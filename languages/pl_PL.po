@@ -1,0 +1,1428 @@
+msgid ""
+msgid ""
+msgstr ""
+msgstr ""
+"Project-Id-Version: understrap\n"
+"Project-Id-Version: understrap\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
+"POT-Creation-Date: 2016-12-20 05:10+0000\n"
+"POT-Creation-Date: 2016-12-20 05:10+0000\n"
+"POT-Revision-Date: Mon Jul 04 2016 09:13:18 GMT+0200 (CEST)\n"
+"POT-Revision-Date: Mon Jul 04 2016 09:13:18 GMT+0200 (CEST)\n"
+"PO-Revision-Date: 2018-04-02 19:11+0100\n"
+"PO-Revision-Date: 2018-04-02 19:11+0100\n"
+"Last-Translator: Mirosław Zalewski <mz@miroslaw-zalewski.eu>\n"
+"Last-Translator: Mirosław Zalewski <mz@miroslaw-zalewski.eu>\n"
+"Language-Team: Polish\n"
+"Language-Team: Polish\n"
+"Language: pl_PL\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10"
+" || n%100>=20) ? 1 : 2);\n"
+" || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 2.0\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;__:"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;__:"
+"1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;_x:1"
+"1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;_x:1"
+",2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;esc_attr__:1;e"
+",2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;esc_attr__:1;e"
+"sc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;esc_html_x:1,2c;comments"
+"sc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;esc_html_x:1,2c;comments"
+"_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: footer.php\n"
+"X-Poedit-SearchPath-0: footer.php\n"
+"X-Poedit-SearchPath-1: header.php\n"
+"X-Poedit-SearchPath-1: header.php\n"
+"X-Poedit-SearchPath-2: index.php\n"
+"X-Poedit-SearchPath-2: index.php\n"
+"X-Poedit-SearchPath-3: statichero.php\n"
+"X-Poedit-SearchPath-3: statichero.php\n"
+"X-Poedit-SearchPath-4: 404.php\n"
+"X-Poedit-SearchPath-4: 404.php\n"
+"X-Poedit-SearchPath-5: archive.php\n"
+"X-Poedit-SearchPath-5: archive.php\n"
+"X-Poedit-SearchPath-6: search.php\n"
+"X-Poedit-SearchPath-6: search.php\n"
+"X-Poedit-SearchPath-7: sticky.php\n"
+"X-Poedit-SearchPath-7: sticky.php\n"
+"X-Poedit-SearchPath-8: single.php\n"
+"X-Poedit-SearchPath-8: single.php\n"
+"X-Poedit-SearchPath-9: sidebar.php\n"
+"X-Poedit-SearchPath-9: sidebar.php\n"
+"X-Poedit-SearchPath-10: comment-form.php\n"
+"X-Poedit-SearchPath-10: comment-form.php\n"
+"X-Poedit-SearchPath-11: comments.php\n"
+"X-Poedit-SearchPath-11: comments.php\n"
+"X-Poedit-SearchPath-12: content-none.php\n"
+"X-Poedit-SearchPath-12: content-none.php\n"
+"X-Poedit-SearchPath-13: content-page.php\n"
+"X-Poedit-SearchPath-13: content-page.php\n"
+"X-Poedit-SearchPath-14: content-search.php\n"
+"X-Poedit-SearchPath-14: content-search.php\n"
+"X-Poedit-SearchPath-15: content-single.php\n"
+"X-Poedit-SearchPath-15: content-single.php\n"
+"X-Poedit-SearchPath-16: content.php\n"
+"X-Poedit-SearchPath-16: content.php\n"
+"X-Poedit-SearchPath-17: hero.php\n"
+"X-Poedit-SearchPath-17: hero.php\n"
+"X-Poedit-SearchPath-18: page.php\n"
+"X-Poedit-SearchPath-18: page.php\n"
+"X-Poedit-SearchPath-19: functions.php\n"
+"X-Poedit-SearchPath-19: functions.php\n"
+"X-Poedit-SearchPath-20: page-templates\n"
+"X-Poedit-SearchPath-20: page-templates\n"
+
+
+#: search.php:29
+#: search.php:29
+#, php-format
+#, php-format
+msgid "Search Results for: %s"
+msgid "Search Results for: %s"
+msgstr "Wyniki wyszukiwania dla frazy: %s"
+msgstr "Wyniki wyszukiwania dla frazy: %s"
+
+
+#: header.php:34
+#: header.php:34
+msgid "Skip to content"
+msgid "Skip to content"
+msgstr "Przejdź do treści"
+msgstr "Przejdź do treści"
+
+
+#: 404.php:24
+#: 404.php:24
+msgid "Oops! That page can&rsquo;t be found."
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ups! Strona nie została znaleziona."
+msgstr "Ups! Strona nie została znaleziona."
+
+
+#: 404.php:31
+#: 404.php:31
+msgid ""
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+"below or a search?"
+msgstr ""
+msgstr ""
+"Wygląda na to, że nic tutaj nie znaleziono. Może spróbuj wyszukiwania lub"
+"Wygląda na to, że nic tutaj nie znaleziono. Może spróbuj wyszukiwania lub"
+"kliknij jeden z odnośników poniżej?"
+"kliknij jeden z odnośników poniżej?"
+
+
+#: 404.php:42
+#: 404.php:42
+msgid "Most Used Categories"
+msgid "Most Used Categories"
+msgstr "Najczęściej używane kategorie"
+msgstr "Najczęściej używane kategorie"
+
+
+#. translators: %1$s: smiley
+#. translators: %1$s: smiley
+#: 404.php:62
+#: 404.php:62
+#, php-format
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Sprawdź w archiwum %1$s"
+msgstr "Sprawdź w archiwum %1$s"
+
+
+#: author.php:34
+#: author.php:34
+msgid "About:"
+msgid "About:"
+msgstr "Autor:"
+msgstr "Autor:"
+
+
+#: author.php:42 inc/custom-comments.php:30
+#: author.php:42 inc/custom-comments.php:30
+msgid "Website"
+msgid "Website"
+msgstr "Strona internetowa"
+msgstr "Strona internetowa"
+
+
+#: author.php:49
+#: author.php:49
+msgid "Profile"
+msgid "Profile"
+msgstr "O autorze"
+msgstr "O autorze"
+
+
+#: author.php:54
+#: author.php:54
+msgid "Posts by"
+msgid "Posts by"
+msgstr "Artykuły"
+msgstr "Artykuły"
+
+
+#: author.php:68
+#: author.php:68
+msgid "in"
+msgid "in"
+msgstr "w"
+msgstr "w"
+
+
+#: comments.php:28
+#: comments.php:28
+#, php-format
+#, php-format
+msgctxt "comments title"
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Jedna opinia na temat „%2$s”"
+msgstr[0] "Jedna opinia na temat „%2$s”"
+msgstr[1] "%1$s opinie na temat „%2$s”"
+msgstr[1] "%1$s opinie na temat „%2$s”"
+msgstr[2] "%1$s opinii na temat „%2$s”"
+msgstr[2] "%1$s opinii na temat „%2$s”"
+
+
+#: comments.php:36 comments.php:59
+#: comments.php:36 comments.php:59
+msgid "Comment navigation"
+msgid "Comment navigation"
+msgstr "Nawigacja po komentarzach"
+msgstr "Nawigacja po komentarzach"
+
+
+#: comments.php:38 comments.php:61
+#: comments.php:38 comments.php:61
+msgid "&larr; Older Comments"
+msgid "&larr; Older Comments"
+msgstr "&larr; Starsze komentarze"
+msgstr "&larr; Starsze komentarze"
+
+
+#: comments.php:42 comments.php:65
+#: comments.php:42 comments.php:65
+msgid "Newer Comments &rarr;"
+msgid "Newer Comments &rarr;"
+msgstr "Nowsze komentarze &rarr;"
+msgstr "Nowsze komentarze &rarr;"
+
+
+#: comments.php:78
+#: comments.php:78
+msgid "Comments are closed."
+msgid "Comments are closed."
+msgstr "Komentarze są zamknięte"
+msgstr "Komentarze są zamknięte"
+
+
+#: footer.php:27
+#: footer.php:27
+msgid "http://wordpress.org/"
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+
+#: footer.php:28
+#: footer.php:28
+#, php-format
+#, php-format
+msgid "Proudly powered by %s"
+msgid "Proudly powered by %s"
+msgstr "Dumnie wspierany przez %s"
+msgstr "Dumnie wspierany przez %s"
+
+
+#: footer.php:31
+#: footer.php:31
+#, php-format
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgid "Theme: %1$s by %2$s."
+msgstr "Motyw: %1$s od %2$s."
+msgstr "Motyw: %1$s od %2$s."
+
+
+#: footer.php:33
+#: footer.php:33
+#, php-format
+#, php-format
+msgid "Version: %1$s"
+msgid "Version: %1$s"
+msgstr "Wersja: %1$s"
+msgstr "Wersja: %1$s"
+
+
+#: searchform.php:10 searchform.php:16
+#: searchform.php:10 searchform.php:16
+msgid "Search"
+msgid "Search"
+msgstr "Szukaj"
+msgstr "Szukaj"
+
+
+#: searchform.php:13
+#: searchform.php:13
+msgid "Search &hellip;"
+msgid "Search &hellip;"
+msgstr "Szukaj &hellip;"
+msgstr "Szukaj &hellip;"
+
+
+#: loop-templates/content-card.php:43 loop-templates/content-page.php:25
+#: loop-templates/content-card.php:43 loop-templates/content-page.php:25
+#: loop-templates/content.php:37 loop-templates/content-single.php:31
+#: loop-templates/content.php:37 loop-templates/content-single.php:31
+#: loop-templates/content-verticalpage.php:28
+#: loop-templates/content-verticalpage.php:28
+msgid "Pages:"
+msgid "Pages:"
+msgstr "Strony:"
+msgstr "Strony:"
+
+
+#: loop-templates/content-page.php:34
+#: loop-templates/content-page.php:34
+#: loop-templates/content-verticalpage.php:37
+#: loop-templates/content-verticalpage.php:37
+msgid "Edit"
+msgid "Edit"
+msgstr "Edytuj"
+msgstr "Edytuj"
+
+
+#: loop-templates/content-none.php:15
+#: loop-templates/content-none.php:15
+msgid "Nothing Found"
+msgid "Nothing Found"
+msgstr "Nic nie znaleziono"
+msgstr "Nic nie znaleziono"
+
+
+#: loop-templates/content-none.php:23
+#: loop-templates/content-none.php:23
+#, php-format
+#, php-format
+msgid ""
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+msgstr ""
+"Gotów do opublikowania pierwszego postu? <a href=\"%1$s\">Zacznij tutaj</a>."
+"Gotów do opublikowania pierwszego postu? <a href=\"%1$s\">Zacznij tutaj</a>."
+
+
+#: loop-templates/content-none.php:28
+#: loop-templates/content-none.php:28
+msgid ""
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+"different keywords."
+msgstr ""
+msgstr ""
+"Niestety, nie znaleziono niczego, co pasowałoby do Twoich kryteriów "
+"Niestety, nie znaleziono niczego, co pasowałoby do Twoich kryteriów "
+"wyszukiwania. Spróbuj ponownie używając innych słów kluczowych."
+"wyszukiwania. Spróbuj ponownie używając innych słów kluczowych."
+
+
+#: loop-templates/content-none.php:34
+#: loop-templates/content-none.php:34
+msgid ""
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+"searching can help."
+msgstr ""
+msgstr ""
+"Wygląda na to, że nie mogliśmy znaleźć tej strony. Może skorzystaj z"
+"Wygląda na to, że nie mogliśmy znaleźć tej strony. Może skorzystaj z"
+" wyszukiwarki?"
+" wyszukiwarki?"
+
+
+#. Name of the template
+#. Name of the template
+msgid "Blank Page Template"
+msgid "Blank Page Template"
+msgstr "Czysta strona"
+msgstr "Czysta strona"
+
+
+#. Name of the template
+#. Name of the template
+msgid "Left and Right Sidebar Layout"
+msgid "Left and Right Sidebar Layout"
+msgstr "Lewy i prawy panel boczny"
+msgstr "Lewy i prawy panel boczny"
+
+
+#. Name of the template
+#. Name of the template
+msgid "Empty Page Template"
+msgid "Empty Page Template"
+msgstr "Pusta strona"
+msgstr "Pusta strona"
+
+
+#. Name of the template
+#. Name of the template
+msgid "Full Width Page"
+msgid "Full Width Page"
+msgstr "Pełna szerokość"
+msgstr "Pełna szerokość"
+
+
+#. Name of the template
+#. Name of the template
+msgid "Left Sidebar Layout"
+msgid "Left Sidebar Layout"
+msgstr "Lewy panel boczny"
+msgstr "Lewy panel boczny"
+
+
+#. Name of the template
+#. Name of the template
+msgid "Vertical One Page"
+msgid "Vertical One Page"
+msgstr ""
+msgstr ""
+
+
+#: inc/template-tags.php:18
+#: inc/template-tags.php:18
+#, php-format
+#, php-format
+msgid " Edited %4$s"
+msgid " Edited %4$s"
+msgstr " Zmiana %4$s"
+msgstr " Zmiana %4$s"
+
+
+#: inc/template-tags.php:29
+#: inc/template-tags.php:29
+#, php-format
+#, php-format
+msgctxt "post date"
+msgctxt "post date"
+msgid "Posted on %s"
+msgid "Posted on %s"
+msgstr "Opublikowano"
+msgstr "Opublikowano"
+
+
+#: inc/template-tags.php:34
+#: inc/template-tags.php:34
+#, php-format
+#, php-format
+msgctxt "post author"
+msgctxt "post author"
+msgid "by %s"
+msgid "by %s"
+msgstr "przez"
+msgstr "przez"
+
+
+#. translators: used between list items, there is a space after the comma
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:51 inc/template-tags.php:57
+#: inc/template-tags.php:51 inc/template-tags.php:57
+msgid ", "
+msgid ", "
+msgstr ","
+msgstr ","
+
+
+#: inc/template-tags.php:53
+#: inc/template-tags.php:53
+#, php-format
+#, php-format
+msgid "Posted in %1$s"
+msgid "Posted in %1$s"
+msgstr "Opublikowano w %1$s"
+msgstr "Opublikowano w %1$s"
+
+
+#: inc/template-tags.php:59
+#: inc/template-tags.php:59
+#, php-format
+#, php-format
+msgid "Tagged %1$s"
+msgid "Tagged %1$s"
+msgstr "Tagi: %1$s"
+msgstr "Tagi: %1$s"
+
+
+#: inc/template-tags.php:65
+#: inc/template-tags.php:65
+msgid "Leave a comment"
+msgid "Leave a comment"
+msgstr "Napisz komentarz"
+msgstr "Napisz komentarz"
+
+
+#: inc/template-tags.php:65
+#: inc/template-tags.php:65
+msgid "1 Comment"
+msgid "1 Comment"
+msgstr "Komentarzy: 1"
+msgstr "Komentarzy: 1"
+
+
+#: inc/template-tags.php:65
+#: inc/template-tags.php:65
+msgid "% Comments"
+msgid "% Comments"
+msgstr "Komentarzy: %"
+msgstr "Komentarzy: %"
+
+
+#. translators: %s: Name of current post
+#. translators: %s: Name of current post
+#: inc/template-tags.php:72
+#: inc/template-tags.php:72
+#, php-format
+#, php-format
+msgid "Edit %s"
+msgid "Edit %s"
+msgstr "Edytuj %s"
+msgstr "Edytuj %s"
+
+
+#: inc/template-tags.php:143
+#: inc/template-tags.php:143
+msgid "Post navigation"
+msgid "Post navigation"
+msgstr "Nawigacja po artykułach"
+msgstr "Nawigacja po artykułach"
+
+
+#: inc/template-tags.php:148
+#: inc/template-tags.php:148
+msgctxt "Previous post link"
+msgctxt "Previous post link"
+msgid "<i class=\"fa fa-angle-left\"></i>&nbsp;%title"
+msgid "<i class=\"fa fa-angle-left\"></i>&nbsp;%title"
+msgstr "<i class=\"fa fa-angle-left\"></i>&nbsp;%title"
+msgstr "<i class=\"fa fa-angle-left\"></i>&nbsp;%title"
+
+
+#: inc/template-tags.php:151
+#: inc/template-tags.php:151
+msgctxt "Next post link"
+msgctxt "Next post link"
+msgid "%title&nbsp;<i class=\"fa fa-angle-right\"></i>"
+msgid "%title&nbsp;<i class=\"fa fa-angle-right\"></i>"
+msgstr "%title&nbsp;<i class=\"fa fa-angle-right\"></i>"
+msgstr "%title&nbsp;<i class=\"fa fa-angle-right\"></i>"
+
+
+#: inc/setup.php:51
+#: inc/setup.php:51
+msgid "Primary Menu"
+msgid "Primary Menu"
+msgstr "Menu główne"
+msgstr "Menu główne"
+
+
+#: inc/setup.php:122
+#: inc/setup.php:122
+msgid "Read More..."
+msgid "Read More..."
+msgstr "Czytaj dalej…"
+msgstr "Czytaj dalej…"
+
+
+#: inc/widgets.php:14
+#: inc/widgets.php:14
+msgid "Right Sidebar"
+msgid "Right Sidebar"
+msgstr "Prawy panel boczny"
+msgstr "Prawy panel boczny"
+
+
+#: inc/widgets.php:24
+#: inc/widgets.php:24
+msgid "Left Sidebar"
+msgid "Left Sidebar"
+msgstr "Lewy panel boczny"
+msgstr "Lewy panel boczny"
+
+
+#: inc/widgets.php:34
+#: inc/widgets.php:34
+msgid "Hero Slider"
+msgid "Hero Slider"
+msgstr "Slider Hero"
+msgstr "Slider Hero"
+
+
+#: inc/widgets.php:44
+#: inc/widgets.php:44
+msgid "Hero Static"
+msgid "Hero Static"
+msgstr "Nieruchomy Hero"
+msgstr "Nieruchomy Hero"
+
+
+#: inc/widgets.php:54
+#: inc/widgets.php:54
+msgid "Footer Full"
+msgid "Footer Full"
+msgstr "Pełna stopka"
+msgstr "Pełna stopka"
+
+
+#: inc/custom-comments.php:24
+#: inc/custom-comments.php:24
+msgid "Name"
+msgid "Name"
+msgstr "Imię"
+msgstr "Imię"
+
+
+#: inc/custom-comments.php:27
+#: inc/custom-comments.php:27
+msgid "Email"
+msgid "Email"
+msgstr "Email"
+msgstr "Email"
+
+
+#: inc/custom-comments.php:49
+#: inc/custom-comments.php:49
+msgctxt "noun"
+msgctxt "noun"
+msgid "Comment"
+msgid "Comment"
+msgstr "Komentarz"
+msgstr "Komentarz"
+
+
+#: inc/customizer.php:36
+#: inc/customizer.php:36
+msgid "Slider Settings"
+msgid "Slider Settings"
+msgstr "Ustawienia slidera"
+msgstr "Ustawienia slidera"
+
+
+#: inc/customizer.php:45
+#: inc/customizer.php:45
+msgid "Number of slides displaying at once"
+msgid "Number of slides displaying at once"
+msgstr "Liczba jednocześnie wyświetlanych slajdów"
+msgstr "Liczba jednocześnie wyświetlanych slajdów"
+
+
+#: inc/customizer.php:57
+#: inc/customizer.php:57
+msgid "Slider Time (in ms)"
+msgid "Slider Time (in ms)"
+msgstr "Długość wyświetlania slajdu (w ms)"
+msgstr "Długość wyświetlania slajdu (w ms)"
+
+
+#: inc/customizer.php:69
+#: inc/customizer.php:69
+msgid "Loop Slider Content"
+msgid "Loop Slider Content"
+msgstr "Zapętlenie"
+msgstr "Zapętlenie"
+
+
+#: inc/customizer.php:81
+#: inc/customizer.php:81
+msgid "Theme Layout Settings"
+msgid "Theme Layout Settings"
+msgstr "Ustawienia układu szablonu"
+msgstr "Ustawienia układu szablonu"
+
+
+#: inc/customizer.php:83
+#: inc/customizer.php:83
+msgid "Container width and sidebar defaults"
+msgid "Container width and sidebar defaults"
+msgstr "Domyślne ustawienia szerokości strony oraz panelu bocznego"
+msgstr "Domyślne ustawienia szerokości strony oraz panelu bocznego"
+
+
+#: inc/customizer.php:98
+#: inc/customizer.php:98
+msgid "Container Width"
+msgid "Container Width"
+msgstr "Szerokość strony"
+msgstr "Szerokość strony"
+
+
+#: inc/customizer.php:99
+#: inc/customizer.php:99
+msgid "Choose between Bootstrap's container and container-fluid"
+msgid "Choose between Bootstrap's container and container-fluid"
+msgstr "Wybierz pomiędzy klasami Bootstrapa: container oraz container-fluid"
+msgstr "Wybierz pomiędzy klasami Bootstrapa: container oraz container-fluid"
+
+
+#: inc/customizer.php:104
+#: inc/customizer.php:104
+msgid "Fixed width container"
+msgid "Fixed width container"
+msgstr "Stała"
+msgstr "Stała"
+
+
+#: inc/customizer.php:105
+#: inc/customizer.php:105
+msgid "Full width container"
+msgid "Full width container"
+msgstr "Zmienna (wypełnia całą dostępną przestrzeń)"
+msgstr "Zmienna (wypełnia całą dostępną przestrzeń)"
+
+
+#: inc/customizer.php:122
+#: inc/customizer.php:122
+msgid "Sidebar Positioning"
+msgid "Sidebar Positioning"
+msgstr "Umiejscowienie panelu bocznego"
+msgstr "Umiejscowienie panelu bocznego"
+
+
+#: inc/customizer.php:123
+#: inc/customizer.php:123
+msgid "Set sidebar's position. Can either be: right, left, both or none"
+msgid "Set sidebar's position. Can either be: right, left, both or none"
+msgstr ""
+msgstr ""
+"Umiejscowienie panelu bocznego. Może znajdować się po prawej stronie, po"
+"Umiejscowienie panelu bocznego. Może znajdować się po prawej stronie, po"
+" lewej stronie, "
+" lewej stronie, "
+"po obu stronach lub może w ogóle go nie być"
+"po obu stronach lub może w ogóle go nie być"
+
+
+#: inc/customizer.php:129
+#: inc/customizer.php:129
+msgid "Right sidebar"
+msgid "Right sidebar"
+msgstr "Panel boczny po prawej"
+msgstr "Panel boczny po prawej"
+
+
+#: inc/customizer.php:130
+#: inc/customizer.php:130
+msgid "Left sidebar"
+msgid "Left sidebar"
+msgstr "Panel boczny po lewej"
+msgstr "Panel boczny po lewej"
+
+
+#: inc/customizer.php:131
+#: inc/customizer.php:131
+msgid "Left & Right sidebars"
+msgid "Left & Right sidebars"
+msgstr "Panel boczny po lewej i po prawej"
+msgstr "Panel boczny po lewej i po prawej"
+
+
+#: inc/customizer.php:132
+#: inc/customizer.php:132
+msgid "No sidebar"
+msgid "No sidebar"
+msgstr "Brak panelu bocznego"
+msgstr "Brak panelu bocznego"
+
+
+#: inc/customizer.php:150
+#: inc/customizer.php:150
+msgid "Posts Index Style"
+msgid "Posts Index Style"
+msgstr ""
+msgstr ""
+
+
+#: inc/customizer.php:151
+#: inc/customizer.php:151
+msgid "Choose how to display latest posts"
+msgid "Choose how to display latest posts"
+msgstr ""
+msgstr ""
+
+
+#: inc/customizer.php:156
+#: inc/customizer.php:156
+msgid "Default"
+msgid "Default"
+msgstr ""
+msgstr ""
+
+
+#: inc/customizer.php:157
+#: inc/customizer.php:157
+msgid "Masonry"
+msgid "Masonry"
+msgstr ""
+msgstr ""
+
+
+#: inc/customizer.php:158
+#: inc/customizer.php:158
+msgid "Grid"
+msgid "Grid"
+msgstr ""
+msgstr ""
+
+
+#: inc/customizer.php:187
+#: inc/customizer.php:187
+msgid "Grid Post Columns"
+msgid "Grid Post Columns"
+msgstr ""
+msgstr ""
+
+
+#: inc/customizer.php:188
+#: inc/customizer.php:188
+msgid "Choose how many columns to use"
+msgid "Choose how many columns to use"
+msgstr ""
+msgstr ""
+
+
+msgid "Proceed to Checkout"
+msgid "Proceed to Checkout"
+msgstr "Przejdź do kasy"
+msgstr "Przejdź do kasy"
+
+
+msgid "Remove this item"
+msgid "Remove this item"
+msgstr "Usuń ten przedmiot"
+msgstr "Usuń ten przedmiot"
+
+
+msgid "No products in the cart."
+msgid "No products in the cart."
+msgstr "Koszyk jest pusty"
+msgstr "Koszyk jest pusty"
+
+
+msgid "Subtotal"
+msgid "Subtotal"
+msgstr "Suma częściowa"
+msgstr "Suma częściowa"
+
+
+msgid "View Cart"
+msgid "View Cart"
+msgstr "Zobacz koszyk"
+msgstr "Zobacz koszyk"
+
+
+msgid "Checkout"
+msgid "Checkout"
+msgstr "Kasa"
+msgstr "Kasa"
+
+
+msgid "Your cart is currently empty."
+msgid "Your cart is currently empty."
+msgstr "Twój koszyk jest pusty"
+msgstr "Twój koszyk jest pusty"
+
+
+msgid "Return To Shop"
+msgid "Return To Shop"
+msgstr "Wróć do sklepu"
+msgstr "Wróć do sklepu"
+
+
+msgid "Product"
+msgid "Product"
+msgstr "Produkt"
+msgstr "Produkt"
+
+
+msgid "Price"
+msgid "Price"
+msgstr "Cena"
+msgstr "Cena"
+
+
+msgid "Quantity"
+msgid "Quantity"
+msgstr "Liczba sztuk"
+msgstr "Liczba sztuk"
+
+
+msgid "Total"
+msgid "Total"
+msgstr "Suma"
+msgstr "Suma"
+
+
+msgid "Available on backorder"
+msgid "Available on backorder"
+msgstr "Dostępny na zamówienie"
+msgstr "Dostępny na zamówienie"
+
+
+msgid "Coupon:"
+msgid "Coupon:"
+msgstr "Kupon:"
+msgstr "Kupon:"
+
+
+msgid "Coupon code"
+msgid "Coupon code"
+msgstr "Kod kuponu"
+msgstr "Kod kuponu"
+
+
+msgid "Apply Coupon"
+msgid "Apply Coupon"
+msgstr "Zastosuj kupon"
+msgstr "Zastosuj kupon"
+
+
+msgid "Update Cart"
+msgid "Update Cart"
+msgstr "Zaktualizuj koszyk"
+msgstr "Zaktualizuj koszyk"
+
+
+msgid ""
+msgid ""
+"Sorry, it seems that there are no available payment methods for your state. "
+"Sorry, it seems that there are no available payment methods for your state. "
+"Please contact us if you require assistance or wish to make alternate "
+"Please contact us if you require assistance or wish to make alternate "
+"arrangements."
+"arrangements."
+msgstr ""
+msgstr ""
+"Przykro nam, ale dla Twojego regionu nie jest udostępniona żadna metoda"
+"Przykro nam, ale dla Twojego regionu nie jest udostępniona żadna metoda"
+" płatności. Prosimy skontaktuj się z nami, jeśli potrzebujesz wyjaśnień lub"
+" płatności. Prosimy skontaktuj się z nami, jeśli potrzebujesz wyjaśnień lub"
+" chcesz omówić alternatywne sposoby płatności."
+" chcesz omówić alternatywne sposoby płatności."
+
+
+msgid "Please fill in your details above to see available payment methods."
+msgid "Please fill in your details above to see available payment methods."
+msgstr "Wypełnij powyższe szczegóły aby zobaczyć dostępne metody płatności."
+msgstr "Wypełnij powyższe szczegóły aby zobaczyć dostępne metody płatności."
+
+
+msgid ""
+msgid ""
+"Since your browser does not support JavaScript, or it is disabled, please "
+"Since your browser does not support JavaScript, or it is disabled, please "
+"ensure you click the <em>Update Totals</em> button before placing your order."
+"ensure you click the <em>Update Totals</em> button before placing your order."
+" You may be charged more than the amount stated above if you fail to do so."
+" You may be charged more than the amount stated above if you fail to do so."
+msgstr ""
+msgstr ""
+"Ponieważ Twoja przeglądarka nie wspiera JavaScriptu lub jest on wyłączony,"
+"Ponieważ Twoja przeglądarka nie wspiera JavaScriptu lub jest on wyłączony,"
+" upewnij się, że klikniesz przycisk <em>Zaktualizuj koszyk</em> przed"
+" upewnij się, że klikniesz przycisk <em>Zaktualizuj koszyk</em> przed"
+" złożeniem zamówienia. Możesz zapłacić więcej niż jest podane powyżej, jeśli"
+" złożeniem zamówienia. Możesz zapłacić więcej niż jest podane powyżej, jeśli"
+" tego nie zrobisz."
+" tego nie zrobisz."
+
+
+msgid "Update totals"
+msgid "Update totals"
+msgstr "Zaktualizuj koszyk"
+msgstr "Zaktualizuj koszyk"
+
+
+msgid "Qty"
+msgid "Qty"
+msgstr "Szt."
+msgstr "Szt."
+
+
+msgid "Totals"
+msgid "Totals"
+msgstr "Łącznie"
+msgstr "Łącznie"
+
+
+msgid ""
+msgid ""
+"Sorry, it seems that there are no available payment methods for your "
+"Sorry, it seems that there are no available payment methods for your "
+"location. Please contact us if you require assistance or wish to make "
+"location. Please contact us if you require assistance or wish to make "
+"alternate arrangements."
+"alternate arrangements."
+msgstr ""
+msgstr ""
+"Przykro nam, ale dla Twojej lokalizacji nie jest udostępniona żadna metoda"
+"Przykro nam, ale dla Twojej lokalizacji nie jest udostępniona żadna metoda"
+" płatności. Prosimy skontaktuj się z nami, jeśli potrzebujesz wyjaśnień lub"
+" płatności. Prosimy skontaktuj się z nami, jeśli potrzebujesz wyjaśnień lub"
+" chcesz omówić alternatywne sposoby płatności."
+" chcesz omówić alternatywne sposoby płatności."
+
+
+msgid "Have a coupon?"
+msgid "Have a coupon?"
+msgstr "Masz kupon?"
+msgstr "Masz kupon?"
+
+
+msgid "Click here to enter your code"
+msgid "Click here to enter your code"
+msgstr "Kliknij tutaj, aby dodać kod"
+msgstr "Kliknij tutaj, aby dodać kod"
+
+
+msgid "Username or email"
+msgid "Username or email"
+msgstr "Użytkownik lub e-mail"
+msgstr "Użytkownik lub e-mail"
+
+
+msgid "Password"
+msgid "Password"
+msgstr "Hasło"
+msgstr "Hasło"
+
+
+msgid "Login"
+msgid "Login"
+msgstr "Zaloguj się"
+msgstr "Zaloguj się"
+
+
+msgid "Remember me"
+msgid "Remember me"
+msgstr "Zapamiętaj mnie"
+msgstr "Zapamiętaj mnie"
+
+
+msgid "Lost your password?"
+msgid "Lost your password?"
+msgstr "Nie pamiętasz hasła?"
+msgstr "Nie pamiętasz hasła?"
+
+
+msgctxt "Product quantity input tooltip"
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgid "Qty"
+msgstr "Szt."
+msgstr "Szt."
+
+
+msgid ""
+msgid ""
+"Lost your password? Please enter your username or email address. You will "
+"Lost your password? Please enter your username or email address. You will "
+"receive a link to create a new password via email."
+"receive a link to create a new password via email."
+msgstr ""
+msgstr ""
+"Zapomniałeś hasła? Wpisz swoją nazwę użytkownika lub adres e-mail. Dostaniesz"
+"Zapomniałeś hasła? Wpisz swoją nazwę użytkownika lub adres e-mail. Dostaniesz"
+" link do stworzenia nowego hasła mailem."
+" link do stworzenia nowego hasła mailem."
+
+
+msgid "Reset Password"
+msgid "Reset Password"
+msgstr "Resetuj hasło"
+msgstr "Resetuj hasło"
+
+
+msgid "Username or email address"
+msgid "Username or email address"
+msgstr "Użytkownik lub e-mail"
+msgstr "Użytkownik lub e-mail"
+
+
+msgid "Register"
+msgid "Register"
+msgstr "Zarejestruj się"
+msgstr "Zarejestruj się"
+
+
+msgid "Username"
+msgid "Username"
+msgstr "Nazwa użytkownika"
+msgstr "Nazwa użytkownika"
+
+
+msgid "Email address"
+msgid "Email address"
+msgstr "E-mail"
+msgstr "E-mail"
+
+
+msgid "Anti-spam"
+msgid "Anti-spam"
+msgstr "Antyspam"
+msgstr "Antyspam"
+
+
+msgid "First name"
+msgid "First name"
+msgstr "Imię"
+msgstr "Imię"
+
+
+msgid "Last name"
+msgid "Last name"
+msgstr "Nazwisko"
+msgstr "Nazwisko"
+
+
+msgid "Password Change"
+msgid "Password Change"
+msgstr "Zmiana hasła"
+msgstr "Zmiana hasła"
+
+
+msgid "Current Password (leave blank to leave unchanged)"
+msgid "Current Password (leave blank to leave unchanged)"
+msgstr "Aktualne hasło (pozostaw puste, aby nie zmieniać)"
+msgstr "Aktualne hasło (pozostaw puste, aby nie zmieniać)"
+
+
+msgid "New Password (leave blank to leave unchanged)"
+msgid "New Password (leave blank to leave unchanged)"
+msgstr "Nowe hasło (pozostaw puste, aby nie zmieniać)"
+msgstr "Nowe hasło (pozostaw puste, aby nie zmieniać)"
+
+
+msgid "Confirm New Password"
+msgid "Confirm New Password"
+msgstr "Potwierdź nowe hasło"
+msgstr "Potwierdź nowe hasło"
+
+
+msgid "Save changes"
+msgid "Save changes"
+msgstr "Zapisz zmiany"
+msgstr "Zapisz zmiany"
+
+
+msgid "Order"
+msgid "Order"
+msgstr "Zamówienie"
+msgstr "Zamówienie"
+
+
+msgid "Date"
+msgid "Date"
+msgstr "Data"
+msgstr "Data"
+
+
+msgid "Status"
+msgid "Status"
+msgstr "Status"
+msgstr "Status"
+
+
+msgid "Recent Orders"
+msgid "Recent Orders"
+msgstr "Ostatnie zamówienia"
+msgstr "Ostatnie zamówienia"
+
+
+msgctxt "hash before order number"
+msgctxt "hash before order number"
+msgid "#"
+msgid "#"
+msgstr "#"
+msgstr "#"
+
+
+#, php-format
+#, php-format
+msgid "%s for %s item"
+msgid "%s for %s item"
+msgid_plural "%s for %s items"
+msgid_plural "%s for %s items"
+msgstr[0] "%s za %s pozycję"
+msgstr[0] "%s za %s pozycję"
+msgstr[1] "%s za %s pozycje"
+msgstr[1] "%s za %s pozycje"
+msgstr[2] "%s za %s pozycji"
+msgstr[2] "%s za %s pozycji"
+
+
+msgid "Pay"
+msgid "Pay"
+msgstr "Zapłać"
+msgstr "Zapłać"
+
+
+msgid "View"
+msgid "View"
+msgstr "Zobacz"
+msgstr "Zobacz"
+
+
+msgid "Cancel"
+msgid "Cancel"
+msgstr "Anuluj"
+msgstr "Anuluj"
+
+
+msgid "Previous"
+msgid "Previous"
+msgstr "Poprzednie"
+msgstr "Poprzednie"
+
+
+msgid "Next"
+msgid "Next"
+msgstr "Następne"
+msgstr "Następne"
+
+
+msgid "Go Shop"
+msgid "Go Shop"
+msgstr "Przejdź do sklepu"
+msgstr "Przejdź do sklepu"
+
+
+msgid "No order has been made yet."
+msgid "No order has been made yet."
+msgstr "Żadne zamówienia nie zostały jeszcze złożone."
+msgstr "Żadne zamówienia nie zostały jeszcze złożone."
+
+
+msgid "Billing Address"
+msgid "Billing Address"
+msgstr "Adres rozliczeniowy."
+msgstr "Adres rozliczeniowy."
+
+
+msgid "Shipping Address"
+msgid "Shipping Address"
+msgstr "Adres wysyłki."
+msgstr "Adres wysyłki."
+
+
+msgid "Save Address"
+msgid "Save Address"
+msgstr "Zapisz adres"
+msgstr "Zapisz adres"
+
+
+msgid "Enter a new password below."
+msgid "Enter a new password below."
+msgstr "Wpisz nowe hasło poniżej."
+msgstr "Wpisz nowe hasło poniżej."
+
+
+msgid "New password"
+msgid "New password"
+msgstr "Nowe hasło"
+msgstr "Nowe hasło"
+
+
+msgid "Re-enter new password"
+msgid "Re-enter new password"
+msgstr "Powtórz nowe hasło"
+msgstr "Powtórz nowe hasło"
+
+
+msgid "Save"
+msgid "Save"
+msgstr "Zapisz"
+msgstr "Zapisz"
+
+
+msgid "&infin;"
+msgid "&infin;"
+msgstr "&infin;"
+msgstr "&infin;"
+
+
+msgid "Never"
+msgid "Never"
+msgstr "Nigdy"
+msgstr "Nigdy"
+
+
+msgid "Download"
+msgid "Download"
+msgstr "Pobieranie"
+msgstr "Pobieranie"
+
+
+msgid "No downloads available yet."
+msgid "No downloads available yet."
+msgstr "Pliki do pobrania nie są jeszcze dostępne."
+msgstr "Pliki do pobrania nie są jeszcze dostępne."
+
+
+#, php-format
+#, php-format
+msgid "Rated %d out of 5"
+msgid "Rated %d out of 5"
+msgstr "Oceniony %s na 5."
+msgstr "Oceniony %s na 5."
+
+
+msgid "out of 5"
+msgid "out of 5"
+msgstr "z 5"
+msgstr "z 5"
+
+
+#, php-format
+#, php-format
+msgid "Rated %s out of 5"
+msgid "Rated %s out of 5"
+msgstr "Oceniony %s na 5."
+msgstr "Oceniony %s na 5."
+
+
+#, php-format
+#, php-format
+msgid "out of %s5%s"
+msgid "out of %s5%s"
+msgstr "z %s5%s"
+msgstr "z %s5%s"
+
+
+#, php-format
+#, php-format
+msgid "based on %s customer rating"
+msgid "based on %s customer rating"
+msgid_plural "based on %s customer ratings"
+msgid_plural "based on %s customer ratings"
+msgstr[0] "na podstawie %s oceny klienta"
+msgstr[0] "na podstawie %s oceny klienta"
+msgstr[1] "na podstawie %s ocen klientów"
+msgstr[1] "na podstawie %s ocen klientów"
+msgstr[2] "na podstawie %s ocen klientów"
+msgstr[2] "na podstawie %s ocen klientów"
+
+
+#, php-format
+#, php-format
+msgid "%s customer review"
+msgid "%s customer review"
+msgid_plural "%s customer reviews"
+msgid_plural "%s customer reviews"
+msgstr[0] "%s opinia klienta"
+msgstr[0] "%s opinia klienta"
+msgstr[1] "%s opinie klienta"
+msgstr[1] "%s opinie klienta"
+msgstr[2] "%s opinii klienta"
+msgstr[2] "%s opinii klienta"
+
+
+#. Name of the theme
+#. Name of the theme
+msgid "UnderStrap"
+msgid "UnderStrap"
+msgstr "UnderStrap"
+msgstr "UnderStrap"
+
+
+#. Description of the theme
+#. Description of the theme
+msgid ""
+msgid ""
+"Combination of Automattic´s _s theme and Bootstrap 4. Made as a solid "
+"Combination of Automattic´s _s theme and Bootstrap 4. Made as a solid "
+"starting point for your next theme project and WordPress website. Use it as "
+"starting point for your next theme project and WordPress website. Use it as "
+"starter theme or as a parent theme. It is up to you. Including Font Awesome "
+"starter theme or as a parent theme. It is up to you. Including Font Awesome "
+"support, built-in widget slider and much more you need for basic websites. "
+"support, built-in widget slider and much more you need for basic websites. "
+"IMPORTANT: All developer dependencies are not bundled with this install file."
+"IMPORTANT: All developer dependencies are not bundled with this install file."
+" Just download the .zip, extract it and run \"npm install\" and \"gulp copy-"
+" Just download the .zip, extract it and run \"npm install\" and \"gulp copy-"
+"assets\" inside the extracted /understrap folder."
+"assets\" inside the extracted /understrap folder."
+msgstr ""
+msgstr ""
+"Połączenie motywu _s od Automattic oraz Bootstrapa 4. Stworzony jako solidna "
+"Połączenie motywu _s od Automattic oraz Bootstrapa 4. Stworzony jako solidna "
+"podstawa dla Twojego następnego motywu lub strony opartej na WordPressie. "
+"podstawa dla Twojego następnego motywu lub strony opartej na WordPressie. "
+"Wykorzystaj go jako motyw startowy lub motyw nadrzędny. Jak chcesz. "
+"Wykorzystaj go jako motyw startowy lub motyw nadrzędny. Jak chcesz. "
+"Zawiera obsługę Font Awesome, wbudowany widżet slidera i wiele innych. "
+"Zawiera obsługę Font Awesome, wbudowany widżet slidera i wiele innych. "
+"WAŻNE: Zależności nie są dołączone do tego pliku instalacyjnego. Po prostu "
+"WAŻNE: Zależności nie są dołączone do tego pliku instalacyjnego. Po prostu "
+"pobierz plik .zip, rozpakuj go, wejdź do katalogu /understrap i uruchom"
+"pobierz plik .zip, rozpakuj go, wejdź do katalogu /understrap i uruchom"
+" polecenia "
+" polecenia "
+"\"npm install\" i \"gulp copy-assets\"."
+"\"npm install\" i \"gulp copy-assets\"."
+
+
+#. Theme URI of the theme
+#. Theme URI of the theme
+msgid "http://understrap.com"
+msgid "http://understrap.com"
+msgstr "http://understrap.com"
+msgstr "http://understrap.com"
+
+
+#. Author of the theme
+#. Author of the theme
+msgid "Holger Koenemann"
+msgid "Holger Koenemann"
+msgstr "Holger Koenemann"
+msgstr "Holger Koenemann"
+
+
+#. Author URI of the theme
+#. Author URI of the theme
+msgid "http://www.holgerkoenemann.de"
+msgid "http://www.holgerkoenemann.de"
+msgstr "http://www.holgerkoenemann.de"
+msgstr "http://www.holgerkoenemann.de"
+
+
+
+

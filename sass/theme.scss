@@ -1,0 +1,76 @@
+@import "theme/theme_variables";
+// <--------- Add your variables into this file. Also add variables to overwrite Bootstrap or UnderStrap variables here
+@import "assets/bootstrap4";
+// <--------- Loads Bootstrap3 or Bootstrap4. Change from /bootstrap3 to /bootstrap4 Watch out! just for testing in the moment!
+@import "understrap/understrap";
+// <-------- Loads the UnderStrap defaults. Just a few classes to incorporate BS in WP
+//Optional files - If you dont use the corresponding scripts/fonts comment em out
+@import "assets/font-awesome";
+// <------- Font Awesome Icon font
+@import "assets/underscores";
+// <------- Underscores media styles
+// Any additional imported files //
+@import "theme/theme";
+// <--------- That's where you can add your own design. Thats your part!
+@import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
+
+$hero-gray: #f0f0f0;
+
+#index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post {
+  padding: 20px 15px;
+  border: 1px solid $gray-700;
+  margin-bottom: 25px;
+
+  @extend .media;
+
+  .entry-thumbnail {
+	position:relative;
+	width: 30%;
+	height: 0;
+	padding-bottom: 30% ; /* % of width, defines aspect ratio*/
+
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	margin-right: 20px;
+	border: 1px solid $gray-700;
+  }
+
+  .entry-body {
+	@extend .media-body;
+
+	.entry-title {
+	  font-size: $h4-font-size;
+	}
+  }
+}
+
+body.home #wrapper-navbar {
+  background-color: $hero-gray;
+}
+
+#wrapper-hero {
+  height: 250px;
+  font-size: $font-size-lg;
+  background-color: $hero-gray;
+}
+
+#wrapper-hero #hero-content {
+  padding-top: 150px;
+}
+
+.widget_categories {
+  h3 {
+	font-size: $font-size-lg;
+	font-weight: $display2-weight;
+  }
+
+  ul {
+	@extend .list-inline, .list-unstyled;
+
+	li a {
+	  @extend .badge, .badge-secondary;
+	}
+  }
+}
+
