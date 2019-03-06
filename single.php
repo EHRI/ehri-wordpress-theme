@@ -10,6 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
+
+
 ?>
 
 <div class="wrapper" id="single-wrapper">
@@ -18,24 +20,28 @@ get_header();
 
 		<div class="row">
 
-			<main class="site-main col-md-8" id="main">
+			<div class="col-md-9 content-area" id="primary">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				<main class="site-main" id="main">
 
-					<?php get_template_part( 'loop-templates/content', 'single' ); ?>
+					<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php understrap_post_nav(); ?>
+						<?php get_template_part( 'loop-templates/content', 'single' ); ?>
 
-					<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-					?>
+						<?php understrap_post_nav(); ?>
 
-				<?php endwhile; // end of the loop. ?>
+						<?php
+						// If comments are open or we have at least one comment, load up the comment template.
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
+						?>
 
-			</main><!-- #main -->
+					<?php endwhile; // end of the loop. ?>
+
+				</main><!-- #main -->
+
+			</div>
 
 			<!-- Do the right sidebar -->
 			<?php get_template_part( 'sidebar-templates/sidebar', 'right' ); ?>

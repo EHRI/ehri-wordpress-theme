@@ -15,62 +15,194 @@
 @import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
 
 $hero-gray: #f0f0f0;
+$light-text: #858c8c;
+
+.container {
+  //max-width: 1440px;
+  //margin: 0 150px;
+}
+
+h4 {
+  text-transform: uppercase;
+}
 
 #index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post {
-  padding: 20px 15px;
-  border: 1px solid $gray-700;
-  margin-bottom: 25px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(131, 1, 76, 0.13);
+  margin-bottom: 20px;
 
   @extend .media;
 
   .entry-thumbnail {
 	position:relative;
-	width: 30%;
+	width: 262px;
 	height: 0;
 	padding-bottom: 30% ; /* % of width, defines aspect ratio*/
 
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
-	margin-right: 20px;
-	border: 1px solid $gray-700;
+	margin-right: 30px;
   }
 
   .entry-body {
 	@extend .media-body;
 
 	.entry-title {
-	  font-size: $h4-font-size;
+	  font-size: $h2-font-size;
+	  margin-bottom: .75rem;
 	}
+  }
+
+  .entry-meta {
+	margin-bottom: .75rem;
+
+	.byline::after {
+	  content: ' | ';
+	}
+  }
+  .entry-meta * {
+	color: $light-text;
+	font-size: 0.75rem;
   }
 }
 
 body.home #wrapper-navbar {
-  background-color: $hero-gray;
+  background: url('../img/tempbg.jpg') no-repeat center right;
+  background-size: cover;
+}
+body.home #wrapper-navbar-overlay {
+  position: relative;
+  height: 100%;
+  background-color: rgba(54, 15, 79, 0.68);
+}
+
+body.home #primary-nav {
+  background-color: transparent !important;
+}
+
+%heading-text {
+  font-size: $h4-font-size;
+  font-family: $headings-font-family;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+#wrapper-navbar #primary-nav a.nav-link, #wrapper-navbar #primary-nav .navbar-brand {
+  @extend %heading-text;
+  color: $white;
+}
+
+.widget {
+  margin-bottom: 1.5rem;
+}
+
+.widget-title {
+  @extend %heading-text;
+  margin-bottom: 1rem;
+}
+
+#primary-nav #search-controls {
+  //color: $white;
+  //border: solid 1px rgba(224, 224, 224, 0.59);
+  .input-group-append {
+	margin-left: 0;
+  }
+  background-color: rgba(255,255,255,0.1);
+  input, button {
+	border-radius: 0;
+	color: $white !important;
+	background-color: transparent;
+	border-color: rgba(224, 224, 224, 0.3);
+  }
+  input:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+  }
+  input::placeholder, *::-webkit-search-cancel-button {
+	color: $white
+  }
+}
+
+@media (min-width: map_get($container-max-widths, md)) {
+  #navbar-nav-dropdown {
+	.nav-item {
+	  padding-left: 1rem;
+	  padding-right: 1rem;
+	}
+  }
+}
+
+@media (max-width: map_get($container-max-widths, md)) {
+  #navbar-nav-dropdown .nav-item, #navbar-nav-dropdown #navbar-nav-search {
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+  }
+
+  #navbar-nav-dropdown .nav-item {
+	border-bottom: 1px solid rgba(224, 224, 224, 0.3);
+  }
+
+  #navbar-nav-dropdown .nav-item:first-child {
+	margin-top: .5rem;
+    border-top: 1px solid rgba(224, 224, 224, 0.3);
+  }
+}
+
+
+#content {
+  padding-top: 3rem;
 }
 
 #wrapper-hero {
-  height: 250px;
-  font-size: $font-size-lg;
-  background-color: $hero-gray;
+  color: $white;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
-#wrapper-hero #hero-content {
-  padding-top: 150px;
-}
-
-.widget_categories {
-  h3 {
+@media (min-width: map_get($container-max-widths, lg)) {
+  #wrapper-hero {
 	font-size: $font-size-lg;
-	font-weight: $display2-weight;
+	height: 250px;
   }
+  #wrapper-hero #hero-content {
+	padding-top: 5rem;
 
-  ul {
-	@extend .list-inline, .list-unstyled;
-
-	li a {
-	  @extend .badge, .badge-secondary;
+	#hero-tagline {
+	  width: 75%;
 	}
+  }
+}
+
+%category-badge {
+  @extend .badge, .badge-secondary;
+  background-color: $cat-badge-color;
+  color: $gray-900;
+  font-weight: $font-weight-lighter;
+  padding: .3rem;
+  font-size: $font-size-sm;
+}
+
+.widget_categories, .cat-links, .tag-links {
+  ul {
+	@extend .list-unstyled, .clearfix;
+	li {
+	  float: left;
+	  margin-right: 0.4rem;
+	  margin-bottom: 0.4rem;
+	}
+	li a {
+	  @extend %category-badge;
+	}
+  }
+}
+
+.cat-links, .tag-links {
+  color: $text-muted;
+  font-size: $font-size-sm;
+  ul {
+	margin-left: 0.4rem;
+	display: inline-flex;
   }
 }
 

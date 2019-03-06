@@ -13,8 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wrapper" id="wrapper-hero">
 
 	<div class="container" id="hero-content">
-		This EHRI document blog is a space to share ideas about Holocaust-related
-		archival documents, and their presentation and interpretation using digital tools.
+		<div id="hero-tagline">
+			<?php echo get_bloginfo('description'); ?>
+		</div>
 	</div>
 
 </div>

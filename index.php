@@ -18,17 +18,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-<?php if ( is_front_page() && is_home() ) : ?>
-	<?php get_template_part( 'global-templates/hero' ); ?>
-<?php endif; ?>
-
 <div class="wrapper" id="index-wrapper">
 
 	<div class="container" id="content" tabindex="-1">
 
 		<div class="row">
 
-			<div class="col-md-8 content-area" id="primary">
+			<div class="col-md-9 content-area" id="primary">
 
 				<main class="site-main" id="main">
 

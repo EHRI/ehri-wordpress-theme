@@ -16,16 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="entry-body">
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-
-			<div class="entry-meta">
-
-				<?php understrap_posted_on(); ?>
-
-			</div><!-- .entry-meta -->
-
-		<?php endif; ?>
-
 		<header class="entry-header">
 
 			<?php
@@ -36,6 +26,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 
 		</header><!-- .entry-header -->
+
+		<?php if ( 'post' === get_post_type() ) : ?>
+
+			<div class="entry-meta">
+
+				<?php ehri_posted_on(); ?>
+
+			</div><!-- .entry-meta -->
+
+		<?php endif; ?>
 
 		<div class="entry-content">
 
@@ -54,7 +54,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<footer class="entry-footer">
 
-			<?php understrap_entry_footer(); ?>
+			<?php ehri_entry_footer(); ?>
 
 		</footer><!-- .entry-footer -->
 
