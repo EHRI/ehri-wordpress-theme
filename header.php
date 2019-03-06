@@ -60,12 +60,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" id="navbar-cat-dropdown" data-toggle="dropdown"
 								   href="#">Articles</a>
-								<div class="dropdown-menu" id="categories-dropdown"
-								     aria-labelledby="navbar-cat-dropdown">
-									<?php foreach ( get_categories() as $cat ): ?>
-										<a class="dropdown-item"
-										   href="<?php echo get_category_link( $cat ); ?>"><?php echo $cat->name; ?></a>
-									<?php endforeach; ?>
+								<div class="dropdown-menu" id="categories-dropdown" aria-labelledby="navbar-cat-dropdown">
+									<div class="dropdown-menu-tab"></div>
+									<?php the_widget('WP_Widget_Categories');?>
+
+									<a class="all-articles" href="?post_type=post">
+										List all articles
+									</a>
 								</div>
 							</li>
 							<li class="nav-item">
