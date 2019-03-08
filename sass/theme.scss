@@ -32,22 +32,34 @@ h2, h4 {
   padding-bottom: 1.5rem;
   margin-bottom: 3rem;
 
-  @extend .media;
+  @include make-row('no-gutters');
 
   .entry-thumbnail {
-	position:relative;
-	width: 262px;
+	@include make-col-ready('no-gutters');
+
+	@include media-breakpoint-up(lg) {
+	  @include make-col(4);
+	  margin-right: 1rem;
+	}
+
+	margin-bottom: 1rem;
+
 	height: 0;
 	padding-bottom: 30% ; /* % of width, defines aspect ratio*/
 
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
-	margin-right: 30px;
   }
 
   .entry-body {
-	@extend .media-body;
+	@include make-col-ready('no-gutters');
+
+	@include media-breakpoint-up(lg) {
+	  @include make-col(7);
+	}
+
+	padding: 0;
 
 	.entry-title {
 	  font-size: $h2-font-size;
@@ -107,7 +119,7 @@ body.home #primary-nav {
   margin-bottom: 1rem;
 }
 
-.all-articles {
+.all-articles-menu {
   @extend .btn, .btn-primary;
 }
 
@@ -141,6 +153,13 @@ body.home #primary-nav {
 }
 
 @media (max-width: map_get($container-max-widths, md)) {
+
+  // add bottom padding and a margin to the 'All articles button':
+	.all-articles {
+	  width: 100%;
+	  margin-bottom: 20px;
+	}
+
   #navbar-nav-dropdown .nav-item, #navbar-nav-dropdown #navbar-nav-search {
 	padding-top: .5rem;
 	padding-bottom: .5rem;

@@ -64,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<div class="dropdown-menu-tab"></div>
 									<?php the_widget('WP_Widget_Categories');?>
 
-									<a class="all-articles" href="/all-articles/">
+									<a class="all-articles-menu" href="/all-articles/">
 										List all articles
 									</a>
 								</div>
