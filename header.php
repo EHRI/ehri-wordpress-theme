@@ -64,7 +64,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<div class="dropdown-menu-tab"></div>
 									<?php the_widget('WP_Widget_Categories');?>
 
-									<a class="all-articles" href="?post_type=post">
+									<a class="all-articles" href="/all-articles/">
 										List all articles
 									</a>
 								</div>
@@ -107,7 +107,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			</nav><!-- .site-navigation -->
 
-			<?php if ( is_front_page() && is_home() ) : ?>
+			<?php if ( is_front_page() ) : ?>
 				<?php get_template_part( 'global-templates/hero' ); ?>
 			<?php endif; ?>
 

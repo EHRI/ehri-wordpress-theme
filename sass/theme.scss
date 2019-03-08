@@ -19,14 +19,18 @@ h2, h4 {
   text-transform: uppercase;
 }
 
-.btn-primary {
+.btn-primary, .btn-outline-primary {
   text-transform: uppercase;
 }
 
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
 #index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post {
-  padding: 20px 0;
   border-bottom: 1px solid rgba(131, 1, 76, 0.13);
-  margin-bottom: 20px;
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
 
   @extend .media;
 
@@ -222,6 +226,34 @@ body.home #primary-nav {
   ul {
 	margin-left: 0.4rem;
 	display: inline-flex;
+  }
+}
+
+// HACKS, to get tag cloud widget looking like the
+// list of categories. Probably better to write our
+// own tag list manually.
+.widget_tag_cloud {
+  @extend .clearfix;
+  margin-bottom: 1rem;
+  a {
+	@extend %category-badge;
+	background-color: $white;
+	display: list-item;
+	float: left;
+	list-style: none;
+	border: 1px solid #cecfcf;
+	font-size: $font-size-sm !important;
+	margin-right: 0.4rem;
+	margin-bottom: 0.4rem;
+  }
+}
+
+.widget-authors {
+  ul {
+	@extend .list-unstyled, .clearfix;
+	li {
+	  margin-bottom: 0.4rem;
+	}
   }
 }
 
