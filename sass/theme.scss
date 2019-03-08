@@ -14,15 +14,12 @@
 // <--------- That's where you can add your own design. Thats your part!
 @import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
 
-$hero-gray: #f0f0f0;
-$light-text: #858c8c;
 
-.container {
-  //max-width: 1440px;
-  //margin: 0 150px;
+h2, h4 {
+  text-transform: uppercase;
 }
 
-h4 {
+.btn-primary {
   text-transform: uppercase;
 }
 
@@ -62,7 +59,7 @@ h4 {
 	}
   }
   .entry-meta * {
-	color: $light-text;
+	@extend .text-muted;
 	font-size: 0.75rem;
   }
 }
@@ -106,9 +103,7 @@ body.home #primary-nav {
 }
 
 .all-articles {
-  color: $white;
-  background-color: $primary;
-  padding: 0.5rem 1.5rem;
+  @extend .btn, .btn-primary;
 }
 
 #primary-nav #search-controls {
@@ -200,7 +195,7 @@ body.home #primary-nav {
 
 %category-badge {
   @extend .badge, .badge-secondary;
-  background-color: $cat-badge-color;
+  background-color: $ehri-gray;
   color: $gray-900;
   font-weight: $font-weight-lighter;
   padding: .3rem;
@@ -227,6 +222,37 @@ body.home #primary-nav {
   ul {
 	margin-left: 0.4rem;
 	display: inline-flex;
+  }
+}
+
+// Footer
+#wrapper-footer-full {
+  background-color: $ehri-gray;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  .social-links {
+	padding-top: 1.5rem;
+	margin-bottom: 3rem;
+	a {
+	  color: $secondary;
+	  font-size: $h4-font-size;
+	  font-family: $headings-font-family;
+	  text-transform: uppercase;
+	  font-weight: 600;
+	  letter-spacing: 1px;
+	  margin-right: 0.7rem;
+	}
+  }
+
+  .footer-categories {
+	@extend .list-unstyled;
+	li {
+	  padding-bottom: 0.1rem;
+	  a {
+		@extend .text-muted, .small;
+	  }
+	}
   }
 }
 

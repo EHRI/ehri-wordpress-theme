@@ -10,7 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-
 ?>
 
 <?php if ( is_active_sidebar( 'footerfull' ) ) : ?>
@@ -23,7 +22,103 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="row">
 
-				<?php dynamic_sidebar( 'footerfull' ); ?>
+				<div class="col-md-6">
+
+					<h3>Don't miss new articles</h3>
+
+					<form action="/">
+
+						<div class="form-group">
+
+							<div class="input-group">
+
+								<input class="form-control col-md-8" type="text" placeholder="your e-mail"/>
+
+								<div class="input-group-append">
+
+									<button type="submit" class="btn btn btn-primary">Subscribe</button>
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</form>
+					<div class="social-links">
+						<a href="https://facebook.com/EHRIproject">
+							<i class="fa fa-facebook"></i>
+							Facebook
+						</a>
+						<a href="https://twitter.com/EHRIproject">
+							<i class="fa fa-twitter"></i>
+							Twitter
+						</a>
+						<a href="/feed/">
+							<i class="fa fa-rss"></i>
+							RSS
+						</a>
+					</div>
+
+					<p id="copyright">
+						<span class="text-muted text-capitalize">© 2015-2019 EHRI Consortium </span>
+						&nbsp;
+						&nbsp;
+						<a class="text-muted" href="https://ehri-project.eu/content/privacy-statement">Privacy policy</a>
+					</p>
+
+				</div>
+
+				<div class="col-md-6">
+
+					<div class="row">
+
+						<div class="col-md-4">
+							<p>
+								<a href="/">Home</a>
+							</p>
+							<p>
+								<a href="/about/">About</a>
+							</p>
+
+							<p>
+								<a href="/about/contribute/">Contribute</a>
+							</p>
+
+							<p>
+								<a href="" onclick="alert('TODO');">Timeline</a>
+							</p>
+						</div>
+
+						<div class="col-md-4">
+
+							<p>
+								<a href="/categories/">Categories</a>
+							</p>
+							<p>
+								<ul class="footer-categories">
+								<?php foreach (get_categories() as $category): ?>
+									<li>
+										<a href="<?php echo get_category_link($category);?>">
+											<?php echo $category->name;?>
+										</a>
+									</li>
+								<?php endforeach; ?>
+								</ul>
+							</p>
+
+						</div>
+
+						<div class="col-md-4">
+							<p>
+								<a href="" onclick="alert('TODO');">Sitemap</a>
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
 
 			</div>
 
