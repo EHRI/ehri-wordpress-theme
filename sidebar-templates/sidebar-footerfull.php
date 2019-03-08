@@ -86,7 +86,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</p>
 
 							<p>
-								<a href="" onclick="alert('TODO');">Timeline</a>
+								<a href="/timeline/">Timeline</a>
 							</p>
 						</div>
 
@@ -111,7 +111,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<div class="col-md-4">
 							<p>
-								<a href="" onclick="alert('TODO');">Sitemap</a>
+								<a href="/sitemap/">Sitemap</a>
 							</p>
 
 						</div>

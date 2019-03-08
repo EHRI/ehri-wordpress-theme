@@ -18,6 +18,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
+<?php if ($img = get_the_post_thumbnail_url(get_option('page_on_front'), 'full')): ?>
+<style>
+	body.home #wrapper-navbar {
+		background-image: url(<?php echo $img;?>);
+	}
+</style>
+<?php endif;?>
+
+
 <div class="wrapper" id="index-wrapper">
 
 	<div class="container" id="content" tabindex="-1">

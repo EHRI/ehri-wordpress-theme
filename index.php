@@ -27,11 +27,10 @@ get_header();
 			<div class="col-md-9 content-area" id="primary">
 
 				<main class="site-main" id="main">
-
 					<?php if ( have_posts() ) : ?>
 
 						<header class="page-header">
-							<h4>Most recent posts</h4>
+							<h1>All articles</h1>
 						</header>
 
 						<?php while ( have_posts() ) : the_post(); ?>

@@ -69,8 +69,9 @@ h2, h4 {
 }
 
 body.home #wrapper-navbar {
-  background: url('../img/tempbg.jpg') no-repeat center right;
   background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
 }
 body.home #wrapper-navbar-overlay {
   position: relative;

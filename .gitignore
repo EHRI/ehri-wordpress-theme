@@ -11,6 +11,7 @@ Thumbs.db
 .svn
 .cvs
 *.bak
+*.css.map
 *.swp
 .idea/
 *.iml
