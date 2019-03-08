@@ -180,11 +180,11 @@ if ( ! function_exists( 'ehri_entry_footer' ) ) {
 				printf( '<span class="cat-links">' . esc_html__( 'Categories: %s', 'understrap' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html__( '', 'understrap' ) );
-			if ( $tags_list ) {
-				/* translators: %s: Tags of current post */
-				printf( '<span class="tags-links">' . esc_html__( 'Tags: %s', 'understrap' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-			}
+//			$tags_list = get_the_tag_list( '', esc_html__( '', 'understrap' ) );
+//			if ( $tags_list ) {
+//				/* translators: %s: Tags of current post */
+//				printf( '<span class="tags-links">' . esc_html__( 'Tags: %s', 'understrap' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+//			}
 		}
 	}
 }

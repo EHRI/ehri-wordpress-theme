@@ -92,7 +92,7 @@ get_header();
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php understrap_pagination(); ?>
+			<?php ehri_pagination(); ?>
 
 			<!-- Do the right sidebar -->
 			<?php get_template_part( 'sidebar-templates/sidebar', 'right' ); ?>

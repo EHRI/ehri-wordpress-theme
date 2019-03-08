@@ -59,7 +59,7 @@ get_header();
 				</main><!-- #main -->
 
 				<!-- The pagination component -->
-				<?php understrap_pagination(); ?>
+				<?php ehri_pagination(); ?>
 
 			</div>
 
