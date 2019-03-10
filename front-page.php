@@ -41,28 +41,32 @@ get_header();
 							<h4>Most recent posts</h4>
 						</header>
 
-						<?php $the_query = new WP_Query( 'posts_per_page=4' ); ?>
+						<div class="post-list">
 
-						<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+							<?php $the_query = new WP_Query( 'posts_per_page=4' ); ?>
 
+							<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+
+
+								<?php
+								/*
+								 * Include the Post-Format-specific template for the content.
+								 * If you want to override this in a child theme, then include a file
+								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+								 */
+								get_template_part( 'loop-templates/content', get_post_format() );
+								?>
 
 							<?php
-							/*
-							 * Include the Post-Format-specific template for the content.
-							 * If you want to override this in a child theme, then include a file
-							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-							 */
-							get_template_part( 'loop-templates/content', get_post_format() );
+							endwhile;
+							wp_reset_postdata();
 							?>
 
-						<?php
-						endwhile;
-						wp_reset_postdata();
-						?>
+						</div>
+
+					<a class="all-articles btn btn-lg btn-outline-primary" href="/all-articles/">All articles</a>
 
 				</main><!-- #main -->
-
-				<a class="btn btn-lg btn-outline-primary" href="/all-articles/">All articles</a>
 
 			</div>
 

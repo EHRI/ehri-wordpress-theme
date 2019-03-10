@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 							<div class="input-group">
 
-								<input class="form-control col-md-8" type="text" placeholder="your e-mail"/>
+								<input class="form-control col-md-8" type="email" placeholder="your e-mail"/>
 
 								<div class="input-group-append">
 

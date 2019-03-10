@@ -12,37 +12,41 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<div class="entry-thumbnail">
-
-		<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-
-	</div>
-
 	<header class="entry-header">
 
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-body">
 
-		<?php the_content(); ?>
+		<div class="entry-cover-image">
 
-		<?php
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
+			<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-	</div><!-- .entry-content -->
+		</div>
 
-	<footer class="entry-footer">
+		<div class="entry-content">
 
-		<?php understrap_entry_footer(); ?>
+			<?php the_content(); ?>
 
-	</footer><!-- .entry-footer -->
+			<?php
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+					'after'  => '</div>',
+				)
+			);
+			?>
+
+		</div><!-- .entry-content -->
+
+		<footer class="entry-footer">
+
+			<?php understrap_entry_footer(); ?>
+
+		</footer><!-- .entry-footer -->
+
+	</div>
 
 </article><!-- #post-## -->
