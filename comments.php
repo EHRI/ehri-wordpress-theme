@@ -33,14 +33,9 @@ if ( post_password_required() ) {
 			<?php
 			$comments_number = get_comments_number();
 			if ( 1 === (int) $comments_number ) {
-				printf(
-					/* translators: %s: post title */
-					esc_html_x( 'One Comment', 'comments title', 'understrap' ),
-					'<span>' . get_the_title() . '</span>'
-				);
+				printf( esc_html_x( 'One Comment', 'comments title', 'understrap' ) );
 			} else {
 				printf( // WPCS: XSS OK.
-					/* translators: 1: number of comments, 2: post title */
 					esc_html( _nx(
 						'%1$s Comment',
 						'%1$s Comments',
@@ -48,8 +43,7 @@ if ( post_password_required() ) {
 						'comments title',
 						'understrap'
 					) ),
-					number_format_i18n( $comments_number ),
-					'<span>' . get_the_title() . '</span>'
+					number_format_i18n( $comments_number )
 				);
 			}
 			?>

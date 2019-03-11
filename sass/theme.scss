@@ -28,7 +28,7 @@ h2, h4 {
 }
 
 article.post {
-  border-bottom: 1px solid rgba(131, 1, 76, 0.13);
+  border-bottom: 1px solid $divider-color;
   padding-bottom: 1.5rem;
   margin-bottom: 3rem;
 }
@@ -48,7 +48,7 @@ article.post {
   }
 
   .entry-footer {
-	border-top: 1px solid rgba(131, 1, 76, 0.13);
+	border-top: 1px solid $divider-color;
 	padding-top: 1.5rem;
   }
 }
@@ -248,7 +248,7 @@ body.home #primary-nav {
   font-size: $font-size-sm;
 }
 
-.widget_categories, .cat-links, .tags-links {
+.widget_categories, .widget_ehri_post_categories, .cat-links, .tags-links {
   ul {
 	@extend .list-unstyled, .clearfix;
 	li {
@@ -274,7 +274,7 @@ body.home #primary-nav {
 // HACKS, to get tag cloud widget looking like the
 // list of categories. Probably better to write our
 // own tag list manually.
-.widget_tag_cloud {
+.widget_tag_cloud, .widget_ehri_post_tags {
   @extend .clearfix;
   margin-bottom: 1rem;
   a {
@@ -296,6 +296,14 @@ body.home #primary-nav {
 	li {
 	  margin-bottom: 0.4rem;
 	}
+  }
+}
+
+// EHRI Comment Link widget
+.widget {
+  #post-comment-number {
+	margin-left: 1rem;
+	margin-right: 1rem;
   }
 }
 
@@ -441,6 +449,7 @@ body.home #primary-nav {
 
 // Sharing
 .share-post {
+  clear: both;
   @extend .nav;
   margin-bottom: 1.5rem;
 
@@ -458,4 +467,41 @@ body.home #primary-nav {
 	  }
 	}
   }
+}
+
+
+// Related posts using the Contextual Related Posts plugin
+.crp_related, .related-posts {
+  h3 {
+	margin-bottom: 1.5rem;
+  }
+
+  .related-post {
+	margin-bottom: 1.5rem;
+	padding-bottom: 1.5rem;
+
+	@media (max-width: map_get($container-max-widths, lg)) {
+	  border-bottom: 1px solid $divider-color;
+	}
+  }
+
+  img {
+	object-fit: cover;
+	height: 220px;
+	width: 100%;
+	margin-bottom: 1.5rem;
+  }
+
+  .related-post-meta {
+	margin-bottom: .75rem;
+
+	.byline::after {
+	  content: ' | ';
+	}
+  }
+  .related-post-meta * {
+	@extend .text-muted;
+	font-size: $font-size-sm;
+  }
+
 }
