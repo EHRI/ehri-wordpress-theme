@@ -22,6 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
+	<!-- FIXME: load this via the theme code? -->
+	<script async src="https://static.addtoany.com/menu/page.js"></script>
+
 	<?php wp_head(); ?>
 </head>
 

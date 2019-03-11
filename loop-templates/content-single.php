@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<footer class="entry-footer">
 
-			<?php understrap_entry_footer(); ?>
+			<?php get_template_part( 'global-templates/share' ); ?>
 
 		</footer><!-- .entry-footer -->
 

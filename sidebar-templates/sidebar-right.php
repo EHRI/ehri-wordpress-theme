@@ -17,6 +17,12 @@ if ( ! is_active_sidebar( 'right-sidebar' ) ) {
 
 <div class="col-md-3 widget-area" id="right-sidebar" role="complementary">
 
+	<?php if (is_single()): ?>
+
+		<?php get_template_part( 'global-templates/share' ); ?>
+
+	<?php endif; ?>
+
 	<?php dynamic_sidebar( 'right-sidebar' ); ?>
 
 	<?php if (is_search()): ?>
