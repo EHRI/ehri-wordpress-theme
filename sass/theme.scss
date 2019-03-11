@@ -402,4 +402,27 @@ body.home #primary-nav {
 	  @extend .btn, .btn-lg, .btn-primary;
 	}
   }
+
+  #respond-shortcut {
+	margin-left: 2rem;
+  }
+
+  .comment-reply-title {
+	margin-bottom: 1.5rem;
+  }
+
+  .comment-form-meta, .comment-form-comment {
+	label {
+	  text-transform: uppercase;
+	}
+  }
+
+  // comment area buttons are no uppercase and have more
+  // horizontal padding
+  .comment-action {
+	@extend .btn, .btn-primary;
+	text-transform: none;
+	padding: .75rem 2rem;
+	font-size: $font-size-base;
+  }
 }

@@ -5,7 +5,8 @@
 
 $primary: #83014c;
 $secondary: #360f4f;
-$headings-font-family: 'Barlow Semi Condensed';
+$headings-font-family: 'Barlow Semi Condensed', sans-serif;
+$font-family-base: 'Roboto', sans-serif;
 $headings-color: $secondary;
 
 // Footer and category badges etc
@@ -25,6 +26,7 @@ $text-muted: #858c8c;
 $font-size-base: .875rem !default;
 $font-size-sm: .75rem !default;
 
+$h1-font-size: 2.625rem;
 $h2-font-size: 1.375rem;
 $h3-font-size: 1.375rem;
 $h4-font-size: $font-size-base;

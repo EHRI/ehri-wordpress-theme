@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Comments form.
-add_filter( 'comment_form_default_fields', 'understrap_bootstrap_comment_form_fields' );
+add_filter( 'comment_form_default_fields', 'ehri_bootstrap_comment_form_default_fields' );
 
 /**
  * Creates the comments form.
@@ -20,24 +20,24 @@ add_filter( 'comment_form_default_fields', 'understrap_bootstrap_comment_form_fi
  * @return array
  */
 
-if ( ! function_exists( 'understrap_bootstrap_comment_form_fields' ) ) {
+if ( ! function_exists( 'ehri_bootstrap_comment_form_default_fields' ) ) {
 
-	function understrap_bootstrap_comment_form_fields( $fields ) {
+	function ehri_bootstrap_comment_form_default_fields( $fields ) {
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
-		$aria_req  = ( $req ? " aria-required='true'" : '' );
+		$aria_req  = ( $req ? " aria-required='true' placeholder='required' required" : '' );
 		$html5     = current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
 		$consent  = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
 		$fields    = array(
-			'author'  => '<div class="form-group comment-form-author"><label for="author">' . __( 'Name',
-					'understrap' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-			            '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . '></div>',
-			'email'   => '<div class="form-group comment-form-email"><label for="email">' . __( 'Email',
-					'understrap' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-			            '<input class="form-control" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . '></div>',
-			'url'     => '<div class="form-group comment-form-url"><label for="url">' . __( 'Website',
+			'author'  => '<div class="comment-form-meta row"><div class="form-group col-md-4 comment-form-author"><label for="author">' . __( 'Name:',
 					'understrap' ) . '</label> ' .
-			            '<input class="form-control" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30"></div>',
+			            '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . '></div>',
+			'email'   => '<div class="form-group col-md-4 comment-form-email"><label for="email">' . __( 'Email:',
+					'understrap' ) . '</label> ' .
+			            '<input class="form-control" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . '></div>',
+			'url'     => '<div class="form-group col-md-4 comment-form-url"><label for="url">' . __( 'Website:',
+					'understrap' ) . '</label> ' .
+			            '<input class="form-control" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30"></div></div>',
 			'cookies' => '<div class="form-group form-check comment-form-cookies-consent"><input class="form-check-input" id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' /> ' .
 			         '<label class="form-check-label" for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment', 'understrap' ) . '</label></div>',
 		);
@@ -46,7 +46,7 @@ if ( ! function_exists( 'understrap_bootstrap_comment_form_fields' ) ) {
 	}
 } // endif function_exists( 'understrap_bootstrap_comment_form_fields' )
 
-add_filter( 'comment_form_defaults', 'understrap_bootstrap_comment_form' );
+add_filter( 'comment_form_defaults', 'ehri_bootstrap_comment_form' );
 
 /**
  * Builds the form.
@@ -56,14 +56,28 @@ add_filter( 'comment_form_defaults', 'understrap_bootstrap_comment_form' );
  * @return mixed
  */
 
-if ( ! function_exists( 'understrap_bootstrap_comment_form' ) ) {
+if ( ! function_exists( 'ehri_bootstrap_comment_form' ) ) {
 
-	function understrap_bootstrap_comment_form( $args ) {
+	function ehri_bootstrap_comment_form( $args ) {
 		$args['comment_field'] = '<div class="form-group comment-form-comment">
-	    <label for="comment">' . _x( 'Comment', 'noun', 'understrap' ) . ( ' <span class="required">*</span>' ) . '</label>
-	    <textarea class="form-control" id="comment" name="comment" aria-required="true" cols="45" rows="8"></textarea>
+			<label for="comment">' . _x( 'Message:', 'noun', 'understrap' ) . '</label>
+			<textarea class="form-control" placeholder="required" id="comment" name="comment" aria-required="true" cols="45" rows="8"></textarea>
 	    </div>';
-		$args['class_submit']  = 'btn btn-secondary'; // since WP 4.1.
 		return $args;
 	}
 } // endif function_exists( 'understrap_bootstrap_comment_form' )
+
+add_filter( 'comment_form_fields', 'ehri_bootstrap_comment_form_fields');
+
+if ( ! function_exists('ehri_bootstrap_comment_form_fields')) {
+
+	function ehri_bootstrap_comment_form_fields( $args ) {
+		return array (
+			'author' => $args['author'],
+			'email' => $args['email'],
+			'url' => $args['url'],
+			'comment' => $args['comment'],
+			'cookies' => $args['cookies']
+		);
+	}
+}

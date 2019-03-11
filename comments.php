@@ -53,6 +53,7 @@ if ( post_password_required() ) {
 				);
 			}
 			?>
+			<a href="#respond" id="respond-shortcut" class="comment-action">Leave a reply</a>
 
 		</h2><!-- .comments-title -->
 
@@ -127,6 +128,10 @@ if ( post_password_required() ) {
 
 	<?php endif; ?>
 
-	<?php comment_form(); // Render comments form. ?>
+	<?php comment_form(array(
+		'comment_notes_before' => '<p>Your email will not be published.</p>',
+		'label_submit' => __('Submit'),
+		'class_submit' => 'comment-action'
+	) ); // Render comments form. ?>
 
 </div><!-- #comments -->
