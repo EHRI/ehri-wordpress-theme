@@ -458,6 +458,27 @@ body.home #primary-nav {
 	padding: .75rem 2rem;
 	font-size: $font-size-base;
   }
+
+  // collapse comments at small widths
+  @media (max-width: map_get($grid-breakpoints, md)) {
+	img {
+	  width: 2.125rem;
+	  height: 2.125rem;
+	  margin: 0 0 -1rem 1.5rem;
+	}
+	.comment-body {
+	  display: block;
+	}
+	.comment-content {
+	  margin-left: 0;
+	}
+	.comment-tab {
+	  display: none;
+	}
+	.comment-meta {
+	  margin-top: 1rem;
+	}
+  }
 }
 
 // Sharing
