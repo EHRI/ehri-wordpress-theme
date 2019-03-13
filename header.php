@@ -90,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								       value="<?php echo get_query_var( 's' ); ?>"/>
 								<span class="input-group-append">
 							  <button class="btn btn-outline-secondary border-left-0" type="button">
-									<i class="fa fa-search fa-inverse"></i>
+									<i class="fa fa-search fa-lg fa-inverse"></i>
 							  </button>
 							</span>
 							</div>

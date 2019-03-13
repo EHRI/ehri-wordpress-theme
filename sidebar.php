@@ -1,6 +1,6 @@
 <?php
 /**
- * The sidebar containing the main widget area.
+ * The right sidebar containing the main widget area.
  *
  * @package understrap
  */
@@ -9,13 +9,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'right-sidebar' ) ) {
 	return;
 }
+
 ?>
 
-<div class="widget-area" id="secondary" role="complementary">
+<div class="widget-area" id="right-sidebar" role="complementary">
 
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<?php if (is_single()): ?>
 
-</div><!-- #secondary -->
+		<?php get_template_part( 'global-templates/share' ); ?>
+
+	<?php endif; ?>
+
+	<?php dynamic_sidebar( 'right-sidebar' ); ?>
+
+</div><!-- #right-sidebar -->
