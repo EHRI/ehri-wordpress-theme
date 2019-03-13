@@ -1,8 +1,8 @@
 <?php if ( function_exists( 'get_crp_posts_id' ) ): ?>
 
-	<?php $this_id = get_the_ID(); ?>
+	<?php $this_post = get_post(); ?>
 
-	<?php if ( $related = get_crp_posts_id( array('postid' => $this_id, 'limit' => 3) ) ): ?>
+	<?php if ( $related = get_crp_posts_id( array('postid' => $this_post->ID, 'limit' => 3) ) ): ?>
 
 		<div class="related-posts" id="related-posts">
 
@@ -44,7 +44,7 @@
 
 	<?php endif; ?>
 
-	<?php setup_postdata( $this_id ); ?>
+	<?php setup_postdata( $this_post ); ?>
 
 <?php endif; ?>
 
