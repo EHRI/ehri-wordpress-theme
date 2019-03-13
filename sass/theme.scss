@@ -14,9 +14,16 @@
 // <--------- That's where you can add your own design. Thats your part!
 @import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
 
-
 h2, h4 {
   text-transform: uppercase;
+}
+
+.content-area {
+  @extend .col-lg-9;
+}
+
+#right-sidebar {
+  @extend .col-lg-3;
 }
 
 .btn-primary, .btn-outline-primary {
@@ -27,10 +34,15 @@ h2, h4 {
   margin-bottom: 1.5rem;
 }
 
-article.post {
+article.post, .comments-area {
   border-bottom: 1px solid $divider-color;
   padding-bottom: 1.5rem;
   margin-bottom: 3rem;
+}
+
+// Ensure last item in the site-main doesn't have a bottom border
+main.site-main > div:last-child {
+  border-bottom: none;
 }
 
 #single-wrapper article.post {
@@ -358,7 +370,7 @@ body.home #primary-nav {
 
 // Comments
 .comments-area {
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 3rem 0;
 
   .comments-title {
 	text-transform: none;
@@ -375,7 +387,8 @@ body.home #primary-nav {
   }
 
   .comment-body {
-	@extend .media;
+
+    @extend .media;
 
 	img.avatar {
 	  @extend .rounded-circle;
@@ -385,7 +398,7 @@ body.home #primary-nav {
   }
 
   .comment-content {
-	@extend .media-body;
+    @extend .media-body;
 
 	background-color: $ehri-gray;
 	margin-left: 2rem;
@@ -453,14 +466,22 @@ body.home #primary-nav {
   @extend .nav;
   margin-bottom: 1.5rem;
 
-  * {
-	margin-bottom: 0;
+  h4 {
+	margin-right: 0.75rem;
   }
+
   ul {
-	@extend .list-unstyled, .list-inline;
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	flex-wrap: nowrap;
+
 	li {
 	  @extend .list-inline-item;
-	  margin-left: 2rem;
+	  margin-right: 0.75rem;
 
 	  a {
 		color: $secondary;
@@ -472,11 +493,22 @@ body.home #primary-nav {
 
 // Related posts using the Contextual Related Posts plugin
 .crp_related, .related-posts {
+
+  .related-post-items {
+	@extend .row;
+  }
+
+  .related-post-item {
+	@extend .col-md-4;
+  }
+
   h3 {
 	margin-bottom: 1.5rem;
   }
 
   .related-post {
+
+
 	margin-bottom: 1.5rem;
 	padding-bottom: 1.5rem;
 

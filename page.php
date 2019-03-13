@@ -22,7 +22,7 @@ get_header();
 	<div class="container" id="content" tabindex="-1">
 		<div class="row">
 
-			<div class="col-md-9 content-area" id="primary">
+			<div class="content-area" id="primary">
 
 				<main class="site-main" id="main">
 

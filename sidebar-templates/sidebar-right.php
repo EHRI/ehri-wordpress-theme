@@ -15,7 +15,7 @@ if ( ! is_active_sidebar( 'right-sidebar' ) ) {
 
 ?>
 
-<div class="col-md-3 widget-area" id="right-sidebar" role="complementary">
+<div class="widget-area" id="right-sidebar" role="complementary">
 
 	<?php if (is_single()): ?>
 

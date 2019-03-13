@@ -20,7 +20,7 @@ get_header();
 
 		<div class="row">
 
-			<div class="col-md-9 content-area" id="primary">
+			<div class="content-area" id="primary">
 
 				<main class="site-main" id="main">
 
@@ -35,32 +35,7 @@ get_header();
 						endif;
 						?>
 
-						<?php if ( function_exists( 'get_crp_posts_id' ) ): ?>
-							<?php $id = get_the_ID(); ?>
-							<?php if ($related = get_crp_posts_id( array( 'postid' => $id, 'limit' => 3))): ?>
-							<div class="related-posts">
-								<h3>Related articles</h3>
-								<div class="row">
-									<?php foreach ($related as $id): ?>
-										<?php global $post; ?>
-										<?php $post = get_post($id->ID);?>
-										<?php setup_postdata($post);?>
-										<div class="col-lg-4">
-											<div class="related-post">
-												<img alt="<?php echo get_the_title() ?>" class="img-fluid" src="<?php echo get_the_post_thumbnail_url(); ?>"/>
-												<h3><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
-												<div class="related-post-meta">
-													<?php ehri_posted_on(); ?>
-												</div>
-												<?php echo get_the_excerpt();?>
-											</div>
-										</div>
-									<?php endforeach; ?>
-								</div>
-							<?php endif; ?>
-							</div>
-							<?php setup_postdata($id);?>
-						<?php endif;?>
+						<?php get_template_part( 'global-templates/crp-related' ); ?>
 
 					<?php endwhile; // end of the loop. ?>
 
