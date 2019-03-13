@@ -26,6 +26,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		</div>
 
+		<?php if ( 'post' === get_post_type() ) : ?>
+
+			<div class="entry-meta">
+
+				<?php ehri_posted_on(); ?>
+
+			</div><!-- .entry-meta -->
+
+		<?php endif; ?>
+
 		<div class="entry-content">
 
 			<?php the_content(); ?>

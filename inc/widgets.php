@@ -22,7 +22,7 @@ class Ehri_Post_Metadata extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'Ehri_Post_Metadata',
-			__( 'Post Metadata', ' ehri_widget_domain' ),
+			__( 'Post Metadata [EHRI]', ' ehri_widget_domain' ),
 			array('description' => __( 'Displays post author and publication date', 'ehri_widget_domain' ),)
 		);
 	}
@@ -60,7 +60,7 @@ class Ehri_Post_Comment_Info extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'Ehri_Post_Comment_Info',
-			__( 'Post Comment Info', ' ehri_widget_domain' ),
+			__( 'Post Comment Info [EHRI]', ' ehri_widget_domain' ),
 			array('description' => __( 'Displays comment count and a link to the reply section', 'ehri_widget_domain' ),)
 		);
 	}
@@ -108,7 +108,7 @@ class Ehri_Post_Categories extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'Ehri_Post_Categories',
-			__( 'Post Categories', ' ehri_widget_domain' ),
+			__( 'Post Categories [EHRI]', ' ehri_widget_domain' ),
 			array('description' => __( 'Displays categories for the current post', 'ehri_widget_domain' ),)
 		);
 	}
@@ -158,7 +158,7 @@ class Ehri_Post_Tags extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'Ehri_Post_Tags',
-			__( 'Post Tags', ' ehri_widget_domain' ),
+			__( 'Post Tags [EHRI]', ' ehri_widget_domain' ),
 			array('description' => __( 'Displays tags for the current post', 'ehri_widget_domain' ),)
 		);
 	}
@@ -179,6 +179,59 @@ class Ehri_Post_Tags extends WP_Widget {
 			$title = $instance[ 'title' ];
 		else
 			$title = __( 'Tags', 'ehri_widget_domain' );
+		?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+		<?php
+	}
+
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		return $instance;
+	}
+}
+
+
+if ( ! function_exists( "ehri_register_authors_list_widget" ) ) {
+	function ehri_register_authors_list_widget() {
+		register_widget( 'Ehri_Authors_List' );
+	}
+}
+
+add_action( 'widgets_init', 'ehri_register_authors_list_widget' );
+
+class Ehri_Authors_List extends WP_Widget {
+
+	function __construct() {
+		parent::__construct(
+			'Ehri_Authors_List',
+			__( 'Authors List [EHRI]', ' ehri_widget_domain' ),
+			array('description' => __( 'Displays a list of authors', 'ehri_widget_domain' ),)
+		);
+	}
+
+	public function widget( $args, $instance ) {
+		$title = apply_filters( 'widget_title', $instance['title'] );
+		echo $args['before_widget'];
+		echo $args['before_title'] . $title . $args['after_title'];
+		?>
+		<ul>
+			<?php foreach (wp_list_authors() as $author): ?>
+				<?php echo $author; ?>
+			<?php endforeach; ?>
+		</ul>
+		<?php
+		echo $args['after_widget'];
+	}
+
+	public function form( $instance ) {
+		if ( isset( $instance[ 'title' ] ) )
+			$title = $instance[ 'title' ];
+		else
+			$title = __( 'Authors', 'ehri_widget_domain' );
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>

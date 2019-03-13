@@ -40,6 +40,14 @@ article.post, .comments-area {
   margin-bottom: 3rem;
 }
 
+.entry-meta {
+  margin-bottom: .75rem;
+
+  .byline::after {
+	content: ' | ';
+  }
+}
+
 // Ensure last item in the site-main doesn't have a bottom border
 main.site-main > div:last-child {
   border-bottom: none;
@@ -63,6 +71,19 @@ main.site-main > div:last-child {
 	border-top: 1px solid $divider-color;
 	padding-top: 1.5rem;
   }
+
+  .entry-meta {
+	color: $text-muted;
+  }
+
+  // Post metadata is hidden when the sidebar is visible
+  // since it's there instead.
+  @media (min-width: map_get($container-max-widths, lg)) {
+	.entry-meta {
+	  display: none;
+	}
+  }
+
 }
 
 #index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post {
@@ -101,13 +122,6 @@ main.site-main > div:last-child {
 	}
   }
 
-  .entry-meta {
-	margin-bottom: .75rem;
-
-	.byline::after {
-	  content: ' | ';
-	}
-  }
   .entry-meta * {
 	@extend .text-muted;
 	font-size: $font-size-sm;
@@ -302,7 +316,7 @@ body.home #primary-nav {
   }
 }
 
-.widget-authors {
+.widget_ehri_authors_list {
   ul {
 	@extend .list-unstyled, .clearfix;
 	li {
@@ -314,8 +328,8 @@ body.home #primary-nav {
 // EHRI Comment Link widget
 .widget {
   #post-comment-number {
-	margin-left: 1rem;
-	margin-right: 1rem;
+	margin-left: .5rem;
+	margin-right: .5rem;
   }
 }
 

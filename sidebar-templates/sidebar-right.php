@@ -25,14 +25,4 @@ if ( ! is_active_sidebar( 'right-sidebar' ) ) {
 
 	<?php dynamic_sidebar( 'right-sidebar' ); ?>
 
-	<?php if (is_search()): ?>
-		<aside class="author-list widget widget-authors">
-			<h4 class="widget-title">Authors</h4>
-			<ul>
-				<?php foreach (wp_list_authors() as $author): ?>
-					<?php echo $author; ?>
-				<?php endforeach; ?>
-			</ul>
-		</aside>
-	<?php endif; ?>
 </div><!-- #right-sidebar -->
