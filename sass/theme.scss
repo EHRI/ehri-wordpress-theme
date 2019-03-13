@@ -586,3 +586,13 @@ body.home #primary-nav {
 	display: block;
   }
 }
+
+// Clean & Simple Contact Form (CSCF) style overrides
+#cscf {
+  label {
+	text-transform: uppercase;
+  }
+  input[type=submit] {
+	@extend .btn, .btn-primary, .btn-lg;
+  }
+}
