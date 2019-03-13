@@ -21,78 +21,83 @@ get_header();
 
 		<div class="row">
 
-			<main class="site-main" id="main">
+			<div class="content-area" id="primary">
 
-				<header class="page-header author-header">
+				<main class="site-main" id="main">
 
-					<?php
-					if ( isset( $_GET['author_name'] ) ) {
-						$curauth = get_user_by( 'slug', $author_name );
-					} else {
-						$curauth = get_userdata( intval( $author ) );
-					}
-					?>
+					<header class="page-header author-header">
 
-					<h1><?php echo esc_html__( 'About:', 'understrap' ) . ' ' . esc_html( $curauth->nickname ); ?></h1>
+						<?php
+						if ( isset( $_GET['author_name'] ) ) {
+							$curauth = get_user_by( 'slug', $author_name );
+						} else {
+							$curauth = get_userdata( intval( $author ) );
+						}
+						?>
 
-					<?php if ( ! empty( $curauth->ID ) ) : ?>
-						<?php echo get_avatar( $curauth->ID ); ?>
-					<?php endif; ?>
+						<h1><?php echo esc_html__( 'About:', 'understrap' ) . ' ' . esc_html( $curauth->nickname ); ?></h1>
 
-					<?php if ( ! empty( $curauth->user_url ) || ! empty( $curauth->user_description ) ) : ?>
-						<dl>
-							<?php if ( ! empty( $curauth->user_url ) ) : ?>
-								<dt><?php esc_html_e( 'Website', 'understrap' ); ?></dt>
-								<dd>
-									<a href="<?php echo esc_url( $curauth->user_url ); ?>"><?php echo esc_html( $curauth->user_url ); ?></a>
-								</dd>
-							<?php endif; ?>
+						<?php if ( ! empty( $curauth->ID ) ) : ?>
+							<?php echo get_avatar( $curauth->ID ); ?>
+						<?php endif; ?>
 
-							<?php if ( ! empty( $curauth->user_description ) ) : ?>
-								<dt><?php esc_html_e( 'Profile', 'understrap' ); ?></dt>
-								<dd><?php esc_html_e( $curauth->user_description ); ?></dd>
-							<?php endif; ?>
-						</dl>
-					<?php endif; ?>
+						<?php if ( ! empty( $curauth->user_url ) || ! empty( $curauth->user_description ) ) : ?>
+							<dl>
+								<?php if ( ! empty( $curauth->user_url ) ) : ?>
+									<dt><?php esc_html_e( 'Website', 'understrap' ); ?></dt>
+									<dd>
+										<a href="<?php echo esc_url( $curauth->user_url ); ?>"><?php echo esc_html( $curauth->user_url ); ?></a>
+									</dd>
+								<?php endif; ?>
 
-					<h2><?php echo esc_html( 'Posts by', 'understrap' ) . ' ' . esc_html( $curauth->nickname ); ?>:</h2>
+								<?php if ( ! empty( $curauth->user_description ) ) : ?>
+									<dt><?php esc_html_e( 'Profile', 'understrap' ); ?></dt>
+									<dd><?php esc_html_e( $curauth->user_description ); ?></dd>
+								<?php endif; ?>
+							</dl>
+						<?php endif; ?>
 
-				</header><!-- .page-header -->
+						<h2><?php echo esc_html( 'Posts by', 'understrap' ) . ' ' . esc_html( $curauth->nickname ); ?>
+							:</h2>
 
-				<ul>
+					</header><!-- .page-header -->
 
-					<!-- The Loop -->
-					<?php if ( have_posts() ) : ?>
-						<?php while ( have_posts() ) : the_post(); ?>
-							<li>
-								<?php
-								printf(
-									'<a rel="bookmark" href="%1$s" title="%2$s %3$s">%3$s</a>',
-									esc_url( apply_filters( 'the_permalink', get_permalink( $post ), $post ) ),
-									esc_attr( __( 'Permanent Link:', 'understrap' ) ),
-									the_title( '', '', false )
-								);
-								?>
-								<?php understrap_posted_on(); ?> 
-								<?php esc_html_e( 'in', 'understrap' ); ?> 
-								<?php the_category( '&' ); ?>
-							</li>
-						<?php endwhile; ?>
+					<ul>
 
-					<?php else : ?>
+						<!-- The Loop -->
+						<?php if ( have_posts() ) : ?>
+							<?php while ( have_posts() ) : the_post(); ?>
+								<li>
+									<?php
+									printf(
+										'<a rel="bookmark" href="%1$s" title="%2$s %3$s">%3$s</a>',
+										esc_url( apply_filters( 'the_permalink', get_permalink( $post ), $post ) ),
+										esc_attr( __( 'Permanent Link:', 'understrap' ) ),
+										the_title( '', '', false )
+									);
+									?>
+									<?php understrap_posted_on(); ?>
+									<?php esc_html_e( 'in', 'understrap' ); ?>
+									<?php the_category( '&' ); ?>
+								</li>
+							<?php endwhile; ?>
 
-						<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+						<?php else : ?>
 
-					<?php endif; ?>
+							<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
-					<!-- End Loop -->
+						<?php endif; ?>
 
-				</ul>
+						<!-- End Loop -->
 
-			</main><!-- #main -->
+					</ul>
 
-			<!-- The pagination component -->
-			<?php ehri_pagination(); ?>
+				</main><!-- #main -->
+
+				<!-- The pagination component -->
+				<?php ehri_pagination(); ?>
+
+			</div>
 
 			<!-- Do the right sidebar -->
 			<?php get_template_part( 'sidebar-templates/sidebar', 'right' ); ?>
