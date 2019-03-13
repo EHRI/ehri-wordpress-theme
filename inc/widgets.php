@@ -28,14 +28,20 @@ class Ehri_Post_Metadata extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		$title = apply_filters( 'widget_title', $instance['title'] );
-		echo $args['before_widget'];
-		if ( ! empty( $title ) )
-			echo $args['before_title'] . $title . $args['after_title'];
-		echo __( 'Author' ) . ': ' . get_the_author_posts_link();
-		echo '<br/>';
-		echo __( 'Published' ) . ': ' . get_the_date();
-		echo $args['after_widget'];
+		if ($post_id = get_queried_object_id()) {
+			global $post;
+			$post = get_post($post_id);
+			setup_postdata($post);
+
+			$title = apply_filters( 'widget_title', $instance['title'] );
+			echo $args['before_widget'];
+			if ( ! empty( $title ) )
+				echo $args['before_title'] . $title . $args['after_title'];
+			echo __( 'Author' ) . ': ' . get_the_author_posts_link();
+			echo '<br/>';
+			echo __( 'Published' ) . ': ' . get_the_date();
+			echo $args['after_widget'];
+		}
 	}
 
 	public function form( $instance ) {
@@ -66,24 +72,26 @@ class Ehri_Post_Comment_Info extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		$title = apply_filters( 'widget_title', $instance['title'] );
-		$number = get_comments_number();
-		echo $args['before_widget'];
-		if ( ! empty( $title ) )
-			echo $args['before_title'] . $title . $args['after_title'];
-		if ( $number > 0 ) {
-			echo '<i class="fa fa-comment fa-lg"></i>';
-			echo '<span id="post-comment-number">';
-			printf( _nx(
-				'%1$s Comment',
-				'%1$s Comments',
-				$number,
-				'comments title'
-			), number_format_i18n( $number ) );
-			echo '</span>';
+		if ($post_id = get_queried_object_id()) {
+			$title = apply_filters( 'widget_title', $instance['title'] );
+			$number = get_comments_number($post_id);
+			echo $args['before_widget'];
+			if ( ! empty( $title ) )
+				echo $args['before_title'] . $title . $args['after_title'];
+			if ( $number > 0 ) {
+				echo '<i class="fa fa-comment fa-lg"></i>';
+				echo '<span id="post-comment-number">';
+				printf( _nx(
+					'%1$s Comment',
+					'%1$s Comments',
+					$number,
+					'comments title'
+				), number_format_i18n( $number ) );
+				echo '</span>';
+			}
+			echo '<a class="btn btn-primary" href="#respond">Leave a reply</a>';
+			echo $args['after_widget'];
 		}
-		echo '<a class="btn btn-primary" href="#respond">Leave a reply</a>';
-		echo $args['after_widget'];
 	}
 
 	public function form( $instance ) {
@@ -114,14 +122,16 @@ class Ehri_Post_Categories extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		$title = apply_filters( 'widget_title', $instance['title'] );
-		echo $args['before_widget'];
-		if ($cats = trim(get_the_category_list())) {
-			if ( ! empty( $title ) )
-				echo $args['before_title'] . $title . $args['after_title'];
-			echo $cats;
+		if ($post_id = get_queried_object_id()) {
+			$title = apply_filters( 'widget_title', $instance['title'] );
+			echo $args['before_widget'];
+			if ( $cats = trim( get_the_category_list('', '', $post_id) ) ) {
+				if ( ! empty( $title ) )
+					echo $args['before_title'] . $title . $args['after_title'];
+				echo $cats;
+			}
+			echo $args['after_widget'];
 		}
-		echo $args['after_widget'];
 	}
 
 	public function form( $instance ) {
@@ -164,14 +174,16 @@ class Ehri_Post_Tags extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		$title = apply_filters( 'widget_title', $instance['title'] );
-		echo $args['before_widget'];
-		if ($tags = trim(get_the_tag_list())) {
-			if ( ! empty( $title ) )
-				echo $args['before_title'] . $title . $args['after_title'];
-			echo $tags;
+		if ($post_id = get_queried_object_id()) {
+			$title = apply_filters( 'widget_title', $instance['title'] );
+			echo $args['before_widget'];
+			if ( $tags = trim( get_the_tag_list('', '', '', $post_id) ) ) {
+				if ( ! empty( $title ) )
+					echo $args['before_title'] . $title . $args['after_title'];
+				echo $tags;
+			}
+			echo $args['after_widget'];
 		}
-		echo $args['after_widget'];
 	}
 
 	public function form( $instance ) {
