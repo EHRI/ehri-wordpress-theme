@@ -376,6 +376,27 @@ body.home #primary-nav {
 
 // Footer
 #wrapper-footer-full {
+
+  .footer-full-sections {
+	@extend .row;
+
+	.footer-full-section-social {
+	  @extend .col-md-6;
+	}
+
+	.footer-full-section-menu {
+	  @extend .col-md-6;
+
+	  .footer-full-menus {
+		@extend .row;
+
+		.footer-full-menu {
+		  @extend .col-md-4;
+		}
+	  }
+	}
+  }
+
   background-color: $ehri-gray;
   padding-top: $large-margin;
   padding-bottom: $large-margin;

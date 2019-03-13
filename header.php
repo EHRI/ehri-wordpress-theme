@@ -61,27 +61,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<!-- The WordPress Menu goes here -->
 					<div class="collapse navbar-collapse" id="navbar-nav-dropdown">
 						<ul class="navbar-nav ml-auto">
-							<li class="nav-item dropdown">
+							<?php $active_articles = is_archive() || is_single(); ?>
+							<li class="nav-item dropdown <?php if ($active_articles) echo "active"; ?>">
 								<a class="nav-link dropdown-toggle" id="navbar-cat-dropdown" data-toggle="dropdown"
 								   href="#">Articles</a>
-								<div class="dropdown-menu" id="categories-dropdown" aria-labelledby="navbar-cat-dropdown">
+								<div class="dropdown-menu" id="categories-dropdown"
+								     aria-labelledby="navbar-cat-dropdown">
 									<div class="dropdown-menu-tab"></div>
-									<?php the_widget('WP_Widget_Categories');?>
+									<?php the_widget( 'WP_Widget_Categories' ); ?>
 
-									<a class="all-articles-menu" href="/all-articles/">
-										List all articles
+									<a class="all-articles-menu"
+									   href="<?php echo esc_url( home_url( '/all-articles/' ) ); ?>">
+										<?php _e("List all articles"); ?>
 									</a>
 								</div>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="/map">Map</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="/about">About</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="/about/contribute">Contribute</a>
-							</li>
+
+							<?php foreach ( wp_get_nav_menu_items( 'main' ) as $item ): ?>
+								<li class="nav-item <?php if ( $item->object_id === get_the_ID() ) echo "active"; ?>">
+									<a class="nav-link" href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
+								</li>
+							<?php endforeach; ?>
 						</ul>
 						<form action="/" class="form-inline my-3" id="navbar-nav-search">
 							<div class="input-group" id="search-controls">

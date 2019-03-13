@@ -20,9 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="container" id="footer-full-content" tabindex="-1">
 
-			<div class="row">
+			<div class="footer-full-sections">
 
-				<div class="col-md-6">
+				<div class="footer-full-section-social">
 
 					<h3>Don't miss new articles</h3>
 
@@ -69,11 +69,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				</div>
 
-				<div class="col-md-6">
+				<div class="footer-full-section-menu">
 
-					<div class="row">
+					<div class="footer-full-menus">
 
-						<div class="col-md-4">
+						<div class="footer-full-menu">
 							<p>
 								<a href="/">Home</a>
 							</p>
@@ -90,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</p>
 						</div>
 
-						<div class="col-md-4">
+						<div class="footer-full-menu">
 
 							<p>
 								<a href="/categories/">Categories</a>
@@ -109,7 +109,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						</div>
 
-						<div class="col-md-4">
+						<div class="footer-full-menu">
 							<p>
 								<a href="/sitemap/">Sitemap</a>
 							</p>
