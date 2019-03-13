@@ -14,10 +14,25 @@
 // <--------- That's where you can add your own design. Thats your part!
 @import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
 
+$small-margin: .75rem;
+$medium-margin: 1.5rem;
+$large-margin: 3rem;
+
+// Certain headings are uppercased
 h2, h4 {
   text-transform: uppercase;
 }
 
+// Mixin for applying heading-like text to
+// certain items
+%heading-text {
+  font-size: $h4-font-size;
+  font-family: $headings-font-family;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+// Main sidebar layout
 .content-area {
   @extend .col-lg-9;
 }
@@ -26,26 +41,21 @@ h2, h4 {
   @extend .col-lg-3;
 }
 
+// Certain buttons are uppercased
 .btn-primary, .btn-outline-primary {
   text-transform: uppercase;
 }
 
+// Main header spacing
 .page-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: $medium-margin;
 }
 
+// Spacing for main page components
 article.post, .comments-area {
   border-bottom: 1px solid $divider-color;
-  padding-bottom: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-.entry-meta {
-  margin-bottom: .75rem;
-
-  .byline::after {
-	content: ' | ';
-  }
+  padding-bottom: $medium-margin;
+  margin-bottom: $large-margin;
 }
 
 // Ensure last item in the site-main doesn't have a bottom border
@@ -53,23 +63,35 @@ main.site-main > div:last-child {
   border-bottom: none;
 }
 
+// Page metadata
+.entry-meta {
+  margin-bottom: $small-margin;
+
+  .byline::after {
+	content: ' | ';
+  }
+}
+
+// Single post components styling
 #single-wrapper article.post {
   padding-bottom: 0;
+
   .entry-cover-image {
 	img {
 	  width: 100%;
 	  height: auto;
 	}
-	margin: 1.5rem 0;
+
+	margin: $medium-margin 0;
   }
 
   .entry-content {
-	padding-bottom: 1.5rem;
+	padding-bottom: $medium-margin;
   }
 
   .entry-footer {
 	border-top: 1px solid $divider-color;
-	padding-top: 1.5rem;
+	padding-top: $medium-margin;
   }
 
   .entry-meta {
@@ -83,9 +105,9 @@ main.site-main > div:last-child {
 	  display: none;
 	}
   }
-
 }
 
+// Post list (blog, search) components styling
 #index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post {
   @include make-row('no-gutters');
 
@@ -100,7 +122,7 @@ main.site-main > div:last-child {
 	margin-bottom: 1rem;
 
 	height: 0;
-	padding-bottom: 30% ; /* % of width, defines aspect ratio*/
+	padding-bottom: 30%; /* % of width, defines aspect ratio*/
 
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -118,21 +140,24 @@ main.site-main > div:last-child {
 
 	.entry-title {
 	  font-size: $h2-font-size;
-	  margin-bottom: .75rem;
+	  margin-bottom: $small-margin;
 	}
   }
 
+  // in post lists all metadata is greyed out
   .entry-meta * {
 	@extend .text-muted;
 	font-size: $font-size-sm;
   }
 }
 
+// Navbar
 body.home #wrapper-navbar {
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
 }
+
 body.home #wrapper-navbar-overlay {
   position: relative;
   height: 100%;
@@ -143,54 +168,36 @@ body.home #primary-nav {
   background-color: transparent !important;
 }
 
-%heading-text {
-  font-size: $h4-font-size;
-  font-family: $headings-font-family;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
 #wrapper-navbar #primary-nav a.nav-link, #wrapper-navbar #primary-nav .navbar-brand {
   @extend %heading-text;
   color: $white;
-}
-
-.widget {
-  margin-bottom: 1.5rem;
-}
-
-// NB: class differs in sidebar and
-// the top menu dropdown as rendered
-// by Wordpress :(
-.widget-title, .widgettitle {
-  @extend %heading-text;
-  margin-bottom: 1rem;
-}
-
-.all-articles-menu {
-  @extend .btn, .btn-primary;
 }
 
 #primary-nav #search-controls {
   .input-group-append {
 	margin-left: 0;
   }
-  background-color: rgba(255,255,255,0.1);
+
+  background-color: rgba(255, 255, 255, 0.1);
+
   input, button {
 	border-radius: 0;
 	color: $white !important;
 	background-color: transparent;
 	border-color: rgba(224, 224, 224, 0.3);
   }
+
   input:focus {
 	-webkit-box-shadow: none;
 	box-shadow: none;
   }
+
   input::placeholder, *::-webkit-search-cancel-button {
 	color: $white
   }
 }
 
+// At wide display, pad navbar items
 @media (min-width: map_get($container-max-widths, md)) {
   #navbar-nav-dropdown {
 	.nav-item {
@@ -200,13 +207,9 @@ body.home #primary-nav {
   }
 }
 
+// At narrow display, add borders and extra vertical padding
+// to navbar items
 @media (max-width: map_get($container-max-widths, md)) {
-
-  // add bottom padding and a margin to the 'All articles button':
-	.all-articles {
-	  width: 100%;
-	  margin-bottom: 20px;
-	}
 
   #navbar-nav-dropdown .nav-item, #navbar-nav-dropdown #navbar-nav-search {
 	padding-top: .5rem;
@@ -219,8 +222,40 @@ body.home #primary-nav {
 
   #navbar-nav-dropdown .nav-item:first-child {
 	margin-top: .5rem;
-    border-top: 1px solid rgba(224, 224, 224, 0.3);
+	border-top: 1px solid rgba(224, 224, 224, 0.3);
   }
+}
+
+// Link to all articles on home page
+.all-articles-menu {
+  @extend .btn, .btn-primary;
+}
+
+@media (max-width: map_get($container-max-widths, md)) {
+
+  // add bottom padding and a margin
+  .all-articles {
+	width: 100%;
+	margin-bottom: $medium-margin;
+  }
+}
+
+// Search form
+#searchform {
+  margin-bottom: $medium-margin;
+}
+
+// Widgets
+.widget {
+  margin-bottom: $medium-margin;
+}
+
+// NB: class differs in sidebar and
+// the top menu dropdown as rendered
+// by Wordpress :(
+.widget-title, .widgettitle {
+  @extend %heading-text;
+  margin-bottom: 1rem;
 }
 
 #categories-dropdown {
@@ -228,7 +263,7 @@ body.home #primary-nav {
 }
 
 #content {
-  padding-top: 3rem;
+  padding-top: $large-margin;
 }
 
 #wrapper-hero {
@@ -277,11 +312,13 @@ body.home #primary-nav {
 .widget_categories, .widget_ehri_post_categories, .cat-links, .tags-links {
   ul {
 	@extend .list-unstyled, .clearfix;
+
 	li {
 	  float: left;
-	  margin-right: 0.4rem;
-	  margin-bottom: 0.4rem;
+	  margin-right: $medium-margin / 3;
+	  margin-bottom: $medium-margin / 3;
 	}
+
 	li a {
 	  @extend %category-badge;
 	}
@@ -291,6 +328,7 @@ body.home #primary-nav {
 .cat-links, .tags-links {
   color: $text-muted;
   font-size: $font-size-sm;
+
   ul {
 	margin-left: 0.4rem;
 	display: inline-flex;
@@ -303,6 +341,7 @@ body.home #primary-nav {
 .widget_tag_cloud, .widget_ehri_post_tags {
   @extend .clearfix;
   margin-bottom: 1rem;
+
   a {
 	@extend %category-badge;
 	background-color: $white;
@@ -316,9 +355,11 @@ body.home #primary-nav {
   }
 }
 
+// Authors list widget
 .widget_ehri_authors_list {
   ul {
 	@extend .list-unstyled, .clearfix;
+
 	li {
 	  margin-bottom: 0.4rem;
 	}
@@ -328,20 +369,21 @@ body.home #primary-nav {
 // EHRI Comment Link widget
 .widget {
   #post-comment-number {
-	margin-left: .5rem;
-	margin-right: .5rem;
+	margin-left: $medium-margin / 3;
+	margin-right: $medium-margin / 3;
   }
 }
 
 // Footer
 #wrapper-footer-full {
   background-color: $ehri-gray;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: $large-margin;
+  padding-bottom: $large-margin;
 
   .social-links {
-	padding-top: 1.5rem;
-	margin-bottom: 3rem;
+	padding-top: $medium-margin;
+	margin-bottom: $large-margin;
+
 	a {
 	  color: $secondary;
 	  font-size: $h4-font-size;
@@ -355,8 +397,10 @@ body.home #primary-nav {
 
   .footer-categories {
 	@extend .list-unstyled;
+
 	li {
 	  padding-bottom: 0.1rem;
+
 	  a {
 		@extend .text-muted, .small;
 	  }
@@ -365,17 +409,18 @@ body.home #primary-nav {
 }
 
 // Pagination
-
 .pagination {
   text-transform: lowercase;
 
   li .page-link {
-    border-right-width: 0;
-    border-left-width: 0;
+	border-right-width: 0;
+	border-left-width: 0;
   }
+
   li:first-child .page-link {
 	border-left-width: 1px;
   }
+
   li:last-child .page-link {
 	border-right-width: 1px;
   }
@@ -384,11 +429,11 @@ body.home #primary-nav {
 
 // Comments
 .comments-area {
-  margin: 1.5rem 0 3rem 0;
+  margin: $medium-margin 0 $large-margin 0;
 
   .comments-title {
 	text-transform: none;
-	margin-bottom: 3rem;
+	margin-bottom: $large-margin;
   }
 
   .comment-list {
@@ -402,7 +447,7 @@ body.home #primary-nav {
 
   .comment-body {
 
-    @extend .media;
+	@extend .media;
 
 	img.avatar {
 	  @extend .rounded-circle;
@@ -412,11 +457,11 @@ body.home #primary-nav {
   }
 
   .comment-content {
-    @extend .media-body;
+	@extend .media-body;
 
 	background-color: $ehri-gray;
 	margin-left: 2rem;
-	padding: 0.75rem 0.75rem 0.75rem 1.5rem;
+	padding: 0.75rem 0.75rem 0.75rem $medium-margin;
 
 	.comment-tab {
 	  float: left;
@@ -434,7 +479,7 @@ body.home #primary-nav {
   }
 
   .comment-metadata {
-	margin-bottom: .75rem;
+	margin-bottom: $small-margin;
   }
 
   .comment-metadata * {
@@ -455,7 +500,7 @@ body.home #primary-nav {
   }
 
   .comment-reply-title {
-	margin-bottom: 1.5rem;
+	margin-bottom: $medium-margin;
   }
 
   .comment-form-meta, .comment-form-comment {
@@ -469,7 +514,7 @@ body.home #primary-nav {
   .comment-action {
 	@extend .btn, .btn-primary;
 	text-transform: none;
-	padding: .75rem 2rem;
+	padding: $small-margin 2rem;
 	font-size: $font-size-base;
   }
 
@@ -478,7 +523,7 @@ body.home #primary-nav {
 	img {
 	  width: 2.125rem;
 	  height: 2.125rem;
-	  margin: 0 0 -1rem 1.5rem;
+	  margin: 0 0 -1rem $medium-margin;
 	}
 	.comment-body {
 	  display: block;
@@ -499,7 +544,7 @@ body.home #primary-nav {
 .share-post {
   clear: both;
   @extend .nav;
-  margin-bottom: 1.5rem;
+  margin-bottom: $medium-margin;
 
   h4 {
 	margin-right: 0.75rem;
@@ -525,7 +570,6 @@ body.home #primary-nav {
   }
 }
 
-
 // Related posts using the Contextual Related Posts plugin
 .crp_related, .related-posts {
 
@@ -538,14 +582,12 @@ body.home #primary-nav {
   }
 
   h3 {
-	margin-bottom: 1.5rem;
+	margin-bottom: $medium-margin;
   }
 
   .related-post {
-
-
-	margin-bottom: 1.5rem;
-	padding-bottom: 1.5rem;
+	margin-bottom: $medium-margin;
+	padding-bottom: $medium-margin;
 
 	@media (max-width: map_get($container-max-widths, lg)) {
 	  border-bottom: 1px solid $divider-color;
@@ -556,16 +598,17 @@ body.home #primary-nav {
 	object-fit: cover;
 	height: 220px;
 	width: 100%;
-	margin-bottom: 1.5rem;
+	margin-bottom: $medium-margin;
   }
 
   .related-post-meta {
-	margin-bottom: .75rem;
+	margin-bottom: $small-margin;
 
 	.byline::after {
 	  content: ' | ';
 	}
   }
+
   .related-post-meta * {
 	@extend .text-muted;
 	font-size: $font-size-sm;
@@ -581,9 +624,15 @@ body.home #primary-nav {
 	  margin-bottom: 1rem;
 	}
   }
+
   .crp_date {
 	@extend .text-muted, .small;
 	display: block;
+  }
+
+  // Hide the sidebar CRM widget when sidebar is collapsed
+  @media (max-width: map_get($grid-breakpoints, lg)) {
+	display: none;
   }
 }
 
@@ -592,6 +641,7 @@ body.home #primary-nav {
   label {
 	text-transform: uppercase;
   }
+
   input[type=submit] {
 	@extend .btn, .btn-primary, .btn-lg;
   }
