@@ -556,5 +556,19 @@ body.home #primary-nav {
 	@extend .text-muted;
 	font-size: $font-size-sm;
   }
+}
 
+// CRP sidebar styling
+.widget_widget_crp {
+  ul {
+	@extend .list-unstyled;
+
+	li {
+	  margin-bottom: 1rem;
+	}
+  }
+  .crp_date {
+	@extend .text-muted, .small;
+	display: block;
+  }
 }
