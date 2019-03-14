@@ -14,9 +14,11 @@
 // <--------- That's where you can add your own design. Thats your part!
 @import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
 
-$small-margin: .75rem;
-$medium-margin: 1.5rem;
-$large-margin: 3rem;
+
+$margin-xs: 0.5rem;
+$margin-sm: .75rem;
+$margin-md: 1.5rem;
+$margin-lg: 3rem;
 
 // Certain headings are uppercased
 h2, h4 {
@@ -48,14 +50,14 @@ h2, h4 {
 
 // Main header spacing
 .page-header {
-  margin-bottom: $medium-margin;
+  margin-bottom: $margin-md;
 }
 
 // Spacing for main page components
 article.post, .comments-area {
   border-bottom: 1px solid $divider-color;
-  padding-bottom: $medium-margin;
-  margin-bottom: $large-margin;
+  padding-bottom: $margin-md;
+  margin-bottom: $margin-lg;
 }
 
 // Ensure last item in the site-main doesn't have a bottom border
@@ -65,7 +67,7 @@ main.site-main > div:last-child {
 
 // Page metadata
 .entry-meta {
-  margin-bottom: $small-margin;
+  margin-bottom: $margin-sm;
 
   .byline::after {
 	content: ' | ';
@@ -82,16 +84,16 @@ main.site-main > div:last-child {
 	  height: auto;
 	}
 
-	margin: $medium-margin 0;
+	margin: $margin-md 0;
   }
 
   .entry-content {
-	padding-bottom: $medium-margin;
+	padding-bottom: $margin-md;
   }
 
   .entry-footer {
 	border-top: 1px solid $divider-color;
-	padding-top: $medium-margin;
+	padding-top: $margin-md;
   }
 
   .entry-meta {
@@ -140,7 +142,7 @@ main.site-main > div:last-child {
 
 	.entry-title {
 	  font-size: $h2-font-size;
-	  margin-bottom: $small-margin;
+	  margin-bottom: $margin-sm;
 	}
   }
 
@@ -236,18 +238,18 @@ body.home #primary-nav {
   // add bottom padding and a margin
   .all-articles {
 	width: 100%;
-	margin-bottom: $medium-margin;
+	margin-bottom: $margin-md;
   }
 }
 
 // Search form
 #searchform {
-  margin-bottom: $medium-margin;
+  margin-bottom: $margin-md;
 }
 
 // Widgets
 .widget {
-  margin-bottom: $medium-margin;
+  margin-bottom: $margin-md;
 }
 
 // NB: class differs in sidebar and
@@ -263,7 +265,7 @@ body.home #primary-nav {
 }
 
 #content {
-  padding-top: $large-margin;
+  padding-top: $margin-lg;
 }
 
 #wrapper-hero {
@@ -315,8 +317,8 @@ body.home #primary-nav {
 
 	li {
 	  float: left;
-	  margin-right: $medium-margin / 3;
-	  margin-bottom: $medium-margin / 3;
+	  margin-right: $margin-xs;
+	  margin-bottom: $margin-xs;
 	}
 
 	li a {
@@ -330,7 +332,7 @@ body.home #primary-nav {
   font-size: $font-size-sm;
 
   ul {
-	margin-left: 0.4rem;
+	margin-left: $margin-xs;
 	display: inline-flex;
   }
 }
@@ -350,8 +352,8 @@ body.home #primary-nav {
 	list-style: none;
 	border: 1px solid #cecfcf;
 	font-size: $font-size-sm !important;
-	margin-right: 0.4rem;
-	margin-bottom: 0.4rem;
+	margin-right: $margin-xs;
+	margin-bottom: $margin-xs;
   }
 }
 
@@ -361,7 +363,7 @@ body.home #primary-nav {
 	@extend .list-unstyled, .clearfix;
 
 	li {
-	  margin-bottom: 0.4rem;
+	  margin-bottom: $margin-xs;
 	}
   }
 }
@@ -369,8 +371,19 @@ body.home #primary-nav {
 // EHRI Comment Link widget
 .widget {
   #post-comment-number {
-	margin-left: $medium-margin / 3;
-	margin-right: $medium-margin / 3;
+	margin-left: $margin-xs;
+	margin-right: $margin-xs;
+  }
+}
+
+// Easy Table of Contents plugin widget
+.widget.ez-toc {
+  ul {
+	@extend .list-unstyled, .clearfix;
+
+	li {
+	  margin-bottom: $margin-xs;
+	}
   }
 }
 
@@ -398,12 +411,12 @@ body.home #primary-nav {
   }
 
   background-color: $ehri-gray;
-  padding-top: $large-margin;
-  padding-bottom: $large-margin;
+  padding-top: $margin-lg;
+  padding-bottom: $margin-lg;
 
   .social-links {
-	padding-top: $medium-margin;
-	margin-bottom: $large-margin;
+	padding-top: $margin-md;
+	margin-bottom: $margin-lg;
 
 	a {
 	  color: $secondary;
@@ -450,11 +463,11 @@ body.home #primary-nav {
 
 // Comments
 .comments-area {
-  margin: $medium-margin 0 $large-margin 0;
+  margin: $margin-md 0 $margin-lg 0;
 
   .comments-title {
 	text-transform: none;
-	margin-bottom: $large-margin;
+	margin-bottom: $margin-lg;
   }
 
   .comment-list {
@@ -482,7 +495,7 @@ body.home #primary-nav {
 
 	background-color: $ehri-gray;
 	margin-left: 2rem;
-	padding: 0.75rem 0.75rem 0.75rem $medium-margin;
+	padding: 0.75rem 0.75rem 0.75rem $margin-md;
 
 	.comment-tab {
 	  float: left;
@@ -500,7 +513,7 @@ body.home #primary-nav {
   }
 
   .comment-metadata {
-	margin-bottom: $small-margin;
+	margin-bottom: $margin-sm;
   }
 
   .comment-metadata * {
@@ -521,7 +534,7 @@ body.home #primary-nav {
   }
 
   .comment-reply-title {
-	margin-bottom: $medium-margin;
+	margin-bottom: $margin-md;
   }
 
   .comment-form-meta, .comment-form-comment {
@@ -535,7 +548,7 @@ body.home #primary-nav {
   .comment-action {
 	@extend .btn, .btn-primary;
 	text-transform: none;
-	padding: $small-margin 2rem;
+	padding: $margin-sm 2rem;
 	font-size: $font-size-base;
   }
 
@@ -544,7 +557,7 @@ body.home #primary-nav {
 	img {
 	  width: 2.125rem;
 	  height: 2.125rem;
-	  margin: 0 0 -1rem $medium-margin;
+	  margin: 0 0 -1rem $margin-md;
 	}
 	.comment-body {
 	  display: block;
@@ -565,7 +578,7 @@ body.home #primary-nav {
 .share-post {
   clear: both;
   @extend .nav;
-  margin-bottom: $medium-margin;
+  margin-bottom: $margin-md;
 
   h4 {
 	margin-right: 0.75rem;
@@ -603,12 +616,12 @@ body.home #primary-nav {
   }
 
   h3 {
-	margin-bottom: $medium-margin;
+	margin-bottom: $margin-md;
   }
 
   .related-post {
-	margin-bottom: $medium-margin;
-	padding-bottom: $medium-margin;
+	margin-bottom: $margin-md;
+	padding-bottom: $margin-md;
 
 	@media (max-width: map_get($container-max-widths, lg)) {
 	  border-bottom: 1px solid $divider-color;
@@ -619,11 +632,11 @@ body.home #primary-nav {
 	object-fit: cover;
 	height: 220px;
 	width: 100%;
-	margin-bottom: $medium-margin;
+	margin-bottom: $margin-md;
   }
 
   .related-post-meta {
-	margin-bottom: $small-margin;
+	margin-bottom: $margin-sm;
 
 	.byline::after {
 	  content: ' | ';
