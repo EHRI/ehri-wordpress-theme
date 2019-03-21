@@ -62,35 +62,18 @@ get_header();
 
 					</header><!-- .page-header -->
 
-					<ul>
+					<div class="post-list">
 
-						<!-- The Loop -->
-						<?php if ( have_posts() ) : ?>
-							<?php while ( have_posts() ) : the_post(); ?>
-								<li>
-									<?php
-									printf(
-										'<a rel="bookmark" href="%1$s" title="%2$s %3$s">%3$s</a>',
-										esc_url( apply_filters( 'the_permalink', get_permalink( $post ), $post ) ),
-										esc_attr( __( 'Permanent Link:', 'understrap' ) ),
-										the_title( '', '', false )
-									);
-									?>
-									<?php understrap_posted_on(); ?>
-									<?php esc_html_e( 'in', 'understrap' ); ?>
-									<?php the_category( '&' ); ?>
-								</li>
-							<?php endwhile; ?>
+						<?php while (have_posts()) : the_post(); ?>
 
-						<?php else : ?>
+							<?php get_template_part( 'loop-templates/content', get_post_format() ); ?>
 
-							<?php get_template_part( 'loop-templates/content', 'none' ); ?>
+						<?php
+						endwhile;
+						wp_reset_postdata();
+						?>
 
-						<?php endif; ?>
-
-						<!-- End Loop -->
-
-					</ul>
+					</div>
 
 				</main><!-- #main -->
 

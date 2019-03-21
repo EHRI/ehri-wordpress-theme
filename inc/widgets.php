@@ -230,10 +230,8 @@ class Ehri_Authors_List extends WP_Widget {
 		echo $args['before_widget'];
 		echo $args['before_title'] . $title . $args['after_title'];
 		?>
-		<ul>
-			<?php foreach (wp_list_authors() as $author): ?>
-				<?php echo $author; ?>
-			<?php endforeach; ?>
+		<ul class="authors-list">
+			<?php echo wp_list_authors(array('style' => 'list')); ?>
 		</ul>
 		<?php
 		echo $args['after_widget'];

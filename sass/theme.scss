@@ -65,6 +65,10 @@ main.site-main > div:last-child {
   border-bottom: none;
 }
 
+.entry-header, .entry-cover-image {
+  margin-bottom: $margin-md;
+}
+
 // Page metadata
 .entry-meta {
   margin-bottom: $margin-sm;
@@ -110,7 +114,7 @@ main.site-main > div:last-child {
 }
 
 // Post list (blog, search) components styling
-#index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post {
+#index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post, #author-wrapper article.post {
   @include make-row('no-gutters');
 
   .entry-thumbnail {
@@ -200,18 +204,35 @@ body.home #primary-nav {
 }
 
 // At wide display, pad navbar items
-@media (min-width: map_get($container-max-widths, md)) {
+@media (min-width: map_get($grid-breakpoints, lg)) {
+  #wrapper-navbar #primary-nav {
+	padding: 0;
+  }
+
   #navbar-nav-dropdown {
 	.nav-item {
-	  padding-left: 1rem;
-	  padding-right: 1rem;
+	  margin-right: $margin-lg;
 	}
+  }
+
+  #wrapper-navbar #primary-nav .navbar-nav .nav-item .nav-link {
+	padding: 0.5rem 0;
+  }
+
+  #wrapper-navbar #primary-nav .navbar-nav .nav-item {
+	padding: 1rem 0;
+	border-bottom: 0.4rem solid transparent;
+	border-top: 0.4rem solid transparent;
+  }
+
+  #wrapper-navbar #primary-nav .navbar-nav .nav-item.active {
+	border-bottom: .4rem solid $white;
   }
 }
 
 // At narrow display, add borders and extra vertical padding
 // to navbar items
-@media (max-width: map_get($container-max-widths, md)) {
+@media (max-width: map_get($grid-breakpoints, lg)) {
 
   #navbar-nav-dropdown .nav-item, #navbar-nav-dropdown #navbar-nav-search {
 	padding-top: .5rem;
@@ -233,7 +254,7 @@ body.home #primary-nav {
   @extend .btn, .btn-primary;
 }
 
-@media (max-width: map_get($container-max-widths, md)) {
+@media (max-width: map_get($grid-breakpoints, md)) {
 
   // add bottom padding and a margin
   .all-articles {
@@ -265,7 +286,7 @@ body.home #primary-nav {
 }
 
 #content {
-  padding-top: $margin-lg;
+  padding: $margin-lg 0;
 }
 
 #wrapper-hero {
@@ -274,7 +295,7 @@ body.home #primary-nav {
   padding-top: 2rem;
 }
 
-@media (min-width: map_get($container-max-widths, lg)) {
+@media (min-width: map_get($grid-breakpoints, lg)) {
   #wrapper-hero {
 	font-size: $font-size-lg;
 	height: 250px;
@@ -623,7 +644,7 @@ body.home #primary-nav {
 	margin-bottom: $margin-md;
 	padding-bottom: $margin-md;
 
-	@media (max-width: map_get($container-max-widths, lg)) {
+	@media (max-width: map_get($grid-breakpoints, lg)) {
 	  border-bottom: 1px solid $divider-color;
 	}
   }
@@ -679,4 +700,9 @@ body.home #primary-nav {
   input[type=submit] {
 	@extend .btn, .btn-primary, .btn-lg;
   }
+}
+
+// Authors page
+.author-post-list {
+  @include list-unstyled();
 }

@@ -78,7 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</li>
 
 							<?php foreach ( wp_get_nav_menu_items( 'main' ) as $item ): ?>
-								<li class="nav-item <?php if ( $item->object_id === get_the_ID() ) echo "active"; ?>">
+								<li class="nav-item <?php if ( $item->object_id == get_the_ID() ) echo "active"; ?>">
 									<a class="nav-link" href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
 								</li>
 							<?php endforeach; ?>

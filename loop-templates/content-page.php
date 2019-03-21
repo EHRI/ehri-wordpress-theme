@@ -18,27 +18,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</header><!-- .entry-header -->
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+	<div class="entry-body">
 
-	<div class="entry-content">
+		<div class="entry-cover-image">
 
-		<?php the_content(); ?>
+			<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-		<?php
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
+		</div>
 
-	</div><!-- .entry-content -->
+		<?php if ( 'post' === get_post_type() ) : ?>
 
-	<footer class="entry-footer">
+			<div class="entry-meta">
 
-		<?php edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php ehri_posted_on(); ?>
 
-	</footer><!-- .entry-footer -->
+			</div><!-- .entry-meta -->
+
+		<?php endif; ?>
+
+		<div class="entry-content">
+
+			<?php the_content(); ?>
+
+			<?php
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+					'after'  => '</div>',
+				)
+			);
+			?>
+
+		</div><!-- .entry-content -->
+
+	</div>
 
 </article><!-- #post-## -->
