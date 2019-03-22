@@ -304,6 +304,87 @@ class Ehri_Author_Info extends WP_Widget {
 }
 
 
+if ( ! function_exists( "ehri_register_link_list_widget" ) ) {
+	function ehri_register_link_list_widget() {
+		register_widget( 'Ehri_Link_List' );
+	}
+}
+
+add_action( 'widgets_init', 'ehri_register_link_list_widget' );
+
+class Ehri_Link_List extends WP_Widget {
+
+	function __construct() {
+		parent::__construct(
+			'Ehri_Link_List',
+			__( 'Link List [EHRI]', ' ehri_widget_domain' ),
+			array('description' => __( 'Displays a list of links found in the post content with a matching base URL', 'ehri_widget_domain' ),)
+		);
+	}
+
+	public function widget( $args, $instance ) {
+		if ($post_id = get_queried_object_id()) {
+			global $post;
+			$post = get_post( $post_id );
+			setup_postdata( $post );
+
+			$matches = array();
+			// Uh-oh:
+			preg_match_all(
+				'#<a.+href="(' . $instance['baseurl'] . '[^"]+)"[^>]*>(.+)</a>#',
+				$post->post_content, $matches, PREG_SET_ORDER);
+			$urls = [];
+			foreach ($matches as $match) {
+				if ($text = strip_tags($match[2])) {
+					$urls[$match[1]] = $text;
+				}
+			}
+
+			if ($urls) {
+				$title = apply_filters( 'widget_title', $instance['title'] );
+				echo $args['before_widget'];
+				echo $args['before_title'] . $title . $args['after_title'];
+				?>
+				<ul class="link-list">
+					<?php foreach ( $urls as $url => $text ): ?>
+						<li><a target="_blank" href="<?php echo $url; ?>"><?php echo $text; ?></a></li>
+					<?php endforeach; ?>
+				</ul>
+				<?php
+				echo $args['after_widget'];
+			}
+		}
+	}
+
+	public function form( $instance ) {
+		$title = isset( $instance[ 'title' ] )
+			? $instance[ 'title' ]
+			: __( 'Linked documents', 'ehri_widget_domain' );
+		$baseurl = isset( $instance[ 'baseurl' ])
+			? $instance[ 'baseurl' ]
+			: "http://www.example.com/";
+		?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'baseurl' ); ?>"><?php _e( 'Base URL:' ); ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'baseurl' ); ?>" name="<?php echo $this->get_field_name( 'baseurl' ); ?>" type="text" value="<?php echo esc_attr( $baseurl ); ?>" />
+		</p>
+		<?php
+	}
+
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['baseurl'] = ( ! empty( $new_instance['baseurl'] ) ) ? strip_tags( $new_instance['baseurl'] ) : '';
+		return $instance;
+	}
+}
+
+
+
 /**
  * Add filter to the parameters passed to a widget's display callback.
  * The filter is evaluated on both the front and the back end!

@@ -381,7 +381,7 @@ body.home #primary-nav {
 // list of categories. Probably better to write our
 // own tag list manually.
 .widget_tag_cloud, .widget_ehri_post_tags {
-  @extend .clearfix;
+  @include clearfix;
   margin-bottom: 1rem;
 
   a {
@@ -397,10 +397,12 @@ body.home #primary-nav {
   }
 }
 
-// Authors list widget
-.widget_ehri_authors_list {
+// Authors list widget, Link list widget, and
+// Easy Table of Contents plugin widget
+.widget_ehri_authors_list, .widget_ehri_link_list, .widget.ez-toc {
   ul {
-	@extend .list-unstyled, .clearfix;
+	@include list-unstyled;
+	@include clearfix;
 
 	li {
 	  margin-bottom: $margin-xs;
@@ -416,16 +418,6 @@ body.home #primary-nav {
   }
 }
 
-// Easy Table of Contents plugin widget
-.widget.ez-toc {
-  ul {
-	@extend .list-unstyled, .clearfix;
-
-	li {
-	  margin-bottom: $margin-xs;
-	}
-  }
-}
 
 // Footer
 #wrapper-footer-full {
