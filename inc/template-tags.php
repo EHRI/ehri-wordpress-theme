@@ -188,4 +188,20 @@ if ( ! function_exists( 'ehri_entry_footer' ) ) {
 }
 
 
+if ( ! function_exists("ehri_current_archive_author") ) {
+	function ehri_get_current_archive_author() {
+		return get_query_var('author_name')
+			? get_user_by('slug', get_query_var('author_name'))
+			: get_userdata(get_query_var('author'));
+	}
+}
 
+if (! function_exists("ehri_has_gravitar" ) ) {
+	function ehri_has_gravitar($user) {
+		// Craft a potential url and test its headers
+		$hash = md5(strtolower(trim($user->user_email)));
+		$uri = 'http://www.gravatar.com/avatar/' . $hash . '?d=404';
+		$headers = @get_headers($uri);
+		return preg_match("|200|", $headers[0]);
+	}
+}

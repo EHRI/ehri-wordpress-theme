@@ -34,6 +34,11 @@ h2, h4 {
   text-transform: uppercase;
 }
 
+%small-muted {
+  font-size: $font-size-sm;
+  color: $text-muted;
+}
+
 // Main sidebar layout
 .content-area {
   @extend .col-lg-9;
@@ -73,8 +78,15 @@ main.site-main > div:last-child {
 .entry-meta {
   margin-bottom: $margin-sm;
 
-  .byline::after {
-	content: ' | ';
+  .byline {
+	padding-right: $font-size-base;
+	border-right: 1px solid $text-muted;
+  }
+  .byline:last-child {
+	border-right: none;
+  }
+  .posted-on {
+	padding-left: $font-size-base;
   }
 }
 
@@ -113,6 +125,11 @@ main.site-main > div:last-child {
   }
 }
 
+#archive-wrapper .taxonomy-description {
+  color: $secondary;
+  font-size: $font-size-lg;
+}
+
 // Post list (blog, search) components styling
 #index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post, #author-wrapper article.post {
   @include make-row('no-gutters');
@@ -122,7 +139,7 @@ main.site-main > div:last-child {
 
 	@include media-breakpoint-up(lg) {
 	  @include make-col(4);
-	  margin-right: 1rem;
+	  margin-right: 2rem;
 	}
 
 	margin-bottom: 1rem;
@@ -147,6 +164,7 @@ main.site-main > div:last-child {
 	.entry-title {
 	  font-size: $h2-font-size;
 	  margin-bottom: $margin-sm;
+      text-transform: none;
 	}
   }
 
@@ -286,7 +304,8 @@ body.home #primary-nav {
 }
 
 #content {
-  padding: $margin-lg 0;
+  margin-top: $margin-lg;
+  margin-bottom: $margin-lg;
 }
 
 #wrapper-hero {
@@ -457,7 +476,7 @@ body.home #primary-nav {
 	  padding-bottom: 0.1rem;
 
 	  a {
-		@extend .text-muted, .small;
+		@extend %small-muted;
 	  }
 	}
   }
@@ -681,13 +700,20 @@ body.home #primary-nav {
   }
 
   .crp_date {
-	@extend .text-muted, .small;
+	@extend %small-muted;
 	display: block;
   }
 
   // Hide the sidebar CRM widget when sidebar is collapsed
   @media (max-width: map_get($grid-breakpoints, lg)) {
 	display: none;
+  }
+}
+
+.widget_ehri_author_info {
+  .author-info {
+	font-size: $font-size-base;
+	color: #5e5e5e;
   }
 }
 

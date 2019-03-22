@@ -33,10 +33,6 @@ get_header();
 							the_archive_title( '<h1 class="page-title">', '</h1>' );
 							the_archive_description( '<div class="taxonomy-description">', '</div>' );
 							?>
-
-							<?php
-							the_archive_description('<h2 class="text-muted">', '</h2>');
-							?>
 						</header><!-- .page-header -->
 
 						<?php /* Start the Loop */ ?>

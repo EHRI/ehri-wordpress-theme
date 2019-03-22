@@ -258,6 +258,52 @@ class Ehri_Authors_List extends WP_Widget {
 }
 
 
+if ( ! function_exists( "ehri_register_author_info_widget" ) ) {
+	function ehri_register_author_info_widget() {
+		register_widget( 'Ehri_Author_Info' );
+	}
+}
+
+add_action( 'widgets_init', 'ehri_register_author_info_widget' );
+
+class Ehri_Author_Info extends WP_Widget {
+
+	function __construct() {
+		parent::__construct(
+			'Ehri_Author_Info',
+			__( 'Author Info [EHRI]', ' ehri_widget_domain' ),
+			array('description' => __( 'Displays biographical info about the current authors', 'ehri_widget_domain' ),)
+		);
+	}
+
+	public function widget( $args, $instance ) {
+		if ($curauth = ehri_get_current_archive_author()) {
+			$title = apply_filters( 'widget_title', "About " . $curauth->display_name );
+			echo $args['before_widget'];
+			echo $args['before_title'] . $title . $args['after_title'];
+			?>
+			<div class="author-info">
+				<?php if ( ! empty( $curauth->user_description ) ) : ?>
+					<p><?php esc_html_e( $curauth->user_description ); ?></p>
+				<?php endif; ?>
+				<?php if ( ehri_has_gravitar($curauth) ) : ?>
+					<?php echo get_avatar( $curauth->ID ); ?>
+				<?php endif; ?>
+			</div>
+			<?php
+			echo $args['after_widget'];
+		}
+	}
+
+	public function form( $instance ) {
+	}
+
+	public function update( $new_instance, $old_instance ) {
+		return $new_instance;
+	}
+}
+
+
 /**
  * Add filter to the parameters passed to a widget's display callback.
  * The filter is evaluated on both the front and the back end!
