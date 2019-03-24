@@ -15,11 +15,6 @@
 @import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
 
 
-$margin-xs: 0.5rem;
-$margin-sm: .75rem;
-$margin-md: 1.5rem;
-$margin-lg: 3rem;
-
 // Certain headings are uppercased
 h2, h4 {
   text-transform: uppercase;
@@ -446,8 +441,18 @@ body.home #primary-nav {
   padding-top: $margin-lg;
   padding-bottom: $margin-lg;
 
+  .newsletter {
+	margin-bottom: $margin-md;
+  }
+
+  #subscribe-to-newsletter {
+	font-size: $font-size-base;
+	text-transform: none;
+	padding-left: $btn-padding-x;
+	padding-right: $btn-padding-x;
+  }
+
   .social-links {
-	padding-top: $margin-md;
 	margin-bottom: $margin-lg;
 
 	a {

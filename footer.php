@@ -22,27 +22,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="footer-full-section-social">
 
-				<h3>Don't miss new articles</h3>
+				<?php if ($mailinglist_url = get_theme_mod('ehri_mailinglist_url', false)): ?>
 
-				<form action="/">
+				<div class="newsletter">
 
-					<div class="form-group">
+					<h3>Don't miss new articles</h3>
 
-						<div class="input-group">
+					<a href="<?php echo $mailinglist_url; ?>" class="btn btn-primary btn-lg" target="_blank" id="subscribe-to-newsletter">
+						Subscribe to our mailing list
+					</a>
 
-							<input class="form-control col-md-8" type="email" placeholder="your e-mail"/>
+				</div>
 
-							<div class="input-group-append">
+				<?php endif; ?>
 
-								<button type="submit" class="btn btn btn-primary">Subscribe</button>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				</form>
 				<div class="social-links">
 					<a href="https://facebook.com/EHRIproject">
 						<i class="fa fa-facebook"></i>
