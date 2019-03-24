@@ -14,7 +14,6 @@
 // <--------- That's where you can add your own design. Thats your part!
 @import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
 
-
 // Certain headings are uppercased
 h2, h4 {
   text-transform: uppercase;
@@ -30,7 +29,7 @@ h2, h4 {
 }
 
 %small-muted {
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
   color: $text-muted;
 }
 
@@ -127,6 +126,7 @@ main.site-main > div:last-child {
 
 // Post list (blog, search) components styling
 #index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post, #author-wrapper article.post {
+  font-size: $font-size-sm;
   @include make-row('no-gutters');
 
   .entry-thumbnail {
@@ -166,12 +166,13 @@ main.site-main > div:last-child {
   // in post lists all metadata is greyed out
   .entry-meta * {
 	@extend .text-muted;
-	font-size: $font-size-sm;
+	font-size: $font-size-xs;
   }
 }
 
 // Navbar
 body.home #wrapper-navbar {
+  font-size: $font-size-sm;
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -200,6 +201,7 @@ body.home #primary-nav {
   background-color: rgba(255, 255, 255, 0.1);
 
   input, button {
+	font-size: $font-size-sm;
 	border-radius: 0;
 	color: $white !important;
 	background-color: transparent;
@@ -283,6 +285,7 @@ body.home #primary-nav {
 
 // Widgets
 .widget {
+  font-size: $font-size-sm;
   margin-bottom: $margin-md;
 }
 
@@ -343,10 +346,11 @@ body.home #primary-nav {
   color: $gray-900;
   font-weight: $font-weight-lighter;
   padding: .3rem 1rem;
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
 }
 
 .widget_categories, .widget_ehri_post_categories, .cat-links, .tags-links {
+  color: $text-darkened;
   ul {
 	@extend .list-unstyled, .clearfix;
 
@@ -364,7 +368,7 @@ body.home #primary-nav {
 
 .cat-links, .tags-links {
   color: $text-muted;
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
 
   ul {
 	margin-left: $margin-xs;
@@ -386,7 +390,7 @@ body.home #primary-nav {
 	float: left;
 	list-style: none;
 	border: 1px solid #cecfcf;
-	font-size: $font-size-sm !important;
+	font-size: $font-size-xs !important;
 	margin-right: $margin-xs;
 	margin-bottom: $margin-xs;
   }
@@ -416,6 +420,8 @@ body.home #primary-nav {
 
 // Footer
 #wrapper-footer-full {
+
+  font-size: $font-size-sm;
 
   .footer-full-sections {
 	@extend .row;
@@ -500,6 +506,8 @@ body.home #primary-nav {
 
 // Comments
 .comments-area {
+  font-size: $font-size-sm;
+
   margin: $margin-md 0 $margin-lg 0;
 
   .comments-title {
@@ -555,7 +563,7 @@ body.home #primary-nav {
 
   .comment-metadata * {
 	@extend .text-muted;
-	font-size: $font-size-sm;
+	font-size: $font-size-xs;
   }
 
   .reply {
@@ -643,6 +651,7 @@ body.home #primary-nav {
 
 // Related posts using the Contextual Related Posts plugin
 .crp_related, .related-posts {
+  font-size: $font-size-sm;
 
   .related-post-items {
 	@extend .row;
@@ -682,7 +691,7 @@ body.home #primary-nav {
 
   .related-post-meta * {
 	@extend .text-muted;
-	font-size: $font-size-sm;
+	font-size: $font-size-xs;
   }
 }
 
