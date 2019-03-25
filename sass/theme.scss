@@ -99,6 +99,44 @@ main.site-main > div:last-child {
 
   .entry-content {
 	padding-bottom: $margin-md;
+
+	.wp-caption {
+	  max-width: 100%;
+	  margin-bottom: 1rem;
+
+	  object-fit: cover;
+
+	  img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin-bottom: $margin-xs;
+	  }
+	}
+
+	.wp-caption-text {
+	  font-size: $font-size-sm;
+	}
+
+	.aligncenter {
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	.alignleft {
+	  float: left;
+	  margin-right: $margin-md;
+	}
+
+	.alignright {
+	  float: right;
+	  margin-left: $margin-md;
+	}
+
+	// Stuff with the align left or right class
+	.alignleft, .alignright {
+	  max-width: 300px;
+	}
   }
 
   .entry-footer {
@@ -452,7 +490,7 @@ body.home #primary-nav {
   }
 
   #subscribe-to-newsletter {
-	font-size: $font-size-base;
+	font-size: $font-size-sm;
 	text-transform: none;
 	padding-left: $btn-padding-x;
 	padding-right: $btn-padding-x;
