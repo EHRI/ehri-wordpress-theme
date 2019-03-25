@@ -89,7 +89,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								       type="search" name="s" placeholder="Search" id="example-search-input"
 								       value="<?php echo get_query_var( 's' ); ?>"/>
 								<span class="input-group-append">
-							  <button class="btn btn-outline-secondary border-left-0" type="button">
+							  <button class="btn btn-outline-secondary border-left-0" type="submit">
 									<i class="fa fa-search fa-lg fa-inverse"></i>
 							  </button>
 							</span>
