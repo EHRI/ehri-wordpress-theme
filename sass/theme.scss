@@ -85,7 +85,7 @@ main.site-main > div:last-child {
 }
 
 // Single post components styling
-#single-wrapper article.post {
+#single-wrapper article.post, #page-wrapper article.page {
   padding-bottom: 0;
 
   .entry-cover-image {
@@ -99,24 +99,6 @@ main.site-main > div:last-child {
 
   .entry-content {
 	padding-bottom: $margin-md;
-
-	.wp-caption {
-	  max-width: 100%;
-	  margin-bottom: 1rem;
-
-	  object-fit: cover;
-
-	  img {
-		display: block;
-		max-width: 100%;
-		height: auto;
-		margin-bottom: $margin-xs;
-	  }
-	}
-
-	.wp-caption-text {
-	  font-size: $font-size-sm;
-	}
 
 	.aligncenter {
 	  margin-left: auto;
@@ -136,6 +118,26 @@ main.site-main > div:last-child {
 	// Stuff with the align left or right class
 	.alignleft, .alignright {
 	  max-width: 300px;
+	  height: auto;
+	  clear: both;
+	}
+
+	.wp-caption {
+	  max-width: 100%;
+	  margin-bottom: 1rem;
+
+	  object-fit: cover;
+
+	  img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin-bottom: $margin-xs;
+	  }
+	}
+
+	.wp-caption-text {
+	  font-size: $font-size-sm;
 	}
 
 	// Galleries
@@ -146,6 +148,7 @@ main.site-main > div:last-child {
 	  .gallery-icon, figcaption {
 		margin-right: $margin-md / 3;
 		margin-left: $margin-md / 3;
+		margin-bottom: $margin-xs;
 		overflow: hidden;
 	  }
 
@@ -802,4 +805,42 @@ body.home #primary-nav {
 // Authors page
 .author-post-list {
   @include list-unstyled();
+}
+
+// WP5 Block styling overrides
+/* Add multi-line by line breaks to Gutenberg galleries. */
+.wp-block-gallery {
+  .blocks-gallery-item figcaption {
+	white-space: pre-line;
+	color: $body-color !important;
+	font-size: $font-size-sm !important;
+	text-align: left !important;
+  }
+
+  /* Prevent the last image from growing to fill available space if there aren't three images in a row. */
+  .blocks-gallery-item {
+	flex-grow: 0 !important;
+	display: inline-block !important;
+  }
+
+  .blocks-gallery-image figure,
+  .blocks-gallery-item figure {
+	display: inline-block;
+	height: auto;
+  }
+
+  &.is-cropped .blocks-gallery-image a,
+  &.is-cropped .blocks-gallery-image img,
+  &.is-cropped .blocks-gallery-item a,
+  &.is-cropped .blocks-gallery-item img {
+	height: 300px;
+	margin-bottom: $margin-xs;
+  }
+
+  .blocks-gallery-image figcaption,
+  .blocks-gallery-item figcaption {
+	position: relative;
+	background: none;
+	padding: 0;
+  }
 }
