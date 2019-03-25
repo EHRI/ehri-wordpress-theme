@@ -137,6 +137,33 @@ main.site-main > div:last-child {
 	.alignleft, .alignright {
 	  max-width: 300px;
 	}
+
+	// Galleries
+	.gallery {
+	  font-size: $font-size-xs;
+	  word-wrap: break-word;
+
+	  .gallery-icon, figcaption {
+		margin-right: $margin-md / 3;
+		margin-left: $margin-md / 3;
+		overflow: hidden;
+	  }
+
+	  .gallery-item:last-child {
+		.gallery-icon, figcaption {
+		  margin-right: 0;
+		}
+	  }
+	  .gallery-item:first-child {
+		.gallery-icon, figcaption {
+		  margin-left: 0;
+		}
+	  }
+
+	  figcaption {
+		text-align: left;
+	  }
+	}
   }
 
   .entry-footer {
