@@ -140,10 +140,38 @@ main.site-main > div:last-child {
 	  font-size: $font-size-sm;
 	}
 
+	// Bibliography
+	.bibliography, .notes, .endnotes {
+	  font-size: $font-size-sm;
+
+	  // hack to make existing headings uniform.
+	  h3, h4 {
+		font-style: $h3-font-size;
+		margin-bottom: $margin-md;
+		text-transform: none;
+	  }
+
+	  ol {
+		padding-left: 0;
+		counter-reset: list;
+	  }
+	  ol > li {
+		list-style: none;
+	  }
+	  ol > li:before {
+		content: "[" counter(list) "] ";
+		counter-increment: list;
+	  }
+	}
+
 	// Galleries
 	.gallery {
 	  font-size: $font-size-xs;
 	  word-wrap: break-word;
+
+	  .gallery-icon {
+		object-fit: cover;
+	  }
 
 	  .gallery-icon, figcaption {
 		margin-right: $margin-md / 3;
