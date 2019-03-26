@@ -140,6 +140,11 @@ main.site-main > div:last-child {
 	  font-size: $font-size-sm;
 	}
 
+	// Small tags
+	small {
+	  font-size: $font-size-sm;
+	}
+
 	// Bibliography
 	.bibliography, .notes, .endnotes {
 	  font-size: $font-size-sm;
@@ -152,11 +157,13 @@ main.site-main > div:last-child {
 	  }
 
 	  ol {
+		margin-top: $margin-md;
 		padding-left: 0;
 		counter-reset: list;
 	  }
 	  ol > li {
 		list-style: none;
+		margin-bottom: $margin-sm;
 	  }
 	  ol > li:before {
 		content: "[" counter(list) "] ";
