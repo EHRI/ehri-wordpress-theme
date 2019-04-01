@@ -130,3 +130,16 @@ function understrap_mobile_web_app_meta() {
 	echo '<meta name="apple-mobile-web-app-title" content="' . esc_attr( get_bloginfo( 'name' ) ) . ' - ' . esc_attr( get_bloginfo( 'description' ) ) . '">' . "\n";
 }
 add_action( 'wp_head', 'understrap_mobile_web_app_meta' );
+
+/**
+ * Only return posts from search results.
+ */
+function ehri_search_filter( $query ) {
+	if ( $query->is_search && ! is_admin() ) {
+		$query->set( 'post_type', array('post') );
+	}
+
+	return $query;
+}
+add_filter( 'pre_get_posts', 'ehri_search_filter' );
+
