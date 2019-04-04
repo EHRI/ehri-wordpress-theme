@@ -12,7 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<div class="entry-thumbnail" style="background-image:url('<?php echo get_the_post_thumbnail_url( $post, 'large' ); ?>')"></div>
+	<a href="<?php echo esc_url( get_permalink() ); ?>"
+	   class="entry-thumbnail" style="background-image:url('<?php echo get_the_post_thumbnail_url( $post, 'large' ); ?>')"
+		title="<?php echo get_the_title(); ?>"
+		alt="<?php echo get_the_title(); ?>">
+	</a>
 
 	<div class="entry-body">
 
