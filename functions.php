@@ -21,7 +21,7 @@ $understrap_includes = array(
 	'/customizer.php',                      // Customizer additions.
 	'/custom-comments.php',                 // Custom Comments file.
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker.
-	'/class-ehri-walker-comment.php',    // Load custom WordPress nav walker.
+	'/class-ehri-walker-comment.php',       // Load custom WordPress nav walker.
 	'/editor.php',                          // Load Editor functions.
 	'/deprecated.php',                      // Load deprecated functions.
 );

@@ -42,6 +42,15 @@ Or, to run with Browser-Sync:
 ```
 - then run: `$ gulp watch-bs`
 
+### Supported Plugins
+
+This theme includes some theming support for the following plugins:
+
+ - Contextual Related Posts (CRP)
+ - Simple Lightbox (SLB)
+
+It is also assumed that the Widget Context plugin is used to control the display of sidebar widgets in posts and pages.
+
 Licenses & Credits
 =
 - UnderStrap: http://understrap.com | (Code licensed under GNU GPL v2.0)

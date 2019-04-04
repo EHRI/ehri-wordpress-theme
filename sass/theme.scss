@@ -879,3 +879,9 @@ body.home #primary-nav {
 	padding: 0;
   }
 }
+
+// Simple Lightbox (SLB) theming
+.slb_container .slb_details .slb_data_content * {
+  font-size: $font-size-sm !important;
+  font-family: $font-family-base !important;
+}
