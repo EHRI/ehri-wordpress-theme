@@ -590,7 +590,11 @@ body.home #primary-nav {
 	  text-transform: uppercase;
 	  font-weight: 600;
 	  letter-spacing: 1px;
-	  margin-right: 0.7rem;
+	  margin-right: 1rem;
+
+	  i {
+		font-size: $font-size-lg;
+	  }
 	}
   }
 
@@ -796,12 +800,14 @@ body.home #primary-nav {
   clear: both;
   @extend .nav;
   margin-bottom: $margin-md;
+  font-size: $font-size-lg;
 
   h4 {
 	margin-right: 0.75rem;
   }
 
   ul {
+	@extend .list-inline;
 	margin: 0;
 	padding: 0;
 
@@ -812,10 +818,10 @@ body.home #primary-nav {
 
 	li {
 	  @extend .list-inline-item;
-	  margin-right: 0.75rem;
 
 	  a {
 		color: $secondary;
+		margin-right: .5rem;
 	  }
 	}
   }

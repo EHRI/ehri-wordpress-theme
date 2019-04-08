@@ -15,15 +15,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<ul class="a2a_kit a2a_default_style">
 		<li>
 			<a class="a2a_button_facebook">
-				<i class="fa fa-lg fa-facebook"></i>
+				<i class="fa fa-facebook"></i>
 			</a>
 		</li>
 		<li><a class="a2a_button_twitter">
-				<i class="fa fa-lg fa-twitter"></i>
+				<i class="fa fa-twitter"></i>
 			</a>
 		</li>
 		<li><a class="a2a_button_email">
-				<i class="fa fa-lg fa-envelope"></i>
+				<i class="fa fa-envelope"></i>
 			</a>
 		</li>
 	</ul>
