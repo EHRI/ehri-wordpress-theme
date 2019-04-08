@@ -205,3 +205,47 @@ if (! function_exists("ehri_has_gravitar" ) ) {
 		return preg_match("|200|", $headers[0]);
 	}
 }
+
+/**
+ * Experimental Polylang-based language switch widget.
+ *
+ * TODO: improve greatly.
+ */
+if (! function_exists("ehri_post_translations")) {
+	function ehri_post_translations($post_id) {
+		if (! function_exists("pll_get_post_translations")
+				|| !function_exists("pll_get_post_language")
+			) {
+			return;
+		}
+		$current_lang = pll_get_post_language($post_id);
+		$translations = pll_get_post_translations($post_id);
+		unset($translations[$current_lang]);
+
+		if (!$translations) {
+			return;
+		}
+
+		// FIXME: where to lookup with info???
+		$langs = array(
+			"en" => "English",
+			"de" => "German",
+			"fr" => "French",
+			"cs" => "Czech",
+			"hu" => "Hungarian",
+		);
+
+		$links = "<ul>";
+		foreach ($translations as $code => $other_id) {
+			$links .= sprintf( '<li><a href="%s">%s</a></li>', get_permalink( $other_id ),
+				__(array_key_exists($code, $langs) ? $langs[$code] : $code));
+		}
+		$links .= "</ul>"
+
+		?>
+		<div class="entry-translations">
+			<?php _e(sprintf("Translations of this post exist in the following languages: %s", $links)); ?>
+		</div>
+		<?php
+	}
+}

@@ -38,6 +38,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="entry-content">
 
+			<?php ehri_post_translations($post->ID); ?>
+
 			<?php the_content(); ?>
 
 			<?php

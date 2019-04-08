@@ -97,6 +97,25 @@ main.site-main > div:last-child {
 	margin: $margin-md 0;
   }
 
+  .entry-translations {
+	@extend .alert, .alert-info;
+	ul {
+	  display: inline;
+	  @include list-unstyled;
+	  @extend .list-inline;
+	  li {
+		@extend .list-inline-item;
+
+		&:after {
+		  content: ', ';
+		}
+		&:last-child:after {
+		  content: '';
+		}
+	  }
+	}
+  }
+
   .entry-content {
 	padding-bottom: $margin-md;
 
