@@ -116,3 +116,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		</div>
 	</div><!-- #wrapper-navbar end -->
+
+	<!-- Floating follow buttons -->
+	<aside id="follow-buttons">
+
+		<header><?php _e("Follow"); ?></header>
+
+		<a class="follow-button" href="https://facebook.com/EHRIproject" title="Follow EHRI on Facebook">
+
+			<i class="fa fa-facebook"></i>
+
+		</a>
+
+		<a class="follow-button" href="https://twitter.com/EHRIproject" title="Follow EHRI on Twitter">
+
+			<i class="fa fa-twitter"></i>
+
+		</a>
+
+	</aside>
+

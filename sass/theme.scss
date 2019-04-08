@@ -215,7 +215,7 @@ main.site-main > div:last-child {
 
   // Post metadata is hidden when the sidebar is visible
   // since it's there instead.
-  @media (min-width: map_get($container-max-widths, lg)) {
+  @media (min-width: map_get($grid-breakpoints, lg)) {
 	.entry-meta {
 	  display: none;
 	}
@@ -492,7 +492,7 @@ body.home #primary-nav {
 	display: list-item;
 	float: left;
 	list-style: none;
-	border: 1px solid #cecfcf;
+	border: 1px solid $ehri-border-gray;
 	font-size: $font-size-xs !important;
 	margin-right: $margin-xs;
 	margin-bottom: $margin-xs;
@@ -719,6 +719,56 @@ body.home #primary-nav {
 	.comment-meta {
 	  margin-top: 1rem;
 	}
+  }
+}
+
+#follow-buttons {
+
+  visibility: hidden;
+  position: fixed;
+  top: 45%;
+  right: 0;
+  width: 3.75rem;
+
+  color: #4a4a4a;
+  font-size: $font-size-xs;
+
+
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $ehri-border-gray;
+  background-color: $white;
+
+  header {
+	padding: 0.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+  .follow-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-top: 1px solid $ehri-border-gray;
+	height: 3.75rem;
+	width: 100%;
+	font-size: 1.25rem;
+
+	&:last-child {
+	  border-bottom: none;
+	}
+
+	&:hover {
+	  text-decoration: none;
+	  background-color: darken($white, 5%);
+	}
+  }
+}
+
+@media (min-width: map-get($grid-breakpoints, lg)) {
+  #follow-buttons {
+	visibility: visible;
   }
 }
 
