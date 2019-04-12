@@ -37,7 +37,12 @@ class Ehri_Post_Metadata extends WP_Widget {
 			echo $args['before_widget'];
 			if ( ! empty( $title ) )
 				echo $args['before_title'] . $title . $args['after_title'];
-			echo __( 'Author' ) . ': ' . get_the_author_posts_link();
+			echo __( 'Author' ) . ': ';
+			if (function_exists("coauthors_posts_links")) {
+				coauthors_posts_links();
+			} else {
+				the_author_posts_link();
+			}
 			echo '<br/>';
 			echo __( 'Published' ) . ': ' . get_the_date();
 			echo $args['after_widget'];
