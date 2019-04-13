@@ -28,19 +28,20 @@ class Ehri_Post_Metadata extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		if ($post_id = get_queried_object_id()) {
+		if ( $post_id = get_queried_object_id() ) {
 			global $post;
-			$post = get_post($post_id);
-			setup_postdata($post);
+			$post = get_post( $post_id );
+			setup_postdata( $post );
 
 			$title = apply_filters( 'widget_title', $instance['title'] );
 			echo $args['before_widget'];
 			if ( ! empty( $title ) )
 				echo $args['before_title'] . $title . $args['after_title'];
-			echo __( 'Author' ) . ': ';
-			if (function_exists("coauthors_posts_links")) {
+			if ( function_exists( "coauthors_posts_links" ) && function_exists( "get_coauthors" ) ) {
+				echo _n( 'Author', 'Authors', sizeof( get_coauthors() ) ) . ': ';
 				coauthors_posts_links();
 			} else {
+				echo __( 'Author' ) . ': ';
 				the_author_posts_link();
 			}
 			echo '<br/>';
@@ -77,9 +78,9 @@ class Ehri_Post_Comment_Info extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		if ($post_id = get_queried_object_id()) {
+		if ( $post_id = get_queried_object_id() ) {
 			$title = apply_filters( 'widget_title', $instance['title'] );
-			$number = get_comments_number($post_id);
+			$number = get_comments_number( $post_id );
 			echo $args['before_widget'];
 			if ( ! empty( $title ) )
 				echo $args['before_title'] . $title . $args['after_title'];
@@ -127,10 +128,10 @@ class Ehri_Post_Categories extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		if ($post_id = get_queried_object_id()) {
+		if ( $post_id = get_queried_object_id() ) {
 			$title = apply_filters( 'widget_title', $instance['title'] );
 			echo $args['before_widget'];
-			if ( $cats = trim( get_the_category_list('', '', $post_id) ) ) {
+			if ( $cats = trim( get_the_category_list( '', '', $post_id ) ) ) {
 				if ( ! empty( $title ) )
 					echo $args['before_title'] . $title . $args['after_title'];
 				echo $cats;
@@ -140,21 +141,23 @@ class Ehri_Post_Categories extends WP_Widget {
 	}
 
 	public function form( $instance ) {
-		if ( isset( $instance[ 'title' ] ) )
-			$title = $instance[ 'title' ];
+		if ( isset( $instance['title'] ) )
+			$title = $instance['title'];
 		else
 			$title = __( 'Categories', 'ehri_widget_domain' );
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
+			       name="<?php echo $this->get_field_name( 'title' ); ?>" type="text"
+			       value="<?php echo esc_attr( $title ); ?>"/>
 		</p>
 		<?php
 	}
 
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['title'] = ( ! empty( $new_instance['title'] )) ? strip_tags( $new_instance['title'] ) : '';
 		return $instance;
 	}
 }
@@ -179,10 +182,10 @@ class Ehri_Post_Tags extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		if ($post_id = get_queried_object_id()) {
+		if ( $post_id = get_queried_object_id() ) {
 			$title = apply_filters( 'widget_title', $instance['title'] );
 			echo $args['before_widget'];
-			if ( $tags = trim( get_the_tag_list('', '', '', $post_id) ) ) {
+			if ( $tags = trim( get_the_tag_list( '', '', '', $post_id ) ) ) {
 				if ( ! empty( $title ) )
 					echo $args['before_title'] . $title . $args['after_title'];
 				echo $tags;
@@ -192,21 +195,23 @@ class Ehri_Post_Tags extends WP_Widget {
 	}
 
 	public function form( $instance ) {
-		if ( isset( $instance[ 'title' ] ) )
-			$title = $instance[ 'title' ];
+		if ( isset( $instance['title'] ) )
+			$title = $instance['title'];
 		else
 			$title = __( 'Tags', 'ehri_widget_domain' );
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
+			       name="<?php echo $this->get_field_name( 'title' ); ?>" type="text"
+			       value="<?php echo esc_attr( $title ); ?>"/>
 		</p>
 		<?php
 	}
 
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['title'] = ( ! empty( $new_instance['title'] )) ? strip_tags( $new_instance['title'] ) : '';
 		return $instance;
 	}
 }
@@ -236,28 +241,30 @@ class Ehri_Authors_List extends WP_Widget {
 		echo $args['before_title'] . $title . $args['after_title'];
 		?>
 		<ul class="authors-list">
-			<?php echo wp_list_authors(array('style' => 'list')); ?>
+			<?php echo wp_list_authors( array('style' => 'list') ); ?>
 		</ul>
 		<?php
 		echo $args['after_widget'];
 	}
 
 	public function form( $instance ) {
-		if ( isset( $instance[ 'title' ] ) )
-			$title = $instance[ 'title' ];
+		if ( isset( $instance['title'] ) )
+			$title = $instance['title'];
 		else
 			$title = __( 'Authors', 'ehri_widget_domain' );
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
+			       name="<?php echo $this->get_field_name( 'title' ); ?>" type="text"
+			       value="<?php echo esc_attr( $title ); ?>"/>
 		</p>
 		<?php
 	}
 
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['title'] = ( ! empty( $new_instance['title'] )) ? strip_tags( $new_instance['title'] ) : '';
 		return $instance;
 	}
 }
@@ -282,7 +289,7 @@ class Ehri_Author_Info extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		if ($curauth = ehri_get_current_archive_author()) {
+		if ( $curauth = ehri_get_current_archive_author() ) {
 			$title = apply_filters( 'widget_title', "About " . $curauth->display_name );
 			echo $args['before_widget'];
 			echo $args['before_title'] . $title . $args['after_title'];
@@ -291,7 +298,7 @@ class Ehri_Author_Info extends WP_Widget {
 				<?php if ( ! empty( $curauth->user_description ) ) : ?>
 					<p><?php esc_html_e( $curauth->user_description ); ?></p>
 				<?php endif; ?>
-				<?php if ( ehri_has_gravitar($curauth) ) : ?>
+				<?php if ( ehri_has_gravitar( $curauth ) ) : ?>
 					<?php echo get_avatar( $curauth->ID ); ?>
 				<?php endif; ?>
 			</div>
@@ -328,7 +335,7 @@ class Ehri_Link_List extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-		if ($post_id = get_queried_object_id()) {
+		if ( $post_id = get_queried_object_id() ) {
 			global $post;
 			$post = get_post( $post_id );
 			setup_postdata( $post );
@@ -337,15 +344,15 @@ class Ehri_Link_List extends WP_Widget {
 			// Uh-oh:
 			preg_match_all(
 				'#<a.+href="(' . $instance['baseurl'] . '[^"]+)"[^>]*>(.+)</a>#',
-				$post->post_content, $matches, PREG_SET_ORDER);
+				$post->post_content, $matches, PREG_SET_ORDER );
 			$urls = [];
-			foreach ($matches as $match) {
-				if ($text = strip_tags($match[2])) {
-					$urls[$match[1]] = $text;
+			foreach ( $matches as $match ) {
+				if ( $text = strip_tags( $match[2] ) ) {
+					$urls[ $match[1] ] = $text;
 				}
 			}
 
-			if ($urls) {
+			if ( $urls ) {
 				$title = apply_filters( 'widget_title', $instance['title'] );
 				echo $args['before_widget'];
 				echo $args['before_title'] . $title . $args['after_title'];
@@ -362,32 +369,35 @@ class Ehri_Link_List extends WP_Widget {
 	}
 
 	public function form( $instance ) {
-		$title = isset( $instance[ 'title' ] )
-			? $instance[ 'title' ]
+		$title = isset( $instance['title'] )
+			? $instance['title']
 			: __( 'Linked documents', 'ehri_widget_domain' );
-		$baseurl = isset( $instance[ 'baseurl' ])
-			? $instance[ 'baseurl' ]
+		$baseurl = isset( $instance['baseurl'] )
+			? $instance['baseurl']
 			: "http://www.example.com/";
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
+			       name="<?php echo $this->get_field_name( 'title' ); ?>" type="text"
+			       value="<?php echo esc_attr( $title ); ?>"/>
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'baseurl' ); ?>"><?php _e( 'Base URL:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'baseurl' ); ?>" name="<?php echo $this->get_field_name( 'baseurl' ); ?>" type="text" value="<?php echo esc_attr( $baseurl ); ?>" />
+			<input class="widefat" id="<?php echo $this->get_field_id( 'baseurl' ); ?>"
+			       name="<?php echo $this->get_field_name( 'baseurl' ); ?>" type="text"
+			       value="<?php echo esc_attr( $baseurl ); ?>"/>
 		</p>
 		<?php
 	}
 
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['baseurl'] = ( ! empty( $new_instance['baseurl'] ) ) ? strip_tags( $new_instance['baseurl'] ) : '';
+		$instance['title'] = ( ! empty( $new_instance['title'] )) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['baseurl'] = ( ! empty( $new_instance['baseurl'] )) ? strip_tags( $new_instance['baseurl'] ) : '';
 		return $instance;
 	}
 }
-
 
 
 /**
