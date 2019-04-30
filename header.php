@@ -42,8 +42,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<nav class="navbar navbar-expand-lg navbar-dark bg-secondary" id="primary-nav">
 				<div class="container">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<img class="img-fluid"
-						     src="<?php echo get_theme_file_uri( "img/ehri-wp-theme-logo-trans-xs.png" ); ?>"
+						<img id="header-logo" class="img-fluid"
+						     src="<?php echo get_theme_file_uri( "img/ehri-logo@2x.png" ); ?>"
 						     alt=""/></a>
 
 					<h1 class="navbar-brand mb-0 nav-item"><a class="nav-link" rel="home"
