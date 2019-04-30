@@ -59,7 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<!-- The WordPress Menu goes here -->
 					<div class="collapse navbar-collapse" id="navbar-nav-dropdown">
-						<ul class="navbar-nav ml-auto">
+						<ul id="nav-pages" class="navbar-nav ml-auto">
 							<?php $active_articles = is_archive() || is_single(); ?>
 							<li class="nav-item dropdown <?php if ($active_articles) echo "active"; ?>">
 								<a class="nav-link dropdown-toggle" id="navbar-cat-dropdown" data-toggle="dropdown"
