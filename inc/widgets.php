@@ -241,7 +241,7 @@ class Ehri_Authors_List extends WP_Widget {
 		echo $args['before_title'] . $title . $args['after_title'];
 		?>
 		<ul class="authors-list">
-			<?php echo wp_list_authors( array('style' => 'list') ); ?>
+			<?php echo wp_list_authors( array('style' => 'list', 'orderby' => 'post_count', 'order' => 'DESC') ); ?>
 		</ul>
 		<?php
 		echo $args['after_widget'];
