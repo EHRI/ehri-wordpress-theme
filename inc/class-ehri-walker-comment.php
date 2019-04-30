@@ -53,7 +53,7 @@ if ( ! class_exists( 'Ehri_Walker_Comment' ) ) {
 						array_merge(
 							$args,
 							array(
-								'reply_text' => '<i class="fa fa-reply"></i>',
+								'reply_text' => '<i class="material-icons">reply</i>',
 								'add_below' => 'div-comment',
 								'depth'     => $depth,
 								'max_depth' => $args['max_depth'],

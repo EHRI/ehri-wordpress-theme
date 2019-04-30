@@ -20,6 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<!-- FIXME: load this via the theme code? -->
 	<script async src="https://static.addtoany.com/menu/page.js"></script>
@@ -59,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<!-- The WordPress Menu goes here -->
 					<div class="collapse navbar-collapse" id="navbar-nav-dropdown">
-						<ul id="nav-pages" class="navbar-nav ml-auto">
+						<ul id="navbar-nav-pages" class="navbar-nav ml-auto">
 							<?php $active_articles = is_archive() || is_single(); ?>
 							<li class="nav-item dropdown <?php if ($active_articles) echo "active"; ?>">
 								<a class="nav-link dropdown-toggle" id="navbar-cat-dropdown" data-toggle="dropdown"
@@ -82,14 +83,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 								</li>
 							<?php endforeach; ?>
 						</ul>
-						<form action="/" class="form-inline my-3" id="navbar-nav-search">
+						<form action="/" class="form-inline" id="navbar-nav-search">
 							<div class="input-group" id="search-controls">
-								<input class="form-control py-2 border-right-0"
+								<input class="form-control border-right-0"
 								       type="search" name="s" placeholder="Search" id="example-search-input"
 								       value="<?php echo get_query_var( 's' ); ?>"/>
 								<span class="input-group-append">
 							  <button class="btn btn-outline-secondary border-left-0" type="submit">
-									<i class="fa fa-search fa-lg fa-inverse"></i>
+<!--									<i class="material-icons">search</i>-->
+									<i class="fa fa-search fa-inverse fa-lg"></i>
 							  </button>
 							</span>
 							</div>

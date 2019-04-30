@@ -76,9 +76,11 @@ main.site-main > div:last-child {
 	padding-right: $font-size-base;
 	border-right: 1px solid $text-muted;
   }
+
   .byline:last-child {
 	border-right: none;
   }
+
   .posted-on {
 	padding-left: $font-size-base;
   }
@@ -99,16 +101,19 @@ main.site-main > div:last-child {
 
   .entry-translations {
 	@extend .alert, .alert-info;
+
 	ul {
 	  display: inline;
 	  @include list-unstyled;
 	  @extend .list-inline;
+
 	  li {
 		@extend .list-inline-item;
 
 		&:after {
 		  content: ', ';
 		}
+
 		&:last-child:after {
 		  content: '';
 		}
@@ -180,10 +185,12 @@ main.site-main > div:last-child {
 		padding-left: 0;
 		counter-reset: list;
 	  }
+
 	  ol > li {
 		list-style: none;
 		margin-bottom: $margin-sm;
 	  }
+
 	  ol > li:before {
 		content: "[" counter(list) "] ";
 		counter-increment: list;
@@ -211,6 +218,7 @@ main.site-main > div:last-child {
 		  margin-right: 0;
 		}
 	  }
+
 	  .gallery-item:first-child {
 		.gallery-icon, figcaption {
 		  margin-left: 0;
@@ -281,7 +289,7 @@ main.site-main > div:last-child {
 	.entry-title {
 	  font-size: $h2-font-size;
 	  margin-bottom: $margin-sm;
-      text-transform: none;
+	  text-transform: none;
 	}
   }
 
@@ -328,6 +336,11 @@ body.home #primary-nav {
 	color: $white !important;
 	background-color: transparent;
 	border-color: rgba(224, 224, 224, 0.3);
+	padding: .3rem $margin-sm;
+  }
+
+  input {
+	//padding: .7rem $margin-sm !important;
   }
 
   input:focus {
@@ -371,9 +384,17 @@ body.home #primary-nav {
 // to navbar items
 @include media-breakpoint-down(lg) {
 
-  #navbar-nav-dropdown .nav-item, #navbar-nav-dropdown #navbar-nav-search {
+  #navbar-nav-dropdown .nav-item {
 	padding-top: .5rem;
 	padding-bottom: .5rem;
+  }
+
+  #navbar-nav-dropdown #navbar-nav-search {
+  	padding: 1.5rem 0;
+
+	#search-controls {
+	  width: 100%;
+	}
   }
 
   #navbar-nav-dropdown .nav-item {
@@ -385,12 +406,12 @@ body.home #primary-nav {
   }
 }
 
-#nav-pages {
+#navbar-nav-pages {
   margin-top: $margin-xs;
 }
 
 @include media-breakpoint-up(lg) {
-  #nav-pages {
+  #navbar-nav-pages {
 	margin-top: 0;
   }
 }
@@ -442,7 +463,7 @@ body.home #primary-nav {
   padding-top: 2rem;
 }
 
-@include media-breakpoint-up(lg){
+@include media-breakpoint-up(lg) {
   #wrapper-hero {
 	font-size: $font-size-lg;
 	height: 250px;
@@ -481,6 +502,7 @@ body.home #primary-nav {
 
 .widget_categories, .widget_ehri_post_categories, .cat-links, .tags-links {
   color: $text-darkened;
+
   ul {
 	@extend .list-unstyled, .clearfix;
 
@@ -542,7 +564,14 @@ body.home #primary-nav {
 // EHRI Comment Link widget
 .widget_ehri_post_comment_info {
   display: flex;
+  align-items: center;
   flex-direction: row;
+
+  i {
+	font-size: $font-size-lg;
+	color: $secondary;
+  }
+
   * {
 	white-space: nowrap;
 	margin-right: $margin-xs;
@@ -551,6 +580,7 @@ body.home #primary-nav {
 	  margin-right: 0;
 	}
   }
+
   .btn {
 	padding-right: inherit;
 	padding-left: inherit;
@@ -695,7 +725,7 @@ body.home #primary-nav {
 	  border-style: solid;
 	  border-width: 1rem 1rem 1rem 0;
 	  border-color: transparent $ehri-gray transparent transparent;
-	  margin: .25rem auto 0 -2.41rem; // sqrt(2)ish
+	  margin: .25rem auto 0 -2.3rem; // sqrt($margin-lg) + 1rem
 	}
   }
 
@@ -716,7 +746,9 @@ body.home #primary-nav {
 	@extend .pull-right;
 
 	a {
-	  @extend .btn, .btn-lg, .btn-primary;
+	  @extend .btn, .btn-primary;
+	  padding: $margin-xs;
+	  font-size: 0;
 	}
   }
 
