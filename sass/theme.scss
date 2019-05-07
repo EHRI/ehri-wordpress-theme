@@ -33,6 +33,15 @@ h2, h4 {
   color: $text-muted;
 }
 
+%nav-link {
+  display: block;
+  padding: 0.5rem 0;
+
+  @include media-breakpoint-up(lg) {
+	padding: .5rem 1rem;
+  }
+}
+
 // Main sidebar layout
 .content-area {
   @extend .col-lg-9;
@@ -320,14 +329,11 @@ body.home #primary-nav {
 
 #navbar-nav-pages {
   margin-top: $margin-xs;
-
   @extend .navbar-nav, .ml-auto;
 
   > li {
-	@extend .nav-item;
-
 	> a {
-	  @extend %heading-text, .nav-link;
+	  @extend %heading-text, %nav-link;
 	}
   }
 }
@@ -337,10 +343,10 @@ body.home #primary-nav {
 }
 
 #site-title {
-  @extend .navbar-brand, .mb-0, .nav-item;
+  @extend .navbar-brand, .mb-0;
 
   a {
-	@extend %heading-text, .nav-link;
+	@extend %heading-text, %nav-link;
   }
 }
 
@@ -350,6 +356,11 @@ body.home #primary-nav {
 
 #primary-nav-container {
   @extend .container;
+  // FIXME: for some reason we need extra padding here
+  // because containers in collapsible navbars have it
+  // set to zero...
+  padding-left: $grid-gutter-width / 2 !important;
+  padding-right: $grid-gutter-width / 2 !important;
 }
 
 #header-logo {
