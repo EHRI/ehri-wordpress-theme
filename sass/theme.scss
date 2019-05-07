@@ -318,9 +318,38 @@ body.home #primary-nav {
   background-color: transparent !important;
 }
 
-#wrapper-navbar #primary-nav a.nav-link, #wrapper-navbar #primary-nav .navbar-brand {
-  @extend %heading-text;
+#navbar-nav-pages {
+  margin-top: $margin-xs;
+
+  @extend .navbar-nav, .ml-auto;
+
+  > li {
+	@extend .nav-item;
+
+	> a {
+	  @extend %heading-text, .nav-link;
+	}
+  }
+}
+
+#wrapper-navbar #primary-nav #navbar-nav-pages > li > a, #wrapper-navbar #primary-nav #site-title > a {
   color: $white;
+}
+
+#site-title {
+  @extend .navbar-brand, .mb-0, .nav-item;
+
+  a {
+	@extend %heading-text, .nav-link;
+  }
+}
+
+#primary-nav {
+  @extend .navbar, .navbar-dark, .bg-secondary, .navbar-expand-lg;
+}
+
+#primary-nav-container {
+  @extend .container;
 }
 
 #header-logo {
@@ -356,64 +385,53 @@ body.home #primary-nav {
   }
 }
 
+// At narrow display, add borders and extra vertical padding
+// to navbar items
+#navbar-nav-dropdown > ul > li {
+  padding: .5rem 0;
+}
+
+#navbar-nav-dropdown #navbar-nav-search {
+  padding: 1.5rem 0;
+
+  #search-controls {
+	width: 100%;
+  }
+}
+
+#navbar-nav-dropdown > ul > li {
+  border-bottom: 1px solid rgba(224, 224, 224, 0.3);
+}
+
+#navbar-nav-dropdown > ul > li:first-child {
+  border-top: 1px solid rgba(224, 224, 224, 0.3);
+}
+
 // At wide display, pad navbar items
 @include media-breakpoint-up(lg) {
   #wrapper-navbar #primary-nav {
 	padding: 0;
   }
 
-  #navbar-nav-dropdown {
-	.nav-item {
-	  margin-right: $margin-lg;
-	}
-  }
-
-  #wrapper-navbar #primary-nav .navbar-nav .nav-item .nav-link {
-	padding: 0.5rem 0;
-  }
-
-  #wrapper-navbar #primary-nav .navbar-nav .nav-item {
+  #navbar-nav-dropdown > ul > li {
+	margin-right: $margin-lg;
 	padding: 1rem 0;
 	border-bottom: 0.4rem solid transparent;
 	border-top: 0.4rem solid transparent;
   }
 
-  #wrapper-navbar #primary-nav .navbar-nav .nav-item.active {
+  #navbar-nav-dropdown > ul > li:first-child {
+	border-top: 0.4rem solid transparent;
+  }
+
+  #navbar-nav-dropdown > ul > li > a {
+	padding: 0.5rem 0;
+  }
+
+  #navbar-nav-dropdown > ul > li.active {
 	border-bottom: .4rem solid $white;
   }
-}
 
-// At narrow display, add borders and extra vertical padding
-// to navbar items
-@include media-breakpoint-down(lg) {
-
-  #navbar-nav-dropdown .nav-item {
-	padding-top: .5rem;
-	padding-bottom: .5rem;
-  }
-
-  #navbar-nav-dropdown #navbar-nav-search {
-  	padding: 1.5rem 0;
-
-	#search-controls {
-	  width: 100%;
-	}
-  }
-
-  #navbar-nav-dropdown .nav-item {
-	border-bottom: 1px solid rgba(224, 224, 224, 0.3);
-  }
-
-  #navbar-nav-dropdown .nav-item:first-child {
-	border-top: 1px solid rgba(224, 224, 224, 0.3);
-  }
-}
-
-#navbar-nav-pages {
-  margin-top: $margin-xs;
-}
-
-@include media-breakpoint-up(lg) {
   #navbar-nav-pages {
 	margin-top: 0;
   }
@@ -506,16 +524,17 @@ body.home #primary-nav {
 .widget_categories, .widget_ehri_post_categories, .cat-links, .tags-links {
   color: $text-darkened;
 
-  ul {
-	@extend .list-unstyled, .clearfix;
+  > ul {
+	@include list-unstyled();
+	@include clearfix();
 
-	li {
+	> li {
 	  float: left;
 	  margin-right: $margin-xs;
 	  margin-bottom: $margin-xs;
 	}
 
-	li a {
+	> li > a {
 	  @extend %category-badge;
 	}
   }
