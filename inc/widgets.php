@@ -334,37 +334,43 @@ class Ehri_Link_List extends WP_Widget {
 		);
 	}
 
-	public function widget( $args, $instance ) {
-		if ( $post_id = get_queried_object_id() ) {
-			global $post;
-			$post = get_post( $post_id );
-			setup_postdata( $post );
-
-			$matches = array();
-			// Uh-oh:
-			preg_match_all(
-				'#<a.+href="(' . $instance['baseurl'] . '[^"]+)"[^>]*>(.+)</a>#',
-				$post->post_content, $matches, PREG_SET_ORDER );
-			$urls = [];
-			foreach ( $matches as $match ) {
-				if ( $text = strip_tags( $match[2] ) ) {
-					$urls[ $match[1] ] = $text;
+	/**
+	 * Get references to external content in this post.
+	 * External links are defined in the 'external_links' metadata custom field
+	 * and consist of one link per line in a "Link Text=URL" format.
+	 *
+	 * @param $post_id int the ID of the current Wordpress post
+	 * @return array an array of two-element text->url pairs
+	 */
+	private function getPostExternalRefs( $post_id ) {
+		$urls = array();
+		foreach ( get_post_meta( $post_id, 'external_links' ) as $field ) {
+			if ( $links = preg_split( '/\r\n|\r|\n/', $field ) ) {
+				foreach ( $links as $link ) {
+					if ( ($name_url = preg_split( '/\s*=\s*/', $link, 2, PREG_SPLIT_NO_EMPTY ))
+						&& sizeof( $name_url ) === 2
+						&& filter_var( $name_url[1], FILTER_VALIDATE_URL ) ) {
+						$urls[] = $name_url;
+					}
 				}
 			}
+		}
+		return $urls;
+	}
 
-			if ( $urls ) {
-				$title = apply_filters( 'widget_title', $instance['title'] );
-				echo $args['before_widget'];
-				echo $args['before_title'] . $title . $args['after_title'];
-				?>
-				<ul class="link-list">
-					<?php foreach ( $urls as $url => $text ): ?>
-						<li><a target="_blank" href="<?php echo $url; ?>"><?php echo $text; ?></a></li>
-					<?php endforeach; ?>
-				</ul>
-				<?php
-				echo $args['after_widget'];
-			}
+	public function widget( $args, $instance ) {
+		if ( $urls = $this->getPostExternalRefs( get_queried_object_id() ) ) {
+			$title = apply_filters( 'widget_title', $instance['title'] );
+			echo $args['before_widget'];
+			echo $args['before_title'] . $title . $args['after_title'];
+			?>
+			<ul class="link-list">
+				<?php foreach ( $urls as list( $text, $url ) ): ?>
+					<li><a target="_blank" href="<?php echo $url; ?>"><?php echo $text; ?></a></li>
+				<?php endforeach; ?>
+			</ul>
+			<?php
+			echo $args['after_widget'];
 		}
 	}
 
