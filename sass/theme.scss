@@ -338,7 +338,8 @@ body.home #primary-nav {
   }
 }
 
-#wrapper-navbar #primary-nav #navbar-nav-pages > li > a, #wrapper-navbar #primary-nav #site-title > a {
+#wrapper-navbar #primary-nav #navbar-nav-pages > li > a,
+#wrapper-navbar #primary-nav #site-title > a {
   color: $white;
 }
 
@@ -833,6 +834,7 @@ body.home #primary-nav {
 
 #follow-buttons {
 
+  z-index: 9999;
   visibility: hidden;
   position: fixed;
   top: 45%;
@@ -1046,3 +1048,35 @@ body.home #primary-nav {
   font-size: $font-size-sm !important;
   font-family: $font-family-base !important;
 }
+
+// Map / Leaflet styling
+
+#map-wrapper {
+  position: relative;
+}
+
+#blog-map {
+  height: 700px;
+}
+
+#map-text {
+  display: inline;
+  position: absolute;
+  top: $margin-md;
+  left: $margin-md;
+  float: left;
+  padding: $margin-md;
+  z-index: 9999;
+  width: 300px;
+  min-height: 80px;
+  max-height: 400px;
+  overflow: auto;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background-color: $white;
+}
+
+.map-popup a {
+  color: $primary;
+  font-size: $font-size-sm;
+}
+

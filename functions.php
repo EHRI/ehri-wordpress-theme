@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $understrap_includes = array(
+	'/actions.php',                         // Initialise custom actions
 	'/theme-settings.php',                  // Initialize theme default settings.
 	'/setup.php',                           // Theme setup and custom theme supports.
 	'/widgets.php',                         // Register widget area.
@@ -23,7 +24,6 @@ $understrap_includes = array(
 	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker.
 	'/class-ehri-walker-comment.php',       // Load custom WordPress nav walker.
 	'/editor.php',                          // Load Editor functions.
-	'/deprecated.php',                      // Load deprecated functions.
 );
 
 foreach ( $understrap_includes as $file ) {
