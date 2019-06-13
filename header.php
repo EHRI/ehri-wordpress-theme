@@ -88,13 +88,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</ul>
 						<form action="/" class="form-inline" id="navbar-nav-search">
 							<div class="input-group" id="search-controls">
-								<input class="form-control border-right-0"
+								<input class="form-control"
 								       type="search" name="s" placeholder="Search" id="example-search-input"
 								       value="<?php echo get_query_var( 's' ); ?>"/>
 								<span class="input-group-append">
-							  <button class="btn btn-outline-secondary border-left-0" type="submit">
-<!--									<i class="material-icons">search</i>-->
-									<i class="fa fa-search fa-inverse fa-lg"></i>
+							  <button class="btn btn-outline-secondary" type="submit">
+								  <i class="material-icons">search</i>
 							  </button>
 							</span>
 							</div>

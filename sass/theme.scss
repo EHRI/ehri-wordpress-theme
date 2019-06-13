@@ -379,12 +379,25 @@ body.home #primary-nav {
 	// NB: this is px so the placeholder
 	// doesn't overflow w/ large base font
 	// sizes.
-	font-size: 14px;
+	//font-size: 14px;
 	border-radius: 0;
 	color: $white !important;
 	background-color: transparent;
 	border-color: rgba(224, 224, 224, 0.3);
-	padding: .3rem $margin-xs;
+	padding: $margin-xs;
+  }
+
+  input {
+	border-right: 0;
+  }
+
+  button {
+	border-left: 0;
+
+	.material-icons {
+	  float: left;
+	  font-size: $font-size-lg;
+	}
   }
 
   input:focus {
@@ -392,7 +405,9 @@ body.home #primary-nav {
 	box-shadow: none;
   }
 
-  input::placeholder, *::-webkit-search-cancel-button {
+  input::placeholder,
+  *::-webkit-search-cancel-button {
+	font-size: $font-size-sm;
 	color: $white
   }
 }

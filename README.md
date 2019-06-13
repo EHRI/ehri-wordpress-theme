@@ -56,8 +56,10 @@ It is also assumed that the Widget Context plugin is used to control the display
 
 This theme assumes some settings in the Wordpress theme configurator:
 
- - static home page, set to a blank page (named e.g. "Home") - set template to "Homepage"
- - posts page, set to another blank page (named e.g. "All Articles")
+ - static home page, set to a blank page (named e.g. "Home") - set template to "Homepage". The front page 
+   hero image is this page's featured image.
+ - posts page, set to another blank page (named e.g. "All Articles"). The default template should be used 
+   here.
  
 #### Widgets
 
