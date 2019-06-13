@@ -52,6 +52,40 @@ This theme includes some theming support for the following plugins:
 
 It is also assumed that the Widget Context plugin is used to control the display of sidebar widgets in posts and pages.
 
+### Theme Configuration
+
+This theme assumes some settings in the Wordpress theme configurator:
+
+ - static home page, set to a blank page (named e.g. "Home") - set template to "Homepage"
+ - posts page, set to another blank page (named e.g. "All Articles")
+ 
+#### Widgets
+
+Add the following widgets to the right sidebar with the given context (via the Widget Content plugin):
+
+ - Text widget titled "About the Project": context Front Page only
+ - Author Info [EHRI]: context All Author archives
+ - Post Metadata [EHRI]: context All Posts
+ - Post Comment Info [EHRI]: context All Posts
+ - Post Categories [EHRI]: context All Posts
+ - Post Tags [EHRI]: context All Posts
+ - Link List [EHRI]: context All posts
+ - Author List [EHRI]: context blog page, search results, all archives
+ - Table of contents titled "Summary": context All Posts
+ - Categories: context Front Page, blog page, search results, 404 error page, all archives
+ - Tag Cloug titled "Tags": context blog page, search results, 404 error page, all archives
+ 
+#### Menus
+
+ - Main (header) nav menu should be named "main"
+   - Map page (empty page with Map template)
+   - About
+   - How to Contribute
+ - Footer menus should be named "footer1" and "footer2" (if needed)
+   - Home
+   - About
+   - Contribute
+
 Licenses & Credits
 =
 - UnderStrap: http://understrap.com | (Code licensed under GNU GPL v2.0)
