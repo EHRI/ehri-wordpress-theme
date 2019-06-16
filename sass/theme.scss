@@ -259,7 +259,7 @@ main.site-main > div:last-child {
 }
 
 #archive-wrapper .taxonomy-description {
-  color: $secondary;
+  color: var(--secondary);
   font-size: $font-size-lg;
 }
 
@@ -320,7 +320,8 @@ body.home #wrapper-navbar {
 body.home #wrapper-navbar-overlay {
   position: relative;
   height: 100%;
-  background-color: rgba(54, 15, 79, 0.68);
+  background-color: var(--secondary);
+  opacity: .85;
 }
 
 body.home #primary-nav {
@@ -340,7 +341,7 @@ body.home #primary-nav {
 
 #wrapper-navbar #primary-nav #navbar-nav-pages > li > a,
 #wrapper-navbar #primary-nav #site-title > a {
-  color: $white;
+  color: var(--white);
 }
 
 #site-title {
@@ -352,7 +353,8 @@ body.home #primary-nav {
 }
 
 #primary-nav {
-  @extend .navbar, .navbar-dark, .bg-secondary, .navbar-expand-lg;
+  @extend .navbar, .navbar-dark, .navbar-expand-lg;
+  background-color: var(--secondary);
 }
 
 #primary-nav-container {
@@ -381,7 +383,7 @@ body.home #primary-nav {
 	// sizes.
 	//font-size: 14px;
 	border-radius: 0;
-	color: $white !important;
+	color: var(--white) !important;
 	background-color: transparent;
 	border-color: rgba(224, 224, 224, 0.3);
 	padding: $margin-xs;
@@ -408,18 +410,18 @@ body.home #primary-nav {
   input::placeholder,
   *::-webkit-search-cancel-button {
 	font-size: $font-size-sm;
-	color: $white
+	color: var(--white)
   }
 }
 
 // At narrow display, add borders and extra vertical padding
 // to navbar items
 #navbar-nav-dropdown > ul > li {
-  padding: .5rem 0;
+  padding: $margin-xs 0;
 }
 
 #navbar-nav-dropdown #navbar-nav-search {
-  padding: 1.5rem 0;
+  padding: $margin-md 0;
 
   #search-controls {
 	width: 100%;
@@ -452,11 +454,11 @@ body.home #primary-nav {
   }
 
   #navbar-nav-dropdown > ul > li > a {
-	padding: 0.5rem 0;
+	padding: $margin-xs 0;
   }
 
   #navbar-nav-dropdown > ul > li.active {
-	border-bottom: .4rem solid $white;
+	border-bottom: $margin-xs solid var(--white);
   }
 
   #navbar-nav-pages {
@@ -506,7 +508,7 @@ body.home #primary-nav {
 }
 
 #wrapper-hero {
-  color: $white;
+  color: var(--white);
   padding-bottom: 2rem;
   padding-top: 2rem;
 }
@@ -586,7 +588,7 @@ body.home #primary-nav {
 
   a {
 	@extend %category-badge;
-	background-color: $white;
+	background-color: var(--white);
 	display: list-item;
 	float: left;
 	list-style: none;
@@ -618,7 +620,7 @@ body.home #primary-nav {
 
   i {
 	font-size: $font-size-lg;
-	color: $secondary;
+	color: var(--secondary);
   }
 
   * {
@@ -683,7 +685,7 @@ body.home #primary-nav {
 	margin-bottom: $margin-lg;
 
 	a {
-	  color: $secondary;
+	  color: var(--secondary);
 	  font-size: $h4-font-size;
 	  font-family: $headings-font-family;
 	  text-transform: uppercase;
@@ -863,7 +865,7 @@ body.home #primary-nav {
   display: flex;
   flex-direction: column;
   border: 1px solid $ehri-border-gray;
-  background-color: $white;
+  background-color: var(--white);
 
   header {
 	padding: 0.25rem;
@@ -923,7 +925,7 @@ body.home #primary-nav {
 	  @extend .list-inline-item;
 
 	  a {
-		color: $secondary;
+		color: var(--secondary);
 		margin-right: $margin-xs;
 	  }
 	}
@@ -1087,11 +1089,11 @@ body.home #primary-nav {
   max-height: 400px;
   overflow: auto;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  background-color: $white;
+  background-color: var(--white);
 }
 
 .map-popup a {
-  color: $primary;
+  color: var(--primary);
   font-size: $font-size-sm;
 }
 

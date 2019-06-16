@@ -10,16 +10,17 @@ $secondary: #360f4f;
 
 $headings-font-family: 'Barlow Semi Condensed', sans-serif;
 $font-family-base: 'Roboto', sans-serif;
-$headings-color: $secondary;
+$headings-color: var(--secondary);
 
 $text-darkened: #4a4a4a;
 
   // Footer and category badges etc
-$ehri-gray: #ecedee;
+$gray-200: #ecedee;
+$ehri-gray: $gray-200;
 $ehri-border-gray: #cecfcf;
 $divider-color: rgba(131, 1, 76, 0.13);
 
-$pagination-active-bg: $secondary;
+$pagination-active-bg: var(--secondary);
 
 $btn-font-size: 0.6875rem;
 $btn-font-weight: bold;
