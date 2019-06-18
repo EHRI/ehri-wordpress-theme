@@ -20,12 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="entry-body">
 
-		<div class="entry-cover-image">
-
-			<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-
-		</div>
-
 		<?php if ( 'post' === get_post_type() ) : ?>
 
 			<div class="entry-meta">
