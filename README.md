@@ -47,6 +47,7 @@ Or, to run with Browser-Sync:
 This theme includes some theming support for the following plugins:
 
  - Contextual Related Posts (CRP) (Disable default plugin rendered output on posts and pages)
+ - EZ-Toc (Enable "Prevent loading of default styles...")
  - Simple Lightbox (SLB)
  - Co-Authors Plus
 
