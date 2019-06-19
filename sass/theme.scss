@@ -608,6 +608,8 @@ body.home #primary-nav {
 
 	li {
 	  margin-bottom: $margin-xs;
+	  // Overrides nowrap whitespace on ez-toc-container
+	  white-space: normal;
 	}
   }
 }

@@ -46,7 +46,7 @@ Or, to run with Browser-Sync:
 
 This theme includes some theming support for the following plugins:
 
- - Contextual Related Posts (CRP)
+ - Contextual Related Posts (CRP) (Disable default plugin rendered output on posts and pages)
  - Simple Lightbox (SLB)
  - Co-Authors Plus
 
