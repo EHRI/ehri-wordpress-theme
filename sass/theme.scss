@@ -320,8 +320,8 @@ body.home #wrapper-navbar {
 body.home #wrapper-navbar-overlay {
   position: relative;
   height: 100%;
-  background-color: var(--secondary);
-  opacity: .85;
+  background-color: rgba($secondary, .85);
+
 }
 
 body.home #primary-nav {
