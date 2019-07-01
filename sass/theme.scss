@@ -712,6 +712,31 @@ body.home #primary-nav {
 	  }
 	}
   }
+
+  #footer-attributions {
+	font-size: $font-size-xs;
+	color: $text-muted;
+
+	display: flex;
+
+	img {
+	  margin-bottom: $margin-sm;
+	  margin-right: $margin-sm;
+	}
+
+	@include media-breakpoint-up(md) {
+	  flex-direction: column;
+	  align-items: flex-end;
+
+	  img {
+		margin-right: 0;
+	  }
+
+	  p {
+		text-align: right;
+	  }
+	}
+  }
 }
 
 // Pagination

@@ -92,12 +92,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					</div>
 
-					<div class="footer-full-menu">
-						<?php foreach ( wp_get_nav_menu_items( 'footer2' ) as $item ): ?>
-							<p class="<?php if ( $item->object_id === get_the_ID() ) echo "active"; ?>">
-								<a href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
-							</p>
-						<?php endforeach; ?>
+					<div class="footer-full-menu" id="footer-attributions">
+						<img src="<?php echo get_theme_file_uri( "img/eu_logo.gif" ); ?>" alt="EU Logo" width="68" height="45"/>
+						<p>The EHRI Project is supported by the European Commission</p>
 					</div>
 
 				</div>

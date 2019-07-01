@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<img id="header-logo" class="img-fluid"
 						     src="<?php echo get_theme_file_uri( "img/ehri-logo@2x.png" ); ?>"
-						     alt=""/></a>
+						     alt="EHRI Logo"/></a>
 
 					<h1 id="site-title">
 						<a rel="home"
