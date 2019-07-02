@@ -42,6 +42,24 @@ h2, h4 {
   }
 }
 
+/**
+ * Outputs both a standard color derived
+ * from one of the color map variables
+ * and a CSS variable of the same name.
+ * This provides compatibility with browsers
+ * that don't support CSS variables.
+ *
+ * Note: the 'varName' arg should always be a
+ * quoted string to avoid collision with built-in
+ * HTML/CSS color names.
+ */
+@mixin color-var($property, $varName) {
+  $all-colors: map-merge($colors, $theme-colors);
+  #{$property}: #{map-get($all-colors, #{$varName})};
+  #{$property}: var(--#{$varName});
+}
+
+
 // Main sidebar layout
 .content-area {
   @extend .col-lg-9;
@@ -259,7 +277,7 @@ main.site-main > div:last-child {
 }
 
 #archive-wrapper .taxonomy-description {
-  color: var(--secondary);
+  @include color-var(color, 'secondary');
   font-size: $font-size-lg;
 }
 
@@ -341,7 +359,7 @@ body.home #primary-nav {
 
 #wrapper-navbar #primary-nav #navbar-nav-pages > li > a,
 #wrapper-navbar #primary-nav #site-title > a {
-  color: var(--white);
+  @include color-var(color, 'white');
 }
 
 #site-title {
@@ -354,7 +372,7 @@ body.home #primary-nav {
 
 #primary-nav {
   @extend .navbar, .navbar-dark, .navbar-expand-lg;
-  background-color: var(--secondary);
+  @include color-var(background-color, 'secondary');
 }
 
 #primary-nav-container {
@@ -410,7 +428,7 @@ body.home #primary-nav {
   input::placeholder,
   *::-webkit-search-cancel-button {
 	font-size: $font-size-sm;
-	color: var(--white)
+	@include color-var(color, 'white');
   }
 }
 
@@ -508,7 +526,7 @@ body.home #primary-nav {
 }
 
 #wrapper-hero {
-  color: var(--white);
+  @include color-var(color, 'white');
   padding-bottom: 2rem;
   padding-top: 2rem;
 }
@@ -588,7 +606,7 @@ body.home #primary-nav {
 
   a {
 	@extend %category-badge;
-	background-color: var(--white);
+	@include color-var(background-color, 'white');
 	display: list-item;
 	float: left;
 	list-style: none;
@@ -622,7 +640,7 @@ body.home #primary-nav {
 
   i {
 	font-size: $font-size-lg;
-	color: var(--secondary);
+	@include color-var(color, 'secondary');
   }
 
   * {
@@ -687,7 +705,7 @@ body.home #primary-nav {
 	margin-bottom: $margin-lg;
 
 	a {
-	  color: var(--secondary);
+	  @include color-var(color, 'secondary');
 	  font-size: $h4-font-size;
 	  font-family: $headings-font-family;
 	  text-transform: uppercase;
@@ -892,7 +910,7 @@ body.home #primary-nav {
   display: flex;
   flex-direction: column;
   border: 1px solid $ehri-border-gray;
-  background-color: var(--white);
+  @include color-var(background-color, 'white');
 
   header {
 	padding: 0.25rem;
@@ -952,7 +970,7 @@ body.home #primary-nav {
 	  @extend .list-inline-item;
 
 	  a {
-		color: var(--secondary);
+		@include color-var(color, 'secondary');
 		margin-right: $margin-xs;
 	  }
 	}
@@ -1116,11 +1134,11 @@ body.home #primary-nav {
   max-height: 400px;
   overflow: auto;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  background-color: var(--white);
+  @include color-var(background-color, 'white');
 }
 
 .map-popup a {
-  color: var(--primary);
+  @include color-var(color, 'primary');
   font-size: $font-size-sm;
 }
 
