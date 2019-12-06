@@ -150,6 +150,9 @@ main.site-main > div:last-child {
 
   .entry-content {
 	padding-bottom: $margin-md;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-wrap: break-word;
 
 	.aligncenter {
 	  margin-left: auto;
@@ -171,6 +174,12 @@ main.site-main > div:last-child {
 	  max-width: 300px;
 	  height: auto;
 	  clear: both;
+	}
+
+	// Make bare images inserted into
+	// para text fluid
+	> p > img {
+		@include img-fluid();
 	}
 
 	.wp-caption {
@@ -228,6 +237,7 @@ main.site-main > div:last-child {
 	.gallery {
 	  font-size: $font-size-xs;
 	  word-wrap: break-word;
+	  overflow-wrap: break-word;
 
 	  .gallery-icon {
 		object-fit: cover;
@@ -395,12 +405,14 @@ body.home #primary-nav {
 
   background-color: rgba(255, 255, 255, 0.1);
 
-  input, button {
+  input,
+  button {
 	// NB: this is px so the placeholder
 	// doesn't overflow w/ large base font
 	// sizes.
 	//font-size: 14px;
 	border-radius: 0;
+	color: #fff;
 	color: var(--white) !important;
 	background-color: transparent;
 	border-color: rgba(224, 224, 224, 0.3);
