@@ -92,8 +92,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 								       type="search" name="s" placeholder="Search" id="example-search-input"
 								       value="<?php echo get_query_var( 's' ); ?>"/>
 								<span class="input-group-append">
-							  <button class="btn btn-outline-secondary" type="submit">
-								  <i class="material-icons">search</i>
+							  <button class="btn btn-outline-secondary" aria-label="Submit Search" type="submit">
+								  <i class="material-icons" aria-hidden="true">search</i>
 							  </button>
 							</span>
 							</div>
@@ -128,13 +128,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<a class="follow-button" href="https://facebook.com/EHRIproject" title="Follow EHRI on Facebook">
 
-			<i class="fa fa-facebook"></i>
+			<i class="fa fa-facebook" aria-hidden="true"></i>
 
 		</a>
 
 		<a class="follow-button" href="https://twitter.com/EHRIproject" title="Follow EHRI on Twitter">
 
-			<i class="fa fa-twitter"></i>
+			<i class="fa fa-twitter" aria-hidden="true"></i>
 
 		</a>
 
