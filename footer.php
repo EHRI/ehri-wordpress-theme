@@ -38,15 +38,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<div class="social-links">
 					<a href="https://facebook.com/EHRIproject">
-						<i class="fa fa-facebook"></i>
+						<i class="fa fa-facebook" aria-hidden="true"></i>
 						Facebook
 					</a>
 					<a href="https://twitter.com/EHRIproject">
-						<i class="fa fa-twitter"></i>
+						<i class="fa fa-twitter" aria-hidden="true"></i>
 						Twitter
 					</a>
 					<a href="/feed/">
-						<i class="fa fa-rss"></i>
+						<i class="fa fa-rss" aria-hidden="true"></i>
 						RSS
 					</a>
 				</div>

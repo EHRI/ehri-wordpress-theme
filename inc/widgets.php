@@ -85,7 +85,7 @@ class Ehri_Post_Comment_Info extends WP_Widget {
 			if ( ! empty( $title ) )
 				echo $args['before_title'] . $title . $args['after_title'];
 			if ( $number > 0 ) {
-				echo '<i class="material-icons md-14">mode_comment</i>';
+				echo '<i class="material-icons md-14" aria-hidden="true">mode_comment</i>';
 				echo '<span id="post-comment-number">';
 				printf( _nx(
 					'%1$s Comment',
