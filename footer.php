@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<h3>Don't miss new articles</h3>
 
-					<a href="<?php echo $mailinglist_url; ?>" class="btn btn-primary btn-lg" target="_blank" id="subscribe-to-newsletter">
+					<a href="<?php echo $mailinglist_url; ?>" class="btn btn-primary btn-lg" target="_blank" rel="noopener" id="subscribe-to-newsletter">
 						Subscribe to our mailing list
 					</a>
 

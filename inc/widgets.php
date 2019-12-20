@@ -366,7 +366,7 @@ class Ehri_Link_List extends WP_Widget {
 			?>
 			<ul class="link-list">
 				<?php foreach ( $urls as list( $text, $url ) ): ?>
-					<li><a target="_blank" href="<?php echo $url; ?>"><?php echo $text; ?></a></li>
+					<li><a target="_blank" rel="noopener" href="<?php echo $url; ?>"><?php echo $text; ?></a></li>
 				<?php endforeach; ?>
 			</ul>
 			<?php
