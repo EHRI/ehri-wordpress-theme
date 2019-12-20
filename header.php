@@ -18,6 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="copyright" content="EHRI Consortium <?php echo date("Y"); ?>">
+	<meta name="description" content="The European Holocaust Research Infrastructure Document Blog">
+	<meta name="keywords" content="EHRI,Blog,Holocaust,Research,Shoah,Archives,History,Deportations,Camps,Ghettos">
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -48,9 +51,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<h1 id="site-title">
 						<a rel="home"
-						  href="<?php echo esc_url( home_url( '/' ) ); ?>"
-						  title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
-						  itemprop="url"><?php bloginfo( 'name' ); ?>
+						   href="<?php echo esc_url( home_url( '/' ) ); ?>"
+						   title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
+						   itemprop="url"><?php bloginfo( 'name' ); ?>
 						</a>
 					</h1>
 
@@ -65,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="collapse navbar-collapse" id="navbar-nav-dropdown">
 						<ul id="navbar-nav-pages">
 							<?php $active_articles = is_archive() || is_single(); ?>
-							<li class="dropdown <?php if ($active_articles) echo "active"; ?>">
+							<li class="dropdown <?php if ( $active_articles ) echo "active"; ?>">
 								<a class="dropdown-toggle" id="navbar-cat-dropdown" data-toggle="dropdown"
 								   href="#">Articles</a>
 								<div class="dropdown-menu" id="categories-dropdown"
@@ -75,7 +78,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 									<a class="all-articles-menu"
 									   href="<?php echo esc_url( home_url( '/all-articles/' ) ); ?>">
-										<?php _e("List all articles"); ?>
+										<?php _e( "List all articles" ); ?>
 									</a>
 								</div>
 							</li>
@@ -88,14 +91,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</ul>
 						<form action="/" class="form-inline" id="navbar-nav-search">
 							<div class="input-group" id="search-controls">
-								<input class="form-control"
-								       type="search" name="s" placeholder="Search" id="example-search-input"
-								       value="<?php echo get_query_var( 's' ); ?>"/>
+								<label class="sr-only" for="search-input">Search</label>
+								<input class="form-control" type="search" name="s" placeholder="Search"
+								       id="search-input" value="<?php echo get_query_var( 's' ); ?>"/>
 								<span class="input-group-append">
-							  <button class="btn btn-outline-secondary" aria-label="Submit Search" type="submit">
-								  <i class="material-icons" aria-hidden="true">search</i>
-							  </button>
-							</span>
+									<button class="btn btn-outline-secondary" aria-label="Submit Search" type="submit">
+										<i class="material-icons" aria-hidden="true">search</i>
+									</button>
+								</span>
 							</div>
 						</form>
 						<!--				--><?php //wp_nav_menu(
@@ -124,17 +127,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- Floating follow buttons -->
 	<aside id="follow-buttons">
 
-		<header><?php _e("Follow"); ?></header>
+		<header><?php _e( "Follow" ); ?></header>
 
 		<a class="follow-button" href="https://facebook.com/EHRIproject" title="Follow EHRI on Facebook">
 
 			<i class="fa fa-facebook" aria-hidden="true"></i>
+
+			<span class="sr-only">Facebook</span>
 
 		</a>
 
 		<a class="follow-button" href="https://twitter.com/EHRIproject" title="Follow EHRI on Twitter">
 
 			<i class="fa fa-twitter" aria-hidden="true"></i>
+
+			<span class="sr-only">Twitter</span>
 
 		</a>
 
