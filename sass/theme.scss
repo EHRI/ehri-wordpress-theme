@@ -91,7 +91,7 @@ main.site-main > div:last-child {
   border-bottom: none;
 }
 
-.entry-header, .entry-cover-image {
+.entry-header {
   margin-bottom: $margin-md;
 }
 
@@ -285,6 +285,10 @@ main.site-main > div:last-child {
 #index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post, #author-wrapper article.post {
   font-size: $font-size-sm;
   @include make-row('no-gutters');
+
+  .entry-header {
+	margin-bottom: $margin-sm;
+  }
 
   .entry-thumbnail {
 	@include make-col-ready('no-gutters');
