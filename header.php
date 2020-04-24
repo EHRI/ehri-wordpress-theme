@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="copyright" content="EHRI Consortium <?php echo date("Y"); ?>">
+	<meta name="copyright" content="EHRI Consortium 2015-<?php echo date("Y"); ?>">
 	<meta name="description" content="The European Holocaust Research Infrastructure Document Blog">
 	<meta name="keywords" content="EHRI,Blog,Holocaust,Research,Shoah,Archives,History,Deportations,Camps,Ghettos">
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600" rel="stylesheet">

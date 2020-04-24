@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 
 				<p id="copyright">
-					<span class="text-muted text-capitalize">© 2015-2019 EHRI Consortium </span>
+					<span class="text-muted text-capitalize">© 2015-<?php echo date("Y"); ?> EHRI Consortium </span>
 					&nbsp;
 					&nbsp;
 					<a class="text-muted" href="https://ehri-project.eu/content/privacy-statement">Privacy
