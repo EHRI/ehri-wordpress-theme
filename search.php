@@ -30,6 +30,7 @@ get_header();
 						<header class="page-header">
 
 							<h1 class="page-title">Search Results</h1>
+
 							<?php if ($q = trim(get_search_query())): ?>
 								<h2 class="text-muted"><?php echo "\"$q\""; ?></h2>
 							<?php endif; ?>
