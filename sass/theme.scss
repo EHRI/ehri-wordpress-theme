@@ -281,6 +281,10 @@ main.site-main > div:last-child {
   font-size: $font-size-lg;
 }
 
+#index-wrapper .page-title {
+  @extend %heading-text;
+}
+
 // Post list (blog, search) components styling
 #index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post, #author-wrapper article.post {
   font-size: $font-size-sm;
@@ -326,8 +330,7 @@ main.site-main > div:last-child {
 
   // in post lists all metadata is greyed out
   .entry-meta * {
-	@extend .text-muted;
-	font-size: $font-size-xs;
+	@extend %small-muted;
   }
 }
 
@@ -592,12 +595,14 @@ body.home #primary-nav {
 }
 
 .cat-links, .tags-links {
+  display: flex;
   color: $text-muted;
   font-size: $font-size-xs;
 
   ul {
 	margin-left: $margin-xs;
 	display: inline-flex;
+	flex-wrap: wrap;
   }
 }
 
@@ -669,6 +674,8 @@ body.home #primary-nav {
 #wrapper-footer-full {
 
   font-size: $font-size-sm;
+  color: darken($text-muted, 10%);
+  font-size: $font-size-xs;
 
   .footer-full-sections {
 	@extend .row;
@@ -730,14 +737,12 @@ body.home #primary-nav {
 	  padding-bottom: 0.1rem;
 
 	  a {
-		@extend %small-muted;
+		color: inherit;
 	  }
 	}
   }
 
   #footer-attributions {
-	font-size: $font-size-xs;
-	color: $text-muted;
 
 	display: flex;
 

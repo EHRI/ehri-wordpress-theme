@@ -38,7 +38,7 @@ get_header();
 				<main class="site-main" id="main">
 
 						<header class="page-header">
-							<h4>Most recent posts</h4>
+							<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 						</header>
 
 						<div class="post-list">
