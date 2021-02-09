@@ -1,7 +1,3 @@
-Travis build: [![Build Status](https://travis-ci.org/understrap/understrap.svg?branch=master)](https://travis-ci.org/understrap/understrap)
-
-#### See: [Official Demo](https://understrap.com/understrap) | Read: [Official Docs Page](https://understrap.github.io/)
-
 # EHRI Wordpress Theme
 
 Website: [https://blog.ehri-project.eu](https://blog.ehri-project.eu)
@@ -16,31 +12,16 @@ Distributed under the terms of the GNU GPL version 2
 
 http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 
-## Developing With npm, Gulp and SASS and [Browser Sync][1]
+## Developing With npm, Grunt and SASS
 
 ### Installing Dependencies
-- Make sure you have installed Node.js and Browser-Sync (optional) on your computer globally
-- Then open your terminal and browse to the location of your UnderStrap copy
+- Make sure you have installed Node.js on your computer globally
 - Run: `$ npm install`
 
 ### Running
 To work with and compile your Sass files on the fly start:
 
-- `$ gulp watch`
-
-Or, to run with Browser-Sync:
-
-- First change the browser-sync options to reflect your environment in the file `/gulpconfig.json` in the beginning of the file:
-```javascript
-{
-    "browserSyncOptions" : {
-        "proxy": "localhost/theme_test/", // <----- CHANGE HERE
-        "notify": false
-    },
-    ...
-};
-```
-- then run: `$ gulp watch-bs`
+- `$ ./node_modules/.bin/grunt watch`
 
 ### Supported Plugins
 
@@ -57,11 +38,11 @@ It is also assumed that the Widget Context plugin is used to control the display
 
 This theme assumes some settings in the Wordpress theme configurator:
 
- - static home page, set to a blank page (named e.g. "Home") - set template to "Homepage". The front page 
+ - static home page, set to a blank page (named e.g. "Home") - set template to "Homepage". The front page
    hero image is this page's featured image.
- - posts page, set to another blank page (named e.g. "All Articles"). The default template should be used 
+ - posts page, set to another blank page (named e.g. "All Articles"). The default template should be used
    here.
- 
+
 #### Widgets
 
 Add the following widgets to the right sidebar with the given context (via the Widget Content plugin):
@@ -77,7 +58,7 @@ Add the following widgets to the right sidebar with the given context (via the W
  - Table of contents titled "Summary": context All Posts
  - Categories: context Front Page, blog page, search results, 404 error page, all archives
  - Tag Cloug titled "Tags": context blog page, search results, 404 error page, all archives
- 
+
 #### Menus
 
  - Main (header) nav menu should be named "main"
