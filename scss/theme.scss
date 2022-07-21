@@ -2,8 +2,6 @@
 // <--------- Add your variables into this file. Also add variables to overwrite Bootstrap or UnderStrap variables here
 @import "bootstrap4/bootstrap";
 // <--------- Loads Bootstrap3 or Bootstrap4. Change from /bootstrap3 to /bootstrap4 Watch out! just for testing in the moment!
-@import "understrap/understrap";
-// <-------- Loads the UnderStrap defaults. Just a few classes to incorporate BS in WP
 //Optional files - If you dont use the corresponding scripts/fonts comment em out
 @import "font-awesome/font-awesome";
 // <------- Font Awesome Icon font
@@ -1151,3 +1149,7 @@ body.home #primary-nav {
   font-size: $font-size-sm;
 }
 
+// Enable a border around wordpress block tables
+.wp-block-table.bordered table {
+  @extend .table, .table-bordered, .table-sm;
+}

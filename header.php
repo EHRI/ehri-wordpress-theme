@@ -21,9 +21,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta name="copyright" content="EHRI Consortium <?php echo date("Y"); ?>">
 	<meta name="description" content="The European Holocaust Research Infrastructure Document Blog">
 	<meta name="keywords" content="EHRI,Blog,Holocaust,Research,Shoah,Archives,History,Deportations,Camps,Ghettos">
-	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<!-- FIXME: load this via the theme code? -->
 	<script async src="https://static.addtoany.com/menu/page.js"></script>
