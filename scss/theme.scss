@@ -284,7 +284,11 @@ main.site-main > div:last-child {
 }
 
 // Post list (blog, search) components styling
-#index-wrapper article.post, #search-wrapper article.post, #archive-wrapper article.post, #author-wrapper article.post {
+#index-wrapper article.post,
+#search-wrapper article.post,
+#archive-wrapper article.post,
+#author-wrapper article.post
+{
   font-size: $font-size-sm;
   @include make-row('no-gutters');
 
@@ -303,7 +307,7 @@ main.site-main > div:last-child {
 	margin-bottom: 1rem;
 
 	height: 0;
-	padding-bottom: 25%; /* % of width, defines aspect ratio*/
+	padding-bottom: Max(12rem, 25%); /* % of width, defines aspect ratio*/
 
 	background-repeat: no-repeat;
 	background-position: center center;
