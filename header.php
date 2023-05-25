@@ -26,6 +26,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<script async src="https://static.addtoany.com/menu/page.js"></script>
 
 	<?php wp_head(); ?>
+
+	<?php if ($plausible_domain = get_theme_mod('ehri_plausible_domain')): ?>
+
+		<script defer data-domain="<?php echo $plausible_domain; ?>" src="https://plausible.io/js/script.js"></script>
+
+	<?php endif; ?>
 </head>
 
 <body <?php body_class(); ?>>
