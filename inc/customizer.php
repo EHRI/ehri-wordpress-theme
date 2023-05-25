@@ -77,12 +77,47 @@ add_action( 'customize_register', 'understrap_theme_customize_register' );
 if ( ! function_exists( 'ehri_theme_customize_register' ) ) {
 	function ehri_theme_customize_register( $wp_customize ) {
 		$wp_customize->add_section(
+			'ehri_theme_header_options',
+			array(
+				'title' => __( 'Theme Header Settings' ),
+				'capability' => 'edit_theme_options',
+				'description' => __( 'EHRI theme header settings' ),
+				'priority' => 170,
+			)
+		);
+
+		$wp_customize->add_setting(
+			'ehri_plausible_domain',
+			array(
+				'default' => '',
+				'type' => 'theme_mod',
+				'capability' => 'edit_theme_options',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'ehri_plausible_domain',
+				array(
+					'label' => __( 'Plausible Analytics domain', 'ehri' ),
+					'description' => __( 'Set the domain for adding a Plausible Analytics tracking script', 'ehri' ),
+					'section' => 'ehri_theme_header_options',
+					'settings' => 'ehri_plausible_domain',
+					'type' => 'input',
+					'priority' => '10',
+				)
+
+			)
+		);
+
+		$wp_customize->add_section(
 			'ehri_theme_footer_options',
 			array(
 				'title' => __( 'Theme Footer Settings' ),
 				'capability' => 'edit_theme_options',
 				'description' => __( 'EHRI theme footer settings' ),
-				'priority' => 170,
+				'priority' => 171,
 			)
 		);
 

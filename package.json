@@ -1,9 +1,10 @@
 {
   "name": "ehri-wp-theme",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "EHRI Wordpress Theme",
   "main": "index.js",
   "scripts": {
+    "dist": "grunt package",
     "postinstall": "grunt copy"
   },
   "engines": {
@@ -39,6 +40,6 @@
     "grunt-contrib-uglify": "^5.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.1.0",
-    "node-sass": "^7.0.1"
+    "node-sass": "^9.0.0"
   }
 }
