@@ -152,7 +152,7 @@ if ( ! function_exists( 'ehri_posted_on' ) ) {
 			)
 		);
 
-		if ( function_exists( "get_coauthors" ) && function_exists("coauthors_posts_links")) {
+		if ( function_exists( "get_coauthors" ) && function_exists( "coauthors_posts_links" ) ) {
 			$coauthors = get_coauthors();
 			$byline = apply_filters(
 				'ehri_posted_by', sprintf(
@@ -228,7 +228,6 @@ if ( ! function_exists( "ehri_has_gravitar" ) ) {
 /**
  * Experimental Polylang-based language switch widget.
  *
- * TODO: improve greatly.
  */
 if ( ! function_exists( "ehri_post_translations" ) ) {
 	function ehri_post_translations( $post_id ) {
@@ -245,19 +244,9 @@ if ( ! function_exists( "ehri_post_translations" ) ) {
 			return;
 		}
 
-		// FIXME: where to lookup with info???
-		$langs = array(
-			"en" => "English",
-			"de" => "German",
-			"fr" => "French",
-			"cs" => "Czech",
-			"hu" => "Hungarian",
-		);
-
 		$links = "<ul>";
 		foreach ( $translations as $code => $other_id ) {
-			$links .= sprintf( '<li><a href="%s">%s</a></li>', get_permalink( $other_id ),
-				__( array_key_exists( $code, $langs ) ? $langs[ $code ] : $code ) );
+			$links .= sprintf( '<li><a href="%s">%s</a></li>', get_permalink( $other_id ), Locale::getDisplayLanguage( $code, $current_lang ) );
 		}
 		$links .= "</ul>"
 

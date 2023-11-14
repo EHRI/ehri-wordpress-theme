@@ -1,6 +1,6 @@
 {
   "name": "ehri-wp-theme",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "EHRI Wordpress Theme",
   "main": "index.js",
   "scripts": {
